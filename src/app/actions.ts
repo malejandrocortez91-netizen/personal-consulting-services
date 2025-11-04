@@ -2,7 +2,6 @@
 
 import { z } from 'zod';
 import { sendEmail } from '@/services/email-service';
-import { summarizeSkillsFromResume } from '@/ai/flows/summarize-skills-from-resume';
 
 const contactSchema = z.object({
   name: z.string().min(1, 'Name is required'),
@@ -48,38 +47,5 @@ export async function handleContactSubmission(
     return { data: { success: true }, error: null, errors: null };
   } catch (error) {
     return { data: null, error: 'Failed to send message. Please try again later.', errors: null };
-  }
-}
-
-const resumeSchema = z.object({
-  resumeText: z.string().min(50, 'Resume text must be at least 50 characters'),
-});
-
-type SummarizeResumeState = {
-  data: { skillsSummary: string } | null;
-  error: string | null;
-}
-
-export async function summarizeResumeAction(
-  prevState: SummarizeResumeState,
-  formData: FormData
-): Promise<SummarizeResumeState> {
-  const validatedFields = resumeSchema.safeParse({
-    resumeText: formData.get('resumeText'),
-  });
-
-  if (!validatedFields.success) {
-    return {
-      data: null,
-      error: validatedFields.error.flatten().fieldErrors.resumeText?.[0] ?? 'Invalid input.',
-    };
-  }
-
-  try {
-    const result = await summarizeSkillsFromResume({ resumeText: validatedFields.data.resumeText });
-    return { data: result, error: null };
-  } catch(e) {
-    console.error(e);
-    return { data: null, error: 'Failed to summarize skills. Please try again.' };
   }
 }
