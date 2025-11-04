@@ -2,21 +2,21 @@
   "placeholderImages": [
     {
       "id": "project-1",
-      "description": "A chart showing process improvement metrics.",
-      "imageUrl": "https://images.unsplash.com/photo-1730382624761-af8112d26209?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjaGFydCUyMGdyYXBofGVufDB8fHx8MTc2MjEzMjUzN3ww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "analytics dashboard"
+      "description": "A rocket launching, symbolizing a product launch.",
+      "imageUrl": "https://images.unsplash.com/photo-1628126235206-5260b9ea6441?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxyb2NrZXQlMjBsYXVuY2h8ZW58MHx8fHwxNzYyMTM2MjkyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "rocket launch"
     },
     {
       "id": "project-2",
-      "description": "Team collaboration during a workshop.",
-      "imageUrl": "https://images.unsplash.com/photo-1492366254240-43affaefc3e3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHx0ZWFtJTIwY29sbGFib3JhdGlvbnxlbnwwfHx8fDE3NjIxNTIyODR8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "online shopping"
+      "description": "A busy shipping container port, representing logistics and supply chain.",
+      "imageUrl": "https://images.unsplash.com/photo-1617938568125-b55e59775632?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8c2hpcHBpbmclMjBjb250YWluZXJzfGVufDB8fHx8MTc2MjIxMDk3NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "shipping containers"
     },
     {
       "id": "project-3",
-      "description": "An organized warehouse after operational changes.",
-      "imageUrl": "https://images.unsplash.com/photo-1504376830547-506dedfe1fe9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHx3YXJlaG91c2UlMjBsb2dpc3RpY3N8ZW58MHx8fHwxNzYyMjExMTE5fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "cloud optimization"
+      "description": "Two hands shaking over a table with documents, symbolizing a successful deal or merger.",
+      "imageUrl": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxidXNpbmVzcyUyMGhhbmRzaGFrZXxlbnwwfHx8fDE3NjIxODI4NDZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "business handshake"
     }
   ]
 }

@@ -1,93 +1,93 @@
-import { Code, Cloud, Cpu } from 'lucide-react';
+import { Cog, Zap, Target } from 'lucide-react';
 
 export const services = [
   {
-    icon: Code,
-    title: 'Full-Stack Development',
-    description: 'Building end-to-end web solutions with a focus on clean architecture, performance, and user experience.',
+    icon: Zap,
+    title: 'Operational Scaling',
+    description: 'Designing and implementing scalable systems and processes to support rapid growth and peak performance.',
   },
   {
-    icon: Cloud,
-    title: 'Cloud & DevOps',
-    description: 'Leveraging cloud infrastructure to create scalable, resilient systems and automated deployment pipelines.',
+    icon: Cog,
+    title: 'Process Optimization',
+    description: 'Analyzing and re-engineering workflows to eliminate bottlenecks, reduce costs, and increase efficiency.',
   },
   {
-    icon: Cpu,
-    title: 'AI Integration',
-    description: 'Integrating generative AI and machine learning models to build intelligent features and automate complex tasks.',
+    icon: Target,
+    title: 'Strategic Execution',
+    description: 'Translating high-level strategy into actionable plans and leading teams to deliver on key business objectives.',
   },
 ];
 
 export const skills = [
-  'React / Next.js',
-  'Node.js / TypeScript',
-  'Python',
-  'Google Cloud / Firebase',
-  'Docker / Kubernetes',
-  'CI/CD Pipelines',
-  'SQL / NoSQL Databases',
-  'System Architecture',
-  'GenAI / LLMs',
-  'API Design & Integration',
-  'Agile Methodologies',
-  'Microservices',
+  'Strategic Planning',
+  'P&L Management',
+  'Process Re-engineering',
+  'Supply Chain Optimization',
+  'Change Management',
+  'Performance Metrics & KPIs',
+  'Team Leadership & Development',
+  'Go-to-Market Strategy',
+  'Systems Implementation',
+  'Data-Driven Decision Making',
+  'Agile & Lean Methodologies',
+  'Vendor Negotiation',
 ];
 
 export const experience = [
   {
-    company: 'Tech Innovators LLC',
-    role: 'Senior Software Consultant',
-    period: '2019 - Present',
+    company: 'ScaleUp Consulting',
+    role: 'Fractional VP of Operations',
+    period: '2020 - Present',
     description: [
-      'Architected and led the development of a multi-tenant SaaS platform, serving over 10,000 users.',
-      'Implemented a CI/CD pipeline that reduced deployment time by 80% and improved release stability.',
-      'Integrated a GenAI-powered chatbot that automated 60% of customer support inquiries.',
+      'Partnered with CEOs of series A/B startups to build and scale operational infrastructure, supporting revenue growth from $5M to $25M.',
+      'Reduced operational costs by 30% through process automation and strategic vendor negotiations.',
+      'Implemented company-wide KPI dashboards to drive accountability and data-informed decision-making.',
     ],
   },
   {
-    company: 'Digital Solutions Co.',
-    role: 'Full-Stack Developer',
-    period: '2016 - 2019',
+    company: 'Innovate Corp.',
+    role: 'Director of Operations',
+    period: '2016 - 2020',
     description: [
-      'Developed and maintained client-facing web applications using React and Node.js.',
-      'Migrated legacy infrastructure to a modern, cloud-native stack on Google Cloud Platform.',
-      'Worked in an agile team to deliver features on-time, contributing to a 30% YoY growth in user base.',
+      'Led a team of 50+ across logistics, customer support, and project management, achieving a 98% customer satisfaction score.',
+      'Managed a $10M operational budget, consistently delivering projects under budget and ahead of schedule.',
+      'Spearheaded a digital transformation initiative, migrating legacy systems to a modern ERP platform.',
     ],
   },
 ];
 
 export const education = [
     {
-        institution: 'University of Technology',
-        degree: 'Master of Science in Computer Science',
+        institution: 'Stanford University',
+        degree: 'Master of Business Administration (MBA)',
         period: '2014 - 2016',
-        description: 'Specialized in distributed systems and artificial intelligence. Published research on scalable AI.',
+        description: 'Concentration in Operations and Strategy. Co-president of the Entrepreneurship Club.',
     },
     {
-        institution: 'State College of Engineering',
-        degree: 'B.S. in Software Engineering',
+        institution: 'University of Michigan',
+        degree: 'B.S. in Industrial & Operations Engineering',
         period: '2010 - 2014',
-        description: 'Graduated summa cum laude. Led the university coding club and won the national hackathon in 2013.',
+        description: 'Graduated with high honors. Awarded the Tau Beta Pi Engineering Honor Society scholarship.',
     },
 ];
 
 export const projects = [
     {
-        title: 'AI-Powered Analytics Dashboard',
-        description: 'Developed a real-time analytics dashboard that uses AI to provide predictive insights and data visualization for business intelligence. Hosted on a serverless architecture.',
+        title: 'Go-to-Market Strategy for SaaS Launch',
+        description: 'Developed and executed the full GTM plan for a B2B SaaS product, leading to 1,000+ paid customers within the first 6 months and securing a lead position in a competitive market.',
         imageId: 'project-1',
-        tags: ['Next.js', 'GenAI', 'Google Cloud', 'Data Visualization'],
+        tags: ['GTM Strategy', 'SaaS', 'Market Analysis', 'Growth'],
     },
     {
-        title: 'E-Commerce Platform Modernization',
-        description: 'Led the migration of a monolithic e-commerce site to a microservices architecture, resulting in a 50% improvement in page load times and increased developer velocity.',
+        title: 'Supply Chain Overhaul for E-Commerce',
+        description: 'Re-architected the entire supply chain for a fast-growing e-commerce brand, reducing fulfillment time by 48% and improving inventory turnover by 40%.',
         imageId: 'project-2',
-        tags: ['Microservices', 'Node.js', 'React', 'DevOps'],
+        tags: ['Supply Chain', 'Logistics', 'E-Commerce', 'Optimization'],
     },
     {
-        title: 'Cloud Cost Optimization',
-        description: 'Analyzed and optimized cloud spending for a large enterprise client, identifying underutilized resources and implementing autoscaling policies to reduce monthly costs by 25%.',
+        title: 'Post-Merger Integration',
+        description: 'Led the operational integration of a $50M acquisition, successfully merging teams, systems, and processes within 90 days while maintaining business continuity.',
         imageId: 'project-3',
-        tags: ['Cloud', 'Cost Optimization', 'FinOps'],
+        tags: ['M&A', 'Change Management', 'Systems Integration'],
     },
 ];
