@@ -48,28 +48,32 @@ export default function ResumeTimeline() {
                 </AccordionContent>
               </AccordionItem>
             ))}
-             <h3 className="mt-12 mb-4 font-headline text-2xl font-semibold text-primary">Education</h3>
-             {education.map((item, index) => (
-              <AccordionItem key={item.institution} value={`edu-${index}`} className="border-accent/20">
-                <AccordionTrigger className="hover:no-underline">
-                  <div className="flex w-full items-start justify-between gap-4 text-left">
-                    <div className="flex items-center gap-4">
-                        <div className="bg-muted p-2 rounded-lg hidden sm:block">
-                            <GraduationCap className="h-5 w-5 text-accent"/>
-                        </div>
-                        <div>
-                            <p className="font-semibold text-primary">{item.degree}</p>
-                            <p className="text-sm text-muted-foreground">{item.institution}</p>
-                        </div>
+            {education.length > 0 && (
+              <>
+                <h3 className="mt-12 mb-4 font-headline text-2xl font-semibold text-primary">Education</h3>
+                {education.map((item, index) => (
+                <AccordionItem key={item.institution} value={`edu-${index}`} className="border-accent/20">
+                  <AccordionTrigger className="hover:no-underline">
+                    <div className="flex w-full items-start justify-between gap-4 text-left">
+                      <div className="flex items-center gap-4">
+                          <div className="bg-muted p-2 rounded-lg hidden sm:block">
+                              <GraduationCap className="h-5 w-5 text-accent"/>
+                          </div>
+                          <div>
+                              <p className="font-semibold text-primary">{item.degree}</p>
+                              <p className="text-sm text-muted-foreground">{item.institution}</p>
+                          </div>
+                      </div>
+                      <p className="text-sm text-muted-foreground shrink-0">{item.period}</p>
                     </div>
-                    <p className="text-sm text-muted-foreground shrink-0">{item.period}</p>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent>
-                  <p className="text-muted-foreground">{item.description}</p>
-                </AccordionContent>
-              </AccordionItem>
-            ))}
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    <p className="text-muted-foreground">{item.description}</p>
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </>
+            )}
           </Accordion>
         </div>
       </div>
