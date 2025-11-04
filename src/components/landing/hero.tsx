@@ -7,10 +7,10 @@ export default function Hero() {
       <div className="container mx-auto px-4 text-center">
         <div className="max-w-3xl mx-auto">
           <h1 className="font-headline text-4xl font-extrabold tracking-tight text-primary sm:text-5xl md:text-6xl">
-            Driving Excellence in Operations, Processes, and Talent
+            Building Robust Solutions with Code, Cloud, and AI
           </h1>
           <p className="mt-6 text-lg leading-8 text-muted-foreground">
-            A seasoned consultant dedicated to optimizing your business for peak performance and sustainable growth.
+            A seasoned software consultant dedicated to building scalable, high-performance applications.
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <Button asChild size="lg">

@@ -11,12 +11,12 @@ export default function Footer() {
           <Link href="/" className="flex items-center space-x-2">
             <Logo className="h-6 w-6 text-primary" />
             <span className="inline-block font-headline text-lg font-bold text-primary">
-              Consultant Canvas
+              Alejandro Cortez
             </span>
           </Link>
         </div>
         <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
-          &copy; {currentYear} Consultant Canvas. All rights reserved.
+          &copy; {currentYear} Alejandro Cortez. All rights reserved.
         </p>
       </div>
     </footer>

@@ -15,8 +15,8 @@ const fontHeadline = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: 'Consultant Canvas',
-  description: 'Expertise in Operations, Processes, and Talent.',
+  title: 'Alejandro Cortez | Software Consultant',
+  description: 'Expertise in Full-Stack Development, Cloud, and AI.',
 };
 
 export default function RootLayout({
