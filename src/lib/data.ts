@@ -155,7 +155,7 @@ export const education = [
     description: 'Business Administration, Management and Operations',
   },
   {
-    institution: 'Coursera',
+    institution: 'Universidad de Palermo',
     degree: 'Dirección y Gestión de Negocios Specialization',
     period: '2023 - Feb 2024',
     description: 'Business, Management, Marketing, and Related Support Services',
