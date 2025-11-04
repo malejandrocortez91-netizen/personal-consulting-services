@@ -37,6 +37,7 @@
     "date-fns": "^3.6.0",
     "embla-carousel-react": "^8.6.0",
     "firebase": "^11.9.1",
+    "formdata-polyfill": "^4.0.10",
     "lucide-react": "^0.475.0",
     "next": "15.3.3",
     "patch-package": "^8.0.0",
@@ -50,6 +51,8 @@
     "zod": "^3.24.2"
   },
   "devDependencies": {
+    "@genkit-ai/google-genai": "^1.1.0",
+    "@google-ai/generativelanguage": "^3.1.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
