@@ -7,8 +7,7 @@
     "build": "NODE_ENV=production next build",
     "start": "next start",
     "lint": "next lint",
-    "typecheck": "tsc --noEmit",
-    "postinstall": "patch-package"
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@hookform/resolvers": "^4.1.3",
@@ -41,7 +40,6 @@
     "formdata-polyfill": "^4.0.10",
     "lucide-react": "^0.475.0",
     "next": "15.3.3",
-    "patch-package": "^8.0.0",
     "react": "^18.3.1",
     "react-day-picker": "^8.10.1",
     "react-dom": "^18.3.1",
@@ -52,8 +50,6 @@
     "zod": "^3.24.2"
   },
   "devDependencies": {
-    "@genkit-ai/google-genai": "latest",
-    "@google-ai/generativelanguage": "latest",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

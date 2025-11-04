@@ -6,6 +6,7 @@ import ProjectHighlights from '@/components/landing/project-highlights';
 import ResumeTimeline from '@/components/landing/resume-timeline';
 import Services from '@/components/landing/services';
 import Skills from '@/components/landing/skills';
+import Chatbot from '@/components/chatbot';
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
         <Contact />
       </main>
       <Footer />
+      <Chatbot />
     </div>
   );
 }
