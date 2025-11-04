@@ -203,7 +203,7 @@ export const education = [
     description: 'Business Statistics',
   },
   {
-    institution: 'Universidad de Palermo',
+    institution: 'Universidad Nacional de Ingenieria',
     degree: 'Computer Engineering',
     period: '2008 - 2013',
     description: 'Information Technology',
