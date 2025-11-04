@@ -52,7 +52,7 @@ export default function ResumeTimeline() {
               <>
                 <h3 className="mt-12 mb-4 font-headline text-2xl font-semibold text-primary">Education</h3>
                 {education.map((item, index) => (
-                <AccordionItem key={item.institution} value={`edu-${index}`} className="border-accent/20">
+                <AccordionItem key={`${item.institution}-${item.degree}`} value={`edu-${index}`} className="border-accent/20">
                   <AccordionTrigger className="hover:no-underline">
                     <div className="flex w-full items-start justify-between gap-4 text-left">
                       <div className="flex items-center gap-4">
