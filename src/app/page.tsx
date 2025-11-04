@@ -1,4 +1,3 @@
-import Chatbot from '@/components/chatbot';
 import Contact from '@/components/landing/contact';
 import Footer from '@/components/landing/footer';
 import Header from '@/components/landing/header';
@@ -21,7 +20,6 @@ export default function Home() {
         <Contact />
       </main>
       <Footer />
-      <Chatbot />
     </div>
   );
 }
