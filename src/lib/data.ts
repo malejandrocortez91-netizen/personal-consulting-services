@@ -147,7 +147,68 @@ export const experience = [
     },
 ];
 
-export const education: any[] = [];
+export const education = [
+  {
+    institution: 'Microsoft',
+    degree: 'Power BI Data Analyst Professional Certificate',
+    period: 'Feb 2024 - Present',
+    description: 'Business Administration, Management and Operations',
+  },
+  {
+    institution: 'Coursera',
+    degree: 'Dirección y Gestión de Negocios Specialization',
+    period: '2023 - Feb 2024',
+    description: 'Business, Management, Marketing, and Related Support Services',
+  },
+  {
+    institution: 'Coursera',
+    degree: 'Google Cloud, Responsible AI: Applying AI Principles with GC',
+    period: 'Feb 2024',
+    description: 'Artificial Intelligence',
+  },
+  {
+    institution: 'Coursera',
+    degree: 'Google Cloud, Introduction to Responsible AI',
+    period: 'Feb 2024',
+    description: 'Artificial Intelligence',
+  },
+  {
+    institution: 'Coursera',
+    degree: 'Google Cloud, Introduction to Large Language Models',
+    period: 'Feb 2024',
+    description: 'Artificial Intelligence',
+  },
+  {
+    institution: 'Coursera',
+    degree: 'Google Cloud, Introduction to Generative AI Course',
+    period: 'Feb 2024',
+    description: 'Artificial Intelligence',
+  },
+  {
+    institution: 'Pontificia Universidad Católica de Chile',
+    degree: 'Gestión Empresarial Exitosa para Pymes',
+    period: 'Jan 2023',
+    description: 'Business Administration and Management, General',
+  },
+  {
+    institution: 'Coursera',
+    degree: 'Google Foundations of Project Management',
+    period: 'Aug 2021 - Sep 2021',
+    description: 'Project Management',
+  },
+  {
+    institution: 'University of Amsterdam',
+    degree: 'Data Analytics for Lean Six Sigma',
+    period: '2021 - May 2021',
+    description: 'Business Statistics',
+  },
+  {
+    institution: 'Universidad de Palermo',
+    degree: 'Computer Engineering',
+    period: '2008 - 2013',
+    description: 'Information Technology',
+  },
+];
 
 export const projects = [
     {
