@@ -1,5 +1,13 @@
-# Firebase Studio
+# Personal Consulting Services
 
-This is a NextJS starter in Firebase Studio.
+This is a NextJS project for personal consulting services.
 
-To get started, take a look at src/app/page.tsx.
+## Author
+
+**Miguel Alejandro Cortez**
+- Email: malejandro.cortez91@gmail.com
+- GitHub: [malejandrocortez91-netizen](https://github.com/malejandrocortez91-netizen)
+
+## Repository
+
+[https://github.com/malejandrocortez91-netizen/personal-consulting-services](https://github.com/malejandrocortez91-netizen/personal-consulting-services)
