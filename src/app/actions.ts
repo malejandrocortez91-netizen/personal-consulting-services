@@ -2,7 +2,6 @@
 
 import { z } from 'zod';
 import { sendEmail } from '@/services/email-service';
-import { chatbotAutoResponseWithResume } from '@/ai/flows/chatbot-auto-response-with-resume';
 
 const contactSchema = z.object({
   name: z.string().min(1, 'Name is required'),
@@ -49,36 +48,4 @@ export async function handleContactSubmission(
   } catch (error) {
     return { data: null, error: 'Failed to send message. Please try again later.', errors: null };
   }
-}
-
-const chatbotSchema = z.object({
-    email: z.string().email(),
-    message: z.string(),
-});
-
-type ChatbotFormState = {
-    data: { response: string } | null;
-    error: string | null;
-};
-
-export async function handleChatbotSubmission(
-    prevState: ChatbotFormState,
-    formData: FormData
-): Promise<ChatbotFormState> {
-    const validatedFields = chatbotSchema.safeParse({
-        email: formData.get('email'),
-        message: formData.get('message'),
-    });
-
-    if (!validatedFields.success) {
-        return { data: null, error: 'Invalid input.' };
-    }
-
-    try {
-        const result = await chatbotAutoResponseWithResume(validatedFields.data);
-        return { data: { response: result.response }, error: null };
-    } catch (error) {
-        console.error(error);
-        return { data: null, error: 'Failed to get response from AI. Please try again later.' };
-    }
 }
