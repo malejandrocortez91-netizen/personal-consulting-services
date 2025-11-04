@@ -1,8 +1,5 @@
 import { CheckCircle } from 'lucide-react';
 import { skills } from '@/lib/data';
-import { Button } from '@/components/ui/button';
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
-import SkillsSummaryGenerator from './skills-summary-generator';
 
 export default function Skills() {
   return (
@@ -26,20 +23,6 @@ export default function Skills() {
               </div>
             ))}
           </div>
-        </div>
-
-        <div className="mt-16 text-center">
-            <Dialog>
-              <DialogTrigger asChild>
-                <Button variant="secondary">See AI Summarizer in Action</Button>
-              </DialogTrigger>
-              <DialogContent className="sm:max-w-[625px]">
-                <DialogHeader>
-                  <DialogTitle className="font-headline text-2xl">AI-Powered Skills Summarizer</DialogTitle>
-                </DialogHeader>
-                <SkillsSummaryGenerator />
-              </DialogContent>
-            </Dialog>
         </div>
       </div>
     </section>
