@@ -1,3 +1,5 @@
+'use client';
+
 import { Link } from 'next-intl/navigation';
 import { useTranslations } from 'next-intl';
 import { Logo } from '@/components/icons';
