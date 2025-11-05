@@ -126,7 +126,13 @@ export const education = [
     institution: 'Google',
     degree: 'Professional Certifications',
     period: '2021 - 2024',
-    description: 'Completed a series of professional certifications in AI, Google Cloud, and Project Management, including specializations from Coursera in Power BI Data Analysis and Data Analytics for Lean Six Sigma.',
+    description: 'Completed a series of professional certifications in AI, Google Cloud, and Project Management.',
+  },
+  {
+    institution: 'Microsoft',
+    degree: 'Professional Certifications',
+    period: '2021 - 2024',
+    description: 'Completed specializations from Coursera in Power BI Data Analysis and Data Analytics for Lean Six Sigma.',
   },
   {
     institution: 'Universidad de Palermo',
