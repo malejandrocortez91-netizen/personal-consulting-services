@@ -2,11 +2,9 @@
 
 import Link from 'next/link';
 import { Logo } from '@/components/icons';
-import { useTranslations } from 'next-intl';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
-  const t = useTranslations('Footer');
 
   return (
     <footer className="bg-card border-t">
@@ -20,7 +18,7 @@ export default function Footer() {
           </Link>
         </div>
         <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
-          {t('copyright', { year: currentYear })}
+          © {currentYear} Alejandro Cortez. All rights reserved.
         </p>
       </div>
     </footer>

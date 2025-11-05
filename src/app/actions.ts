@@ -2,7 +2,6 @@
 
 import { z } from 'zod';
 import { sendEmail } from '@/services/email-service';
-import { getTranslations } from 'next-intl/server';
 
 type ContactFormState = {
   data: { success: boolean } | null;
@@ -19,12 +18,11 @@ export async function handleContactSubmission(
   prevState: ContactFormState,
   formData: FormData
 ): Promise<ContactFormState> {
-  const t = await getTranslations('Contact');
   const contactSchema = z.object({
-    name: z.string().min(1, t('validation_name_required')),
-    email: z.string().email(t('validation_email_invalid')),
+    name: z.string().min(1, 'Name is required'),
+    email: z.string().email('A valid email is required'),
     phone: z.string().optional(),
-    message: z.string().min(10, t('validation_message_min')),
+    message: z.string().min(10, 'Message must be at least 10 characters'),
   });
 
   const validatedFields = contactSchema.safeParse({
@@ -38,7 +36,7 @@ export async function handleContactSubmission(
     return {
       data: null,
       errors: validatedFields.error.flatten().fieldErrors,
-      error: t('error_form_invalid'),
+      error: 'Please correct the errors below.',
     };
   }
 
@@ -51,7 +49,7 @@ export async function handleContactSubmission(
 
     return { data: { success: true }, error: null, errors: null };
   } catch (error) {
-    return { data: null, error: t('error_send_failed'), errors: null };
+    return { data: null, error: 'Failed to send message. Please try again later.', errors: null };
   }
 }
 
