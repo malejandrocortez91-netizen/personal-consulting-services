@@ -126,13 +126,13 @@ export const education = [
     institution: 'Microsoft',
     degree: 'Microsoft Power BI Data Analyst Professional Certificate',
     period: 'Feb 2024 - Present',
-    description: 'Developed skills in data modeling, data visualization with Power BI, creating reports and dashboards, DAX formulas, and data transformation.',
+    description: 'Developed skills in data modeling, data visualization with Power BI, creating reports and dashboards, DAX formulas, and data transformation for business intelligence.',
   },
   {
     institution: 'Google',
     degree: 'Google Cloud & AI Certifications',
     period: 'Feb 2024 - Feb 2024',
-    description: 'Completed courses in: Introduction to Generative AI, Introduction to Large Language Models, Introduction to Responsible AI, and Responsible AI: Applying AI Principles with Google Cloud.',
+    description: 'Completed a series of specialized certifications covering: Introduction to Generative AI, Introduction to Large Language Models, Introduction to Responsible AI, and Responsible AI: Applying AI Principles with Google Cloud.',
   },
   {
     institution: 'Universidad de Palermo',
@@ -144,25 +144,25 @@ export const education = [
     institution: 'Pontificia Universidad Católica de Chile',
     degree: 'Gestión Empresarial Exitosa para Pymes',
     period: 'Jan 2023 - Jan 2023',
-    description: 'Acquired practical knowledge in successful business management for small and medium-sized enterprises (SMEs), including financial health, marketing, and strategy.',
+    description: 'Acquired practical knowledge in successful business management for small and medium-sized enterprises (SMEs), including financial health, marketing strategy, and competitive positioning.',
   },
   {
     institution: 'Google',
     degree: 'Foundations of Project Management',
     period: 'Aug 2021 - Sep 2021',
-    description: 'Mastered the fundamentals of project management, including project initiation, planning, execution, and closing, with a focus on Agile methodologies.',
+    description: 'Mastered the fundamentals of project management, including project initiation, planning, execution, and closing. Focused on Agile methodologies, risk management, and stakeholder communication.',
   },
   {
     institution: 'University of Amsterdam',
     degree: 'Data Analytics for Lean Six Sigma',
     period: '2021 - May 2021',
-    description: 'Learned to apply statistical and data analysis techniques to improve business processes, reduce waste, and enhance quality using the Lean Six Sigma framework.',
+    description: 'Learned to apply statistical and data analysis techniques to improve business processes, reduce waste, and enhance quality using the Lean Six Sigma framework for data-driven optimization.',
   },
   {
     institution: 'UNIVERSIDAD NACIONAL DE INGENIERIA UNI-RUSB',
     degree: 'Computer Engineering',
     period: '2008 - 2013',
-    description: 'Gained a strong foundation in software development, database management, computer architecture, and network engineering.',
+    description: 'Gained a strong foundation in software development, database management, computer architecture, network engineering, and systems analysis.',
   },
 ];
 
