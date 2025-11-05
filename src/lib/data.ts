@@ -135,25 +135,25 @@ export const education = [
     description: 'Business, Management, Marketing, and Related Support Services',
   },
   {
-    institution: 'Coursera',
+    institution: 'Google',
     degree: 'Google Cloud, Responsible AI: Applying AI Principles with GC',
     period: 'Feb 2024',
     description: 'Artificial Intelligence',
   },
   {
-    institution: 'Coursera',
+    institution: 'Google',
     degree: 'Google Cloud, Introduction to Responsible AI',
     period: 'Feb 2024',
     description: 'Artificial Intelligence',
   },
   {
-    institution: 'Coursera',
+    institution: 'Google',
     degree: 'Google Cloud, Introduction to Large Language Models',
     period: 'Feb 2024',
     description: 'Artificial Intelligence',
   },
   {
-    institution: 'Coursera',
+    institution: 'Google',
     degree: 'Google Cloud, Introduction to Generative AI Course',
     period: 'Feb 2024',
     description: 'Artificial Intelligence',
@@ -165,7 +165,7 @@ export const education = [
     description: 'Business Administration and Management, General',
   },
   {
-    institution: 'Coursera',
+    institution: 'Google',
     degree: 'Google Foundations of Project Management',
     period: 'Aug 2021 - Sep 2021',
     description: 'Project Management',
