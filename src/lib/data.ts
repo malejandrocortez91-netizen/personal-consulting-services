@@ -1,3 +1,4 @@
+
 export const services = [
   {
     key: 'scaling',
@@ -116,31 +117,6 @@ export const experience = [
             'Managed survey projects from concept to client liaison for seamless execution and satisfaction.',
             'Maintained active client communication, providing updates and employing consultative sales for revenue generation.',
             'Built and nurtured strong client relationships to achieve organizational success through exceptional service.',
-        ],
-    },
-    {
-        company: 'Convergys (now Concentrix)',
-        role: 'Sales Associate',
-        period: '2016 - 2017',
-        description: [
-            'Specialized in soft sales, up-selling, customer service, and billing for telecommunications clients.',
-        ],
-    },
-    {
-        company: 'Targeted Growth Solutions',
-        role: 'Director, Business Process Improvement; Country Lead',
-        period: '2016 - 2017',
-        description: [
-            'Focused on lead generation, email marketing campaigns, calendar/inbox management, and Salesforce database management.',
-        ],
-    },
-    {
-        company: 'Sitel Group (now Foundever)',
-        role: 'Team Supervisor / Agent',
-        period: '2012 - 2017',
-        description: [
-            'Led teams of up to 15 staff members, managing escalations, workforce, KPIs, and performance.',
-            'Handled customer service, tech support, retention, and order management across voice, email, and chat for retail and telecom clients.',
         ],
     },
 ];

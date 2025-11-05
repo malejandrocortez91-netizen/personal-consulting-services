@@ -3,7 +3,8 @@ import { Inter, Space_Grotesk } from 'next/font/google';
 import '../globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import { cn } from '@/lib/utils';
-import {NextIntlClientProvider, useMessages} from 'next-intl';
+import {NextIntlClientProvider} from 'next-intl';
+import {getMessages} from 'next-intl/server';
 import {ThemeProvider} from '@/components/providers';
 
 const fontBody = Inter({
@@ -21,14 +22,14 @@ export const metadata: Metadata = {
   description: 'Expertise in Full-Stack Development, Cloud, and AI.',
 };
 
-export default function LocaleLayout({
+export default async function LocaleLayout({
   children,
   params: {locale}
 }: {
   children: React.ReactNode;
   params: {locale: string};
 }) {
-  const messages = useMessages();
+  const messages = await getMessages();
 
   return (
     <html lang={locale} className="scroll-smooth" suppressHydrationWarning>
