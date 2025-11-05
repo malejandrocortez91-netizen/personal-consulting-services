@@ -130,9 +130,15 @@ export const education = [
   },
   {
     institution: 'Microsoft',
-    degree: 'Professional Certifications',
+    degree: 'Professional Certification',
     period: '2021 - 2024',
-    description: 'Completed specializations from Coursera in Power BI Data Analysis and Data Analytics for Lean Six Sigma.',
+    description: 'Completed a specialization from Coursera in Power BI Data Analysis.',
+  },
+  {
+    institution: 'University of Amsterdam',
+    degree: 'Professional Certification',
+    period: '2021 - 2024',
+    description: 'Completed a specialization from Coursera in Data Analytics for Lean Six Sigma.',
   },
   {
     institution: 'Universidad de Palermo',
