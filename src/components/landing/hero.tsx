@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { useTranslations } from 'next-intl';
-import Link from 'next-intl/link';
+import { Link } from 'next-intl/navigation';
 
 export default function Hero() {
   const t = useTranslations('Hero');
