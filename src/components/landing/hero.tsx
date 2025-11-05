@@ -1,25 +1,28 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import Link from 'next/link';
+import { Link } from '@/navigation';
+import { useTranslations } from 'next-intl';
 
 export default function Hero() {
+  const t = useTranslations('Hero');
+
   return (
     <section id="hero" className="relative bg-card py-24 sm:py-32">
       <div className="container mx-auto px-4 text-center">
         <div className="max-w-3xl mx-auto">
           <h1 className="font-headline text-4xl font-extrabold tracking-tight text-primary sm:text-5xl md:text-6xl">
-            Building Robust Solutions with Code, Cloud, and AI
+            {t('title')}
           </h1>
           <p className="mt-6 text-lg leading-8 text-muted-foreground">
-            An executive operations leader specializing in scaling businesses, driving strategic growth, and implementing high-impact transformation.
+            {t('subtitle')}
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <Button asChild size="lg">
-              <Link href="#contact">Get In Touch</Link>
+              <Link href="#contact">{t('getInTouch')}</Link>
             </Button>
             <Button asChild variant="secondary" size="lg">
-              <Link href="#services">Explore Services</Link>
+              <Link href="#services">{t('exploreServices')}</Link>
             </Button>
           </div>
         </div>

@@ -1,3 +1,6 @@
+'use client';
+
+import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { projects } from '@/lib/data';
@@ -5,6 +8,7 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Badge } from '@/components/ui/badge';
 
 export default function ProjectHighlights() {
+  const t = useTranslations('Projects');
   const getImage = (id: string) => PlaceHolderImages.find(img => img.id === id);
 
   return (
@@ -12,10 +16,10 @@ export default function ProjectHighlights() {
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-2xl lg:text-center">
           <h2 className="font-headline text-3xl font-bold tracking-tight text-primary sm:text-4xl">
-            Project Highlights
+            {t('title')}
           </h2>
           <p className="mt-4 text-lg leading-8 text-muted-foreground">
-            A selection of projects that demonstrate my impact and expertise.
+            {t('subtitle')}
           </p>
         </div>
         <div className="mx-auto mt-16 grid max-w-2xl auto-rows-fr grid-cols-1 gap-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">

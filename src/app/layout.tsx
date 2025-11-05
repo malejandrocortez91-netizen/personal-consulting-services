@@ -25,25 +25,5 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
-      <body
-        className={cn(
-          'antialiased',
-          fontBody.variable,
-          fontHeadline.variable
-        )}
-      >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-          <Toaster />
-        </ThemeProvider>
-      </body>
-    </html>
-  );
+  return children;
 }
