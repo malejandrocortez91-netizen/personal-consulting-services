@@ -1,17 +1,10 @@
 import type { Metadata } from 'next';
 import { Inter, Space_Grotesk } from 'next/font/google';
-import './globals.css';
+import '../globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import { cn } from '@/lib/utils';
 import {ThemeProvider} from '@/components/providers';
-import Contact from '@/components/landing/contact';
-import Footer from '@/components/landing/footer';
-import Header from '@/components/landing/header';
-import Hero from '@/components/landing/hero';
-import ProjectHighlights from '@/components/landing/project-highlights';
-import ResumeTimeline from '@/components/landing/resume-timeline';
-import Services from '@/components/landing/services';
-import Skills from '@/components/landing/skills';
+import {NextIntlClientProvider, useMessages} from 'next-intl';
 
 const fontBody = Inter({
   subsets: ['latin'],
@@ -28,13 +21,17 @@ export const metadata: Metadata = {
   description: 'Expertise in Full-Stack Development, Cloud, and AI.',
 };
 
-export default function RootLayout({
+export default function LocaleLayout({
   children,
+  params: {locale},
 }: {
   children: React.ReactNode;
+  params: {locale: string};
 }) {
+  const messages = useMessages();
+
   return (
-    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+    <html lang={locale} className="scroll-smooth" suppressHydrationWarning>
       <body
         className={cn(
           'antialiased',
@@ -42,15 +39,17 @@ export default function RootLayout({
           fontHeadline.variable
         )}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-          <Toaster />
-        </ThemeProvider>
+        <NextIntlClientProvider messages={messages}>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {children}
+            <Toaster />
+          </ThemeProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
   );
