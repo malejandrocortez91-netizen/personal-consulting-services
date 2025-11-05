@@ -136,9 +136,9 @@ export const education = [
   },
   {
     institution: 'Google',
-    degree: 'Cloud & AI, Project Management Certifications',
+    degree: 'Professional Certifications',
     period: '2021 - 2024',
-    description: 'Completed a series of professional certifications focused on AI, Google Cloud, and Project Management.',
+    description: 'Completed a series of professional certifications focused on: AI, Google Cloud, and Project Management.',
   },
   {
     institution: 'Pontificia Universidad Católica de Chile',
