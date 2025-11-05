@@ -123,24 +123,6 @@ export const experience = [
 
 export const education = [
   {
-    institution: 'Google',
-    degree: 'Professional Certifications',
-    period: '2021-2024',
-    description: 'Completed a series of professional certifications in AI, Google Cloud, and Project Management.',
-  },
-  {
-    institution: 'Microsoft',
-    degree: 'Professional Certification',
-    period: '2021-2024',
-    description: 'Completed a specialization from Coursera in Power BI Data Analysis.',
-  },
-  {
-    institution: 'University of Amsterdam',
-    degree: 'Professional Certification',
-    period: '2021-2024',
-    description: 'Completed a specialization from Coursera in Data Analytics for Lean Six Sigma.',
-  },
-  {
     institution: 'Universidad de Palermo',
     degree: 'Dirección y Gestión de Negocios Specialization',
     period: '2023 - Feb 2024',
@@ -151,6 +133,24 @@ export const education = [
     degree: 'Gestión Empresarial Exitosa para Pymes',
     period: 'Jan 2023',
     description: 'Business Administration and Management, General',
+  },
+  {
+    institution: 'Google',
+    degree: 'Professional Certifications',
+    period: '2021',
+    description: 'Completed a series of professional certifications in AI, Google Cloud, and Project Management.',
+  },
+  {
+    institution: 'Microsoft',
+    degree: 'Professional Certification',
+    period: '2021',
+    description: 'Completed a specialization from Coursera in Power BI Data Analysis.',
+  },
+  {
+    institution: 'University of Amsterdam',
+    degree: 'Professional Certification',
+    period: '2021',
+    description: 'Completed a specialization from Coursera in Data Analytics for Lean Six Sigma.',
   },
   {
     institution: 'Universidad Nacional de Ingenieria',
