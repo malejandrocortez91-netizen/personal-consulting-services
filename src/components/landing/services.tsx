@@ -18,7 +18,7 @@ type ServiceKey = keyof typeof serviceIcons;
 export default function Services() {
   
   return (
-    <section id="services" className="py-16 sm:py-24 bg-background">
+    <section id="services" className="py-12 sm:py-16 bg-background">
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-2xl lg:text-center">
           <h2 className="font-headline text-3xl font-bold tracking-tight text-primary sm:text-4xl">
