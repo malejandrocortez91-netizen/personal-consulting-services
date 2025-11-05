@@ -124,45 +124,45 @@ export const experience = [
 export const education = [
   {
     institution: 'Microsoft',
-    degree: 'Microsoft Power BI Data Analyst Professional Certificate',
+    degree: 'Power BI Data Analyst Professional Certificate',
     period: 'Feb 2024 - Present',
-    description: 'Developed skills in data modeling, data visualization with Power BI, creating reports and dashboards, DAX formulas, and data transformation for business intelligence.',
-  },
-  {
-    institution: 'Google',
-    degree: 'Google Cloud & AI Certifications',
-    period: 'Feb 2024 - Feb 2024',
-    description: 'Completed a series of specialized certifications covering: Introduction to Generative AI, Introduction to Large Language Models, Introduction to Responsible AI, and Responsible AI: Applying AI Principles with Google Cloud.',
+    description: 'Skills: Data Modeling, Data Visualization (Power BI), DAX Formulas, ETL Processes, Business Intelligence, Report & Dashboard Development.',
   },
   {
     institution: 'Universidad de Palermo',
     degree: 'Dirección y Gestión de Negocios Specialization',
     period: '2023 - Feb 2024',
-    description: 'Focused on strategic business management, marketing principles, financial analysis, and operational leadership for modern enterprises.',
+    description: 'Skills: Strategic Business Management, Marketing Principles, Financial Analysis, Corporate Strategy, and Operational Leadership for modern enterprises.',
+  },
+  {
+    institution: 'Google',
+    degree: 'Cloud & AI Certifications',
+    period: 'Feb 2024',
+    description: 'Completed a series of specialized certifications covering: Introduction to Generative AI, Introduction to Large Language Models, and Responsible AI.',
   },
   {
     institution: 'Pontificia Universidad Católica de Chile',
     degree: 'Gestión Empresarial Exitosa para Pymes',
-    period: 'Jan 2023 - Jan 2023',
-    description: 'Acquired practical knowledge in successful business management for small and medium-sized enterprises (SMEs), including financial health, marketing strategy, and competitive positioning.',
+    period: 'Jan 2023',
+    description: 'Skills: Business Management for SMEs, Financial Health Analysis, Go-to-Market Strategy, Competitive Positioning, and Strategic Planning.',
   },
   {
     institution: 'Google',
     degree: 'Foundations of Project Management',
     period: 'Aug 2021 - Sep 2021',
-    description: 'Mastered the fundamentals of project management, including project initiation, planning, execution, and closing. Focused on Agile methodologies, risk management, and stakeholder communication.',
+    description: 'Skills: Project Initiation & Planning, Execution & Closing, Agile Methodologies (Scrum), Risk Management, and Stakeholder Communication.',
   },
   {
     institution: 'University of Amsterdam',
     degree: 'Data Analytics for Lean Six Sigma',
-    period: '2021 - May 2021',
-    description: 'Learned to apply statistical and data analysis techniques to improve business processes, reduce waste, and enhance quality using the Lean Six Sigma framework for data-driven optimization.',
+    period: 'May 2021',
+    description: 'Skills: Statistical & Data Analysis, Process Improvement, Waste Reduction, Quality Enhancement, Lean Six Sigma Framework, Data-Driven Optimization.',
   },
   {
-    institution: 'UNIVERSIDAD NACIONAL DE INGENIERIA UNI-RUSB',
+    institution: 'UNIVERSIDAD NACIONAL DE INGENIERIA UNI-RUSB, NICARAGUA',
     degree: 'Computer Engineering',
     period: '2008 - 2013',
-    description: 'Gained a strong foundation in software development, database management, computer architecture, network engineering, and systems analysis.',
+    description: 'Skills: Software Development, Database Management, Computer Architecture, Network Engineering, Systems Analysis, and Algorithm Design.',
   },
 ];
 
