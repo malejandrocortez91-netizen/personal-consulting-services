@@ -123,10 +123,10 @@ export const experience = [
 
 export const education = [
   {
-    institution: 'Microsoft',
-    degree: 'Power BI Data Analyst Professional Certificate',
-    period: 'Feb 2024 - Present',
-    description: 'Business Administration, Management and Operations',
+    institution: 'Google',
+    degree: 'Professional Certifications: AI, Google Cloud & Project Management',
+    period: '2021 - 2024',
+    description: 'Completed a series of professional certifications, including specializations from Coursera in Power BI Data Analysis and Data Analytics for Lean Six Sigma.',
   },
   {
     institution: 'Universidad de Palermo',
@@ -135,22 +135,10 @@ export const education = [
     description: 'Business, Management, Marketing, and Related Support Services',
   },
   {
-    institution: 'Google',
-    degree: 'Professional Certifications',
-    period: '2021 - 2024',
-    description: 'Completed a series of professional certifications focused on: AI, Google Cloud, and Project Management.',
-  },
-  {
     institution: 'Pontificia Universidad Católica de Chile',
     degree: 'Gestión Empresarial Exitosa para Pymes',
     period: 'Jan 2023',
     description: 'Business Administration and Management, General',
-  },
-  {
-    institution: 'University of Amsterdam',
-    degree: 'Data Analytics for Lean Six Sigma',
-    period: '2021 - May 2021',
-    description: 'Business Statistics',
   },
   {
     institution: 'Universidad Nacional de Ingenieria',
