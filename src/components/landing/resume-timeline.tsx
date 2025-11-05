@@ -1,6 +1,5 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
 import {
   Accordion,
   AccordionContent,
@@ -11,23 +10,21 @@ import { education, experience } from '@/lib/data';
 import { Building, GraduationCap } from 'lucide-react';
 
 export default function ResumeTimeline() {
-  const t = useTranslations('Resume');
-
   return (
     <section id="resume" className="py-16 sm:py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-2xl lg:text-center">
           <h2 className="font-headline text-3xl font-bold tracking-tight text-primary sm:text-4xl">
-            {t('title')}
+            Professional Journey
           </h2>
           <p className="mt-4 text-lg leading-8 text-muted-foreground">
-            {t('subtitle')}
+            A timeline of my experience and education.
           </p>
         </div>
 
         <div className="mt-16 mx-auto max-w-3xl">
           <Accordion type="single" collapsible defaultValue="item-0">
-            <h3 className="mb-4 font-headline text-2xl font-semibold text-primary">{t('experience')}</h3>
+            <h3 className="mb-4 font-headline text-2xl font-semibold text-primary">Experience</h3>
             {experience.map((item, index) => (
               <AccordionItem key={item.company} value={`item-${index}`} className="border-accent/20">
                 <AccordionTrigger className="hover:no-underline">
@@ -55,7 +52,7 @@ export default function ResumeTimeline() {
             ))}
             {education.length > 0 && (
               <>
-                <h3 className="mt-12 mb-4 font-headline text-2xl font-semibold text-primary">{t('education')}</h3>
+                <h3 className="mt-12 mb-4 font-headline text-2xl font-semibold text-primary">Education</h3>
                 {education.map((item, index) => (
                 <AccordionItem key={`${item.institution}-${item.degree}`} value={`edu-${index}`} className="border-accent/20">
                   <AccordionTrigger className="hover:no-underline">

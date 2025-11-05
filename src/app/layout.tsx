@@ -4,6 +4,14 @@ import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import { cn } from '@/lib/utils';
 import {ThemeProvider} from '@/components/providers';
+import Contact from '@/components/landing/contact';
+import Footer from '@/components/landing/footer';
+import Header from '@/components/landing/header';
+import Hero from '@/components/landing/hero';
+import ProjectHighlights from '@/components/landing/project-highlights';
+import ResumeTimeline from '@/components/landing/resume-timeline';
+import Services from '@/components/landing/services';
+import Skills from '@/components/landing/skills';
 
 const fontBody = Inter({
   subsets: ['latin'],
@@ -25,5 +33,25 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return children;
+  return (
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+      <body
+        className={cn(
+          'antialiased',
+          fontBody.variable,
+          fontHeadline.variable
+        )}
+      >
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+          <Toaster />
+        </ThemeProvider>
+      </body>
+    </html>
+  );
 }
