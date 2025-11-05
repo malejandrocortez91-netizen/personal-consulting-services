@@ -8,7 +8,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 
 const initialState = {
-  data: null,
+  summary: null,
   error: null,
 };
 
@@ -55,13 +55,13 @@ export default function SkillsSummaryGenerator() {
         </Alert>
       )}
 
-      {state?.data && (
+      {state?.summary && (
         <Card>
           <CardHeader>
             <CardTitle className="font-headline text-primary">AI-Generated Summary</CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-muted-foreground">{state.data.skillsSummary}</p>
+            <p className="text-muted-foreground">{state.summary}</p>
           </CardContent>
         </Card>
       )}

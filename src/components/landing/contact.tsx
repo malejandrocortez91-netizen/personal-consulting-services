@@ -81,6 +81,11 @@ export default function Contact() {
                   {state.errors?.email && <p className="text-sm font-medium text-destructive">{state.errors.email}</p>}
                 </div>
                 <div className="space-y-2">
+                  <Label htmlFor="phone">Phone (optional)</Label>
+                  <Input id="phone" name="phone" placeholder="(555) 555-5555" />
+                  {state.errors?.phone && <p className="text-sm font-medium text-destructive">{state.errors.phone}</p>}
+                </div>
+                <div className="space-y-2">
                   <Label htmlFor="message">Message</Label>
                   <Textarea id="message" name="message" placeholder="Your message..." />
                   {state.errors?.message && <p className="text-sm font-medium text-destructive">{state.errors.message}</p>}

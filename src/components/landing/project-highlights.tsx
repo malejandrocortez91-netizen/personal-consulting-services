@@ -41,7 +41,7 @@ export default function ProjectHighlights() {
                   <CardDescription>{project.description}</CardDescription>
                   <div className="mt-4 flex flex-wrap gap-2">
                     {project.tags.map(tag => (
-                      <Badge key={tag} variant="secondary" className="bg-accent/20 text-accent-foreground/80">{tag}</Badge>
+                      <Badge key={tag} variant="secondary" className="bg-white text-gray-800 hover:bg-gray-100">{tag}</Badge>
                     ))}
                   </div>
                 </CardContent>
