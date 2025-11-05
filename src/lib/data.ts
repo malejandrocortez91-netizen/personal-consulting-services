@@ -126,45 +126,46 @@ export const education = [
     institution: 'Microsoft',
     degree: 'Power BI Data Analyst Professional Certificate',
     period: 'Feb 2024 - Present',
-    description: 'Skills: Data Modeling, Data Visualization (Power BI), DAX Formulas, ETL Processes, Business Intelligence, Report & Dashboard Development.',
+    description: 'Key Skills: Data Modeling, Data Visualization with Power BI, DAX formula implementation, ETL process management, and developing insightful business intelligence reports and dashboards.',
   },
   {
     institution: 'Universidad de Palermo',
     degree: 'Dirección y Gestión de Negocios Specialization',
     period: '2023 - Feb 2024',
-    description: 'Skills: Strategic Business Management, Marketing Principles, Financial Analysis, Corporate Strategy, and Operational Leadership for modern enterprises.',
+    description: 'Key Skills: Advanced principles in Strategic Business Management, modern Marketing Strategies, in-depth Financial Analysis, Corporate Strategy formulation, and high-level Operational Leadership.',
   },
   {
     institution: 'Google',
     degree: 'Cloud & AI Certifications',
     period: 'Feb 2024',
-    description: 'Completed a series of specialized certifications covering: Introduction to Generative AI, Introduction to Large Language Models, and Responsible AI.',
+    description: 'Completed a series of specialized certification covering: Introduction to Generative AI, Introduction to Large Language Models, Introduction to Responsible AI, and Responsible AI: Applying AI Principles with GC.',
   },
   {
     institution: 'Pontificia Universidad Católica de Chile',
     degree: 'Gestión Empresarial Exitosa para Pymes',
     period: 'Jan 2023',
-    description: 'Skills: Business Management for SMEs, Financial Health Analysis, Go-to-Market Strategy, Competitive Positioning, and Strategic Planning.',
+    description: 'Key Skills: Comprehensive Business Management for SMEs, Financial Health Analysis, Go-to-Market Strategy development, Competitive Positioning, and long-term Strategic Planning.',
   },
   {
     institution: 'Google',
     degree: 'Foundations of Project Management',
     period: 'Aug 2021 - Sep 2021',
-    description: 'Skills: Project Initiation & Planning, Execution & Closing, Agile Methodologies (Scrum), Risk Management, and Stakeholder Communication.',
+    description: 'Key Skills: Proficient in Project Initiation & Planning, full-cycle Execution & Closing, Agile Methodologies including Scrum, advanced Risk Management, and effective Stakeholder Communication.',
   },
   {
     institution: 'University of Amsterdam',
     degree: 'Data Analytics for Lean Six Sigma',
     period: 'May 2021',
-    description: 'Skills: Statistical & Data Analysis, Process Improvement, Waste Reduction, Quality Enhancement, Lean Six Sigma Framework, Data-Driven Optimization.',
+    description: 'Key Skills: Advanced Statistical & Data Analysis, strategic Process Improvement, Waste Reduction techniques, Quality Enhancement methodologies, and applying the Lean Six Sigma framework for data-driven optimization.',
   },
   {
     institution: 'UNIVERSIDAD NACIONAL DE INGENIERIA UNI-RUSB, NICARAGUA',
     degree: 'Computer Engineering',
     period: '2008 - 2013',
-    description: 'Skills: Software Development, Database Management, Computer Architecture, Network Engineering, Systems Analysis, and Algorithm Design.',
+    description: 'Key Skills: Core competencies in Software Development life cycle, complex Database Management, Computer Architecture design, Network Engineering, Systems Analysis, and advanced Algorithm Design.',
   },
 ];
+
 
 export const projects = [
     {
