@@ -1,11 +1,9 @@
 'use client';
 
-import { Link } from 'next-intl/navigation';
-import { useTranslations } from 'next-intl';
+import Link from 'next/link';
 import { Logo } from '@/components/icons';
 
 export default function Footer() {
-  const t = useTranslations('Footer');
   const currentYear = new Date().getFullYear();
 
   return (
@@ -20,7 +18,7 @@ export default function Footer() {
           </Link>
         </div>
         <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
-          {t('copyright', { year: currentYear })}
+          © {currentYear} Alejandro Cortez. All rights reserved.
         </p>
       </div>
     </footer>

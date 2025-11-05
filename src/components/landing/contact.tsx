@@ -10,7 +10,6 @@ import { Label } from '@/components/ui/label';
 import { useToast } from '@/hooks/use-toast';
 import { LoaderCircle } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { useTranslations } from 'next-intl';
 
 const initialState = {
   data: null,
@@ -20,10 +19,9 @@ const initialState = {
 
 function SubmitButton() {
   const { pending } = useFormStatus();
-  const t = useTranslations('Contact');
   return (
     <Button type="submit" disabled={pending}>
-      {pending ? <LoaderCircle className="animate-spin" /> : t('submitButton')}
+      {pending ? <LoaderCircle className="animate-spin" /> : 'Send Message'}
     </Button>
   );
 }
@@ -31,23 +29,22 @@ function SubmitButton() {
 export default function Contact() {
   const [state, formAction] = useActionState(handleContactSubmission, initialState);
   const { toast } = useToast();
-  const t = useTranslations('Contact');
 
   useEffect(() => {
     if (state?.data) {
       toast({
-        title: t('successTitle'),
-        description: t('successDescription'),
+        title: 'Message Sent!',
+        description: 'Thank you for reaching out. I will get back to you shortly.',
       });
     }
     if (state?.error && !state.errors) {
       toast({
         variant: 'destructive',
-        title: t('errorTitle'),
+        title: 'An error occurred',
         description: state.error,
       });
     }
-  }, [state, toast, t]);
+  }, [state, toast]);
 
   return (
     <section id="contact" className="py-16 sm:py-24 bg-background">
@@ -55,42 +52,42 @@ export default function Contact() {
         <div className="mx-auto grid max-w-5xl items-center gap-12 lg:grid-cols-2">
           <div className="space-y-4">
             <h2 className="font-headline text-3xl font-bold tracking-tight text-primary sm:text-4xl">
-              {t('title')}
+              Let's Connect
             </h2>
             <p className="text-lg text-muted-foreground">
-              {t('subtitle')}
+              Have a project in mind or want to learn more about my services? I'm here to answer your questions.
             </p>
             <p className="text-muted-foreground">
-              {t('instructions')}
+              Fill out the form, and I'll get back to you as soon as possible.
             </p>
           </div>
           <Card>
             <CardHeader>
-              <CardTitle>{t('cardTitle')}</CardTitle>
+              <CardTitle>Contact Me</CardTitle>
               <CardDescription>
-                {t('cardDescription')}
+                Please provide your details below.
               </CardDescription>
             </CardHeader>
             <CardContent>
               <form action={formAction} className="space-y-4">
                 <div className="space-y-2">
-                  <Label htmlFor="name">{t('nameLabel')}</Label>
-                  <Input id="name" name="name" placeholder={t('namePlaceholder')} />
+                  <Label htmlFor="name">Name</Label>
+                  <Input id="name" name="name" placeholder="John Doe" />
                   {state.errors?.name && <p className="text-sm font-medium text-destructive">{state.errors.name}</p>}
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="email">{t('emailLabel')}</Label>
-                  <Input id="email" name="email" type="email" placeholder={t('emailPlaceholder')} />
+                  <Label htmlFor="email">Email</Label>
+                  <Input id="email" name="email" type="email" placeholder="john@example.com" />
                   {state.errors?.email && <p className="text-sm font-medium text-destructive">{state.errors.email}</p>}
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="phone">{t('phoneLabel')}</Label>
-                  <Input id="phone" name="phone" placeholder={t('phonePlaceholder')} />
+                  <Label htmlFor="phone">Phone (optional)</Label>
+                  <Input id="phone" name="phone" placeholder="(555) 555-5555" />
                   {state.errors?.phone && <p className="text-sm font-medium text-destructive">{state.errors.phone}</p>}
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="message">{t('messageLabel')}</Label>
-                  <Textarea id="message" name="message" placeholder={t('messagePlaceholder')} />
+                  <Label htmlFor="message">Message</Label>
+                  <Textarea id="message" name="message" placeholder="Your message..." />
                   {state.errors?.message && <p className="text-sm font-medium text-destructive">{state.errors.message}</p>}
                 </div>
                 <SubmitButton />

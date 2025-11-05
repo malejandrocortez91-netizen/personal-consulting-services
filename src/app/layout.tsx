@@ -3,6 +3,7 @@ import { Inter, Space_Grotesk } from 'next/font/google';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import { cn } from '@/lib/utils';
+import {ThemeProvider} from '@/components/providers';
 
 const fontBody = Inter({
   subsets: ['latin'],
@@ -21,8 +22,28 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
-  return children;
+}) {
+  return (
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+      <body
+        className={cn(
+          'antialiased',
+          fontBody.variable,
+          fontHeadline.variable
+        )}
+      >
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+          <Toaster />
+        </ThemeProvider>
+      </body>
+    </html>
+  );
 }
