@@ -3,6 +3,7 @@
 import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Cog, Zap, Target, BrainCircuit, Users, Shuffle } from 'lucide-react';
 import { services } from '@/lib/data';
+import { Separator } from '@/components/ui/separator';
 
 const serviceIcons = {
   scaling: { icon: Zap, title: 'Operational Scaling' },
@@ -20,6 +21,7 @@ export default function Services() {
   return (
     <section id="services" className="py-12 sm:py-16 bg-background">
       <div className="container mx-auto px-4">
+        <Separator className="mb-12 bg-border/50" />
         <div className="mx-auto max-w-2xl lg:text-center">
           <h2 className="font-headline text-3xl font-bold tracking-tight text-primary sm:text-4xl">
             My Expertise
