@@ -24,18 +24,5 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en" className="scroll-smooth">
-      <body
-        className={cn(
-          'antialiased',
-          fontBody.variable,
-          fontHeadline.variable
-        )}
-      >
-        {children}
-        <Toaster />
-      </body>
-    </html>
-  );
+  return children;
 }

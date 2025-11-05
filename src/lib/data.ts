@@ -1,33 +1,31 @@
-import { Cog, Zap, Target, BrainCircuit, Users, Shuffle } from 'lucide-react';
-
 export const services = [
   {
-    icon: Zap,
+    key: 'scaling',
     title: 'Operational Scaling',
     description: 'Designing and implementing scalable systems and processes to support rapid growth and peak performance.',
   },
   {
-    icon: Cog,
+    key: 'optimization',
     title: 'Process Optimization',
     description: 'Analyzing and re-engineering workflows to eliminate bottlenecks, reduce costs, and increase efficiency.',
   },
   {
-    icon: Target,
+    key: 'execution',
     title: 'Strategic Execution',
     description: 'Translating high-level strategy into actionable plans and leading teams to deliver on key business objectives.',
   },
   {
-    icon: BrainCircuit,
+    key: 'automation',
     title: 'AI-Powered Automation',
     description: 'Leveraging AI and automation to streamline complex operations, reduce manual effort, and unlock exponential efficiency gains.',
   },
   {
-    icon: Users,
+    key: 'leadership',
     title: 'Executive Leadership',
     description: 'Building, mentoring, and leading high-performing teams that are aligned with strategic goals and drive cultural excellence.',
   },
   {
-    icon: Shuffle,
+    key: 'transformation',
     title: 'High-Impact Transformation',
     description: 'Leading critical business turnarounds, post-merger integrations, and high-stakes initiatives that redefine market position.',
   },

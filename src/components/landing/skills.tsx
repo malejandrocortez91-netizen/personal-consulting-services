@@ -1,7 +1,10 @@
 import { CheckCircle } from 'lucide-react';
-import { skills } from '@/lib/data';
+import { useTranslations } from 'next-intl';
 
 export default function Skills() {
+  const t = useTranslations('Skills');
+  const skills = t.raw('items') as string[];
+
   return (
     <section id="skills" className="py-16 sm:py-24 bg-card">
       <div className="container mx-auto px-4">
@@ -9,10 +12,10 @@ export default function Skills() {
           <div>
             <div className="text-center">
               <h2 className="font-headline text-3xl font-bold tracking-tight text-primary sm:text-4xl">
-                Core Competencies
+                {t('title')}
               </h2>
               <p className="mt-4 text-lg leading-8 text-muted-foreground">
-                A diverse skill set to tackle complex challenges and deliver tangible results.
+                {t('subtitle')}
               </p>
             </div>
 

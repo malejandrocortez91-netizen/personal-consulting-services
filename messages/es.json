@@ -1,0 +1,102 @@
+{
+  "Header": {
+    "name": "Alejandro Cortez"
+  },
+  "Hero": {
+    "title": "Construyendo Soluciones Robustas con Código, Nube e IA",
+    "subtitle": "Un líder ejecutivo de operaciones especializado en escalar negocios, impulsar el crecimiento estratégico e implementar transformaciones de alto impacto.",
+    "getInTouch": "Ponerse en Contacto",
+    "exploreServices": "Explorar Servicios"
+  },
+  "Services": {
+    "title": "Mi Experiencia",
+    "subtitle": "Impulsando el crecimiento y la eficiencia mediante la construcción de marcos operativos de alto rendimiento.",
+    "items": {
+      "scaling": {
+        "title": "Escalamiento Operacional",
+        "description": "Diseñando e implementando sistemas y procesos escalables para soportar un rápido crecimiento y un rendimiento máximo."
+      },
+      "optimization": {
+        "title": "Optimización de Procesos",
+        "description": "Analizando y rediseñando flujos de trabajo para eliminar cuellos de botella, reducir costos y aumentar la eficiencia."
+      },
+      "execution": {
+        "title": "Ejecución Estratégica",
+        "description": "Traduciendo la estrategia de alto nivel en planes accionables y liderando equipos para cumplir con los objetivos clave del negocio."
+      },
+      "automation": {
+        "title": "Automatización Impulsada por IA",
+        "description": "Aprovechando la IA y la automatización para optimizar operaciones complejas, reducir el esfuerzo manual y desbloquear ganancias de eficiencia exponenciales."
+      },
+      "leadership": {
+        "title": "Liderazgo Ejecutivo",
+        "description": "Construyendo, mentorizando y liderando equipos de alto rendimiento que están alineados con los objetivos estratégicos e impulsan la excelencia cultural."
+      },
+      "transformation": {
+        "title": "Transformación de Alto Impacto",
+        "description": "Liderando reestructuraciones de negocios críticas, integraciones post-fusión e iniciativas de alto riesgo que redefinen la posición en el mercado."
+      }
+    }
+  },
+  "Skills": {
+    "title": "Competencias Clave",
+    "subtitle": "Un conjunto de habilidades diverso para enfrentar desafíos complejos y entregar resultados tangibles.",
+    "items": [
+      "Planificación Estratégica",
+      "Gestión de P&L",
+      "Reingeniería de Procesos",
+      "Optimización de la Cadena de Suministro",
+      "Gestión del Cambio",
+      "Métricas de Rendimiento y KPIs",
+      "Liderazgo y Desarrollo de Equipos",
+      "Estrategia de Salida al Mercado",
+      "Implementación de Sistemas",
+      "Toma de Decisiones Basada en Datos",
+      "Metodologías Ágiles y Lean",
+      "Negociación con Proveedores"
+    ]
+  },
+  "Resume": {
+    "title": "Trayectoria Profesional",
+    "subtitle": "Una cronología de mi experiencia y educación.",
+    "experience": "Experiencia",
+    "education": "Educación"
+  },
+  "Projects": {
+    "title": "Proyectos Destacados",
+    "subtitle": "Una selección de proyectos que demuestran mi impacto y experiencia."
+  },
+  "Contact": {
+    "title": "Conectemos",
+    "subtitle": "¿Tienes un proyecto en mente o quieres saber más sobre mis servicios? Estoy aquí para responder tus preguntas.",
+    "instructions": "Completa el formulario y me pondré en contacto contigo lo antes posible.",
+    "cardTitle": "Contáctame",
+    "cardDescription": "Por favor, proporciona tus datos a continuación.",
+    "nameLabel": "Nombre",
+    "namePlaceholder": "Juan Pérez",
+    "emailLabel": "Correo electrónico",
+    "emailPlaceholder": "juan@ejemplo.com",
+    "phoneLabel": "Teléfono (opcional)",
+    "phonePlaceholder": "(555) 555-5555",
+    "messageLabel": "Mensaje",
+    "messagePlaceholder": "Tu mensaje...",
+    "submitButton": "Enviar Mensaje",
+    "successTitle": "¡Mensaje Enviado!",
+    "successDescription": "Gracias por contactarme. Te responderé en breve.",
+    "errorTitle": "Ocurrió un error"
+  },
+  "Footer": {
+    "copyright": "© {year} Alejandro Cortez. Todos los derechos reservados."
+  },
+  "LocaleSwitcher": {
+    "label": "Cambiar idioma",
+    "en": "Inglés",
+    "es": "Español"
+  },
+  "ThemeToggle": {
+    "toggle": "Cambiar tema",
+    "light": "Claro",
+    "dark": "Oscuro",
+    "system": "Sistema"
+  }
+}
