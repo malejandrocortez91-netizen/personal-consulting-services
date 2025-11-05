@@ -22,7 +22,7 @@ export default function Skills() {
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-6 gap-x-8">
                 {skills.map((skill) => (
                   <div key={skill} className="flex items-center gap-3">
-                    <CheckCircle className="h-5 w-5 text-primary" />
+                    <CheckCircle className="h-6 w-6 text-primary" />
                     <span className="text-muted-foreground">{skill}</span>
                   </div>
                 ))}
