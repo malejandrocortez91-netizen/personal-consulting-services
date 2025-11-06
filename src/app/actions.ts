@@ -28,7 +28,7 @@ function getGoogleAuth() {
   const auth = new google.auth.GoogleAuth({
     credentials: {
       client_email: GOOGLE_SHEETS_CLIENT_EMAIL,
-      private_key: GOOGLE_SHEETS_PRIVATE_KEY.replace(/\\n/g, '\n'),
+      private_key: (GOOGLE_SHEETS_PRIVATE_KEY || '').replace(/\\n/g, '\n'),
     },
     scopes: ['https://www.googleapis.com/auth/spreadsheets'],
   });
@@ -117,21 +117,35 @@ export async function handleContactSubmission(
     // Send notification to site owner
     await sendEmail({
       to: 'malejandro.cortez91@gmail.com',
-      subject: `New Message from ${name}`,
-      text: `From: ${name} <${email}>\nPhone: ${phone || 'N/A'}\n\n${message}`,
+      subject: `New Lead from Website: ${name}`,
+      text: `A new lead has submitted the contact form.\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone || 'N/A'}\n\nMessage:\n${message}`,
     });
 
     // Try to send confirmation to the lead
     try {
+        const leadEmailSubject = 'Thank you for contacting me - Alejandro Cortez Velasquez';
+        const leadEmailBody = `Dear ${name},
+
+Thank you for reaching out and expressing interest in my consulting services. I have successfully received your message and appreciate you taking the time to connect.
+
+I am currently reviewing your inquiry and will get back to you personally as soon as possible, typically within one business day.
+
+In the meantime, feel free to connect with me on LinkedIn or explore my project highlights on my website.
+
+Best regards,
+
+Alejandro Cortez Velasquez
+Executive Operations & Transformation Leader`;
+
       await sendEmail({
         to: email,
-        subject: 'Thank you for contacting me',
-        text: `Hi ${name},\n\nThank you for reaching out. I've received your message and will get back to you as soon as possible.\n\nBest regards,\nAlejandro Cortez Velasquez`,
+        subject: leadEmailSubject,
+        text: leadEmailBody,
       });
-      if (newRowIndex) await updateSheetCell(`F${newRowIndex}`, 'Sent');
+      if (newRowIndex) await updateSheetCell(`F${newRowIndex}`, 'Confirmation Sent');
     } catch (leadEmailError) {
       console.error('Failed to send email to lead:', leadEmailError);
-      if (newRowIndex) await updateSheetCell(`F${newRowIndex}`, 'Failed to send');
+      if (newRowIndex) await updateSheetCell(`F${newRowIndex}`, 'Failed to Send Confirmation');
     }
 
     return { data: { success: true }, error: null, errors: null };
