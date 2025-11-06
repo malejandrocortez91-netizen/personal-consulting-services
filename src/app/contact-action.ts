@@ -59,7 +59,7 @@ export async function handleContactSubmission(
 
     const leadEmailPromise = sendEmail({
         to: email,
-        subject: 'Thank you for contacting me - Alejandro Cortez Velasquez',
+        subject: 'Thank You for Your Interest in My Services',
         text: `Dear ${name},
 
 Thank you for reaching out and expressing interest in my consulting services. I have successfully received your message and appreciate you taking the time to connect.
@@ -70,8 +70,10 @@ In the meantime, feel free to connect with me on LinkedIn or explore my project 
 
 Best regards,
 
-Alejandro Cortez Velasquez
-Executive Operations & Transformation Leader`,
+Manuel Alejandro Cortez Velásquez
+Alternate: ing.cortez.vlz@gmail.com
+Mobile & Whatsapp: +505 5731 3554
+LinkedIn: https://www.linkedin.com/in/alecortez91/`,
       });
       
     const [sheetResult, ownerEmailResult, leadEmailResult] = await Promise.allSettled([
