@@ -6,9 +6,9 @@ import { Label } from '@/components/ui/label';
 
 export default function Newsletter() {
   return (
-    <section id="newsletter" className="py-12 sm:py-16 bg-card">
+    <section id="newsletter" className="py-8 sm:py-12 bg-card">
       <div className="container mx-auto px-4">
-        <div className="relative isolate overflow-hidden bg-primary/10 px-6 py-12 text-center shadow-lg sm:rounded-3xl sm:px-16">
+        <div className="relative isolate overflow-hidden bg-primary/10 px-6 py-8 text-center shadow-lg sm:rounded-3xl sm:px-16">
           <h2 className="mx-auto max-w-2xl font-headline text-3xl font-bold tracking-tight text-primary sm:text-4xl">
             Subscribe to My Newsletter
           </h2>

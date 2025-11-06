@@ -47,7 +47,7 @@ export default function Contact() {
   }, [state, toast]);
 
   return (
-    <section id="contact" className="py-16 sm:py-24 bg-background">
+    <section id="contact" className="py-12 sm:py-16 bg-background">
       <div className="container mx-auto px-4">
         <div className="mx-auto grid max-w-5xl items-center gap-12 lg:grid-cols-2">
           <div className="space-y-4">
