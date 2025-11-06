@@ -11,7 +11,7 @@ export default function ProjectHighlights() {
   const getImage = (id: string) => PlaceHolderImages.find(img => img.id === id);
 
   return (
-    <section id="projects" className="py-16 sm:py-24 bg-card">
+    <section id="projects" className="py-12 sm:py-16 bg-card">
       <div className="container mx-auto px-4">
         <Separator className="mb-12 bg-border/50" />
         <div className="mx-auto max-w-2xl lg:text-center">
@@ -44,16 +44,9 @@ export default function ProjectHighlights() {
                 <CardContent className="flex-grow">
                   <CardDescription>{project.description}</CardDescription>
                   <div className="mt-4 flex flex-wrap gap-2">
-                    {project.tags.map(tag => {
-                      if (tag === 'Onboarding') {
-                        return (
-                           <Badge key={tag} variant="secondary" className="bg-white text-gray-800 hover:bg-gray-100">{tag}</Badge>
-                        )
-                      }
-                      return (
-                        <Badge key={tag} variant="secondary">{tag}</Badge>
-                      )
-                    })}
+                    {project.tags.map(tag => (
+                      <Badge key={tag} variant="secondary">{tag}</Badge>
+                    ))}
                   </div>
                 </CardContent>
               </Card>
