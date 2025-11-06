@@ -5,18 +5,31 @@ import { google } from 'googleapis';
 
 // --- Google Sheets config ---
 const GOOGLE_SHEETS_CLIENT_EMAIL = process.env.GOOGLE_SHEETS_CLIENT_EMAIL;
-// The private key is now expected to be a Base64 encoded string.
+const GOOGLE_SHEETS_PRIVATE_KEY = process.env.GOOGLE_SHEETS_PRIVATE_KEY;
 const GOOGLE_SHEETS_PRIVATE_KEY_BASE64 = process.env.GOOGLE_SHEETS_PRIVATE_KEY_BASE64;
 const SHEET_ID = process.env.SHEET_ID;
 
 // Helper: ensures required Google auth
 function getGoogleAuth() {
-  if (!GOOGLE_SHEETS_CLIENT_EMAIL || !GOOGLE_SHEETS_PRIVATE_KEY_BASE64 || !SHEET_ID) {
-    throw new Error('Google Sheets API credentials are not configured in environment variables.');
+  // Check for email and sheet ID first
+  if (!GOOGLE_SHEETS_CLIENT_EMAIL || !SHEET_ID) {
+    throw new Error('Google Sheets client email or Sheet ID are not configured in environment variables.');
   }
 
-  // Decode the Base64 private key.
-  const privateKey = Buffer.from(GOOGLE_SHEETS_PRIVATE_KEY_BASE64, 'base64').toString('utf8');
+  let privateKey: string;
+
+  // Primary method: Use the raw private key if it exists
+  if (GOOGLE_SHEETS_PRIVATE_KEY) {
+    privateKey = GOOGLE_SHEETS_PRIVATE_KEY.replace(/\\n/g, '\n');
+  } 
+  // Fallback method: Use the Base64 encoded key if the raw key is missing
+  else if (GOOGLE_SHEETS_PRIVATE_KEY_BASE64) {
+    privateKey = Buffer.from(GOOGLE_SHEETS_PRIVATE_KEY_BASE64, 'base64').toString('utf8');
+  } 
+  // If neither is found, throw an error
+  else {
+    throw new Error('No Google Sheets private key found. Please set either GOOGLE_SHEETS_PRIVATE_KEY or GOOGLE_SHEETS_PRIVATE_KEY_BASE64.');
+  }
 
   const auth = new google.auth.GoogleAuth({
     credentials: {
