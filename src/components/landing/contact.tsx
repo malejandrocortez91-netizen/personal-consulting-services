@@ -68,7 +68,7 @@ export default function Contact() {
               Let's Connect
             </h2>
             <p className="text-lg text-muted-foreground">
-              Have a project in mind or want to learn more about my services? I'm here to answer your questions.
+              Have a project in mind or want to learn more about my services? Still not found what you are looking for? I work with a wide network of near-shore experts, from digital marketers and AI developers to high volume recruiters, accounting and legal professionals. I'm here to answer your questions.
             </p>
             <p className="text-muted-foreground">
               Fill out the form, and I'll get back to you as soon as possible.
