@@ -1,33 +1,40 @@
+
 'use server';
 
 import { google } from 'googleapis';
 
 // --- Google Sheets config ---
 const GOOGLE_SHEETS_CLIENT_EMAIL = process.env.GOOGLE_SHEETS_CLIENT_EMAIL;
-const GOOGLE_SHEETS_PRIVATE_KEY = process.env.GOOGLE_SHEETS_PRIVATE_KEY;
+// The private key is now expected to be a Base64 encoded string.
+const GOOGLE_SHEETS_PRIVATE_KEY_BASE64 = process.env.GOOGLE_SHEETS_PRIVATE_KEY_BASE64;
 const SHEET_ID = process.env.SHEET_ID;
 
 // Helper: ensures required Google auth
 function getGoogleAuth() {
-  if (!GOOGLE_SHEETS_CLIENT_EMAIL || !GOOGLE_SHEETS_PRIVATE_KEY || !SHEET_ID) {
+  if (!GOOGLE_SHEETS_CLIENT_EMAIL || !GOOGLE_SHEETS_PRIVATE_KEY_BASE64 || !SHEET_ID) {
     throw new Error('Google Sheets API credentials are not configured in environment variables.');
   }
+
+  // Decode the Base64 private key.
+  const privateKey = Buffer.from(GOOGLE_SHEETS_PRIVATE_KEY_BASE64, 'base64').toString('utf8');
+
   const auth = new google.auth.GoogleAuth({
     credentials: {
       client_email: GOOGLE_SHEETS_CLIENT_EMAIL,
-      // Replace literal \n with actual newlines
-      private_key: GOOGLE_SHEETS_PRIVATE_KEY.replace(/\\n/g, '\n'),
+      private_key: privateKey,
     },
     scopes: ['https://www.googleapis.com/auth/spreadsheets'],
   });
   return { sheets: google.sheets({ version: 'v4', auth }), spreadsheetId: SHEET_ID };
 }
 
+
 // Append data to Google Sheet
 export async function appendToSheet(
   data: { name: string; email: string; phone?: string; message: string },
   followUpStatus: string = ''
 ) {
+  try {
     const { sheets, spreadsheetId } = getGoogleAuth();
     const range = 'Sheet1!A:F';
     const timestamp = new Date().toISOString();
@@ -46,6 +53,11 @@ export async function appendToSheet(
       if (match && match[1]) return parseInt(match[1], 10);
     }
     return null;
+  } catch (error: any) {
+    console.error('Error appending to sheet:', error.message);
+    // Re-throw the specific error for the action to handle
+    throw new Error(`Failed to write to sheet. Reason: ${error.message}`);
+  }
 }
 
 // Update a specific cell
