@@ -12,7 +12,7 @@ export default function Header() {
           <Link href="/" className="flex items-center space-x-2">
             <Logo className="h-6 w-6 text-primary" />
             <span className="inline-block font-headline text-lg font-bold text-primary">
-              Alejandro Cortez
+              Alejandro Cortez Velasquez
             </span>
           </Link>
         </div>

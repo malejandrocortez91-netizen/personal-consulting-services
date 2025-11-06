@@ -6,18 +6,16 @@ import { Label } from '@/components/ui/label';
 
 export default function Newsletter() {
   return (
-    <section id="newsletter" className="py-16 sm:py-24 bg-card">
+    <section id="newsletter" className="py-12 sm:py-16 bg-card">
       <div className="container mx-auto px-4">
-        <div className="mx-auto max-w-2xl lg:text-center">
-          <h2 className="font-headline text-3xl font-bold tracking-tight text-primary sm:text-4xl">
+        <div className="relative isolate overflow-hidden bg-primary/10 px-6 py-12 text-center shadow-lg sm:rounded-3xl sm:px-16">
+          <h2 className="mx-auto max-w-2xl font-headline text-3xl font-bold tracking-tight text-primary sm:text-4xl">
             Subscribe to My Newsletter
           </h2>
-          <p className="mt-4 text-lg leading-8 text-muted-foreground">
+          <p className="mx-auto mt-2 max-w-xl text-lg leading-8 text-muted-foreground">
             Stay up to date with my latest articles, projects, and insights on technology and leadership.
           </p>
-        </div>
-        <div className="mx-auto mt-10 max-w-lg">
-          <form className="flex gap-x-4">
+          <form className="mx-auto mt-6 flex max-w-md gap-x-4">
             <Label htmlFor="email-address" className="sr-only">
               Email address
             </Label>
@@ -28,8 +26,9 @@ export default function Newsletter() {
               autoComplete="email"
               required
               placeholder="Enter your email"
+              className="min-w-0 flex-auto"
             />
-            <Button type="submit">
+            <Button type="submit" className="flex-none">
               Subscribe
             </Button>
           </form>

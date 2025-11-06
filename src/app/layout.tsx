@@ -17,7 +17,7 @@ const fontHeadline = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: 'Alejandro Cortez | Software Consultant',
+  title: 'Alejandro Cortez Velasquez | Software Consultant',
   description: 'Expertise in Full-Stack Development, Cloud, and AI.',
 };
 
