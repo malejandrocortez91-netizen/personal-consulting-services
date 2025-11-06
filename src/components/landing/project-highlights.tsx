@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { projects } from '@/lib/data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Badge } from '@/components/ui/badge';
+import { Separator } from '@/components/ui/separator';
 
 export default function ProjectHighlights() {
   const getImage = (id: string) => PlaceHolderImages.find(img => img.id === id);
@@ -12,6 +13,7 @@ export default function ProjectHighlights() {
   return (
     <section id="projects" className="py-16 sm:py-24 bg-card">
       <div className="container mx-auto px-4">
+        <Separator className="mb-12 bg-border/50" />
         <div className="mx-auto max-w-2xl lg:text-center">
           <h2 className="font-headline text-3xl font-bold tracking-tight text-primary sm:text-4xl">
             Project Highlights

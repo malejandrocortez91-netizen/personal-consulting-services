@@ -10,6 +10,7 @@ import { Label } from '@/components/ui/label';
 import { useToast } from '@/hooks/use-toast';
 import { LoaderCircle } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Separator } from '@/components/ui/separator';
 
 const initialState = {
   data: null,
@@ -49,6 +50,7 @@ export default function Contact() {
   return (
     <section id="contact" className="py-12 sm:py-16 bg-background">
       <div className="container mx-auto px-4">
+        <Separator className="mb-12 bg-border/50" />
         <div className="mx-auto grid max-w-5xl items-center gap-12 lg:grid-cols-2">
           <div className="space-y-4">
             <h2 className="font-headline text-3xl font-bold tracking-tight text-primary sm:text-4xl">
