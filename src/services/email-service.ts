@@ -10,6 +10,7 @@ interface MailOptions {
   to: string;
   subject: string;
   text: string;
+  html?: string; // Add optional html property
   attachments?: MailAttachment[];
 }
 
@@ -38,7 +39,7 @@ const transporter =
 
 /**
  * Sends an email
- * @param options Mail options (to, subject, text, attachments)
+ * @param options Mail options (to, subject, text, html, attachments)
  */
 export async function sendEmail(options: MailOptions): Promise<void> {
   if (!transporter) {
@@ -47,6 +48,10 @@ export async function sendEmail(options: MailOptions): Promise<void> {
     console.log(`To: ${options.to}`);
     console.log(`Subject: ${options.subject}`);
     console.log(`Text: ${options.text}`);
+    if (options.html) {
+      // Log HTML content if present
+      console.log(`HTML: ${options.html}`);
+    }
     if (options.attachments && options.attachments.length > 0) {
       console.log('Attachments:');
       options.attachments.forEach((att) =>
@@ -54,8 +59,6 @@ export async function sendEmail(options: MailOptions): Promise<void> {
       );
     }
     console.log('--- END MOCK EMAIL SERVICE ---');
-    // In a real scenario, you might want to throw an error here
-    // For this app, we will just log and proceed.
     return;
   }
 

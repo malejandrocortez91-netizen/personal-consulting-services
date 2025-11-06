@@ -11,7 +11,7 @@ export default function Header() {
         <div className="flex gap-6 md:gap-10">
           <Link href="/" className="flex items-center space-x-3">
             <Cpu className="h-6 w-6 text-primary" />
-            <span className="inline-block font-handwriting text-2xl font-bold text-primary">
+            <span className="inline-block font-font-handwriting text-2xl font-bold text-primary">
               Alejandro Cortez Velasquez
             </span>
           </Link>

@@ -4,7 +4,8 @@ import { Inter, Space_Grotesk, Dancing_Script } from 'next/font/google';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import { cn } from '@/lib/utils';
-import {ThemeProvider} from '@/components/providers';
+import { ThemeProvider } from '@/components/providers';
+import AppCheckProvider from '@/components/app-check-provider';
 
 const fontBody = Inter({
   subsets: ['latin'],
@@ -41,15 +42,17 @@ export default function RootLayout({
           fontHandwriting.variable
         )}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-          <Toaster />
-        </ThemeProvider>
+        <AppCheckProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {children}
+            <Toaster />
+          </ThemeProvider>
+        </AppCheckProvider>
       </body>
     </html>
   );
