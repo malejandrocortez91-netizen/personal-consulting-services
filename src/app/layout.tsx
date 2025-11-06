@@ -1,6 +1,6 @@
 
 import type { Metadata } from 'next';
-import { Inter, Space_Grotesk } from 'next/font/google';
+import { Inter, Space_Grotesk, Dancing_Script } from 'next/font/google';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import { cn } from '@/lib/utils';
@@ -14,6 +14,11 @@ const fontBody = Inter({
 const fontHeadline = Space_Grotesk({
   subsets: ['latin'],
   variable: '--font-headline',
+});
+
+const fontHandwriting = Dancing_Script({
+  subsets: ['latin'],
+  variable: '--font-handwriting',
 });
 
 export const metadata: Metadata = {
@@ -32,7 +37,8 @@ export default function RootLayout({
         className={cn(
           'antialiased',
           fontBody.variable,
-          fontHeadline.variable
+          fontHeadline.variable,
+          fontHandwriting.variable
         )}
       >
         <ThemeProvider

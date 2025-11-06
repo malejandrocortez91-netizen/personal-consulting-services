@@ -12,7 +12,7 @@ export default function Footer() {
         <div className="flex flex-col items-center gap-4 px-8 md:flex-row md:gap-2 md:px-0">
           <Link href="/" className="flex items-center space-x-2">
             <Logo className="h-6 w-6 text-primary" />
-            <span className="inline-block font-headline text-lg font-bold text-primary">
+            <span className="inline-block font-handwriting text-2xl font-bold text-primary">
               Alejandro Cortez Velasquez
             </span>
           </Link>
