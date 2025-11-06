@@ -16,12 +16,15 @@ type ContactFormState = {
 };
 
 // This function will append data to a Google Sheet.
-async function appendToSheet(data: {
-  name: string;
-  email: string;
-  phone?: string;
-  message: string;
-}) {
+async function appendToSheet(
+  data: {
+    name: string;
+    email: string;
+    phone?: string;
+    message: string;
+  },
+  followUpStatus: string = ''
+) {
   try {
     const auth = new google.auth.GoogleAuth({
       credentials: {
@@ -33,13 +36,12 @@ async function appendToSheet(data: {
 
     const sheets = google.sheets({ version: 'v4', auth });
     const spreadsheetId = process.env.SHEET_ID;
-    const range = 'Sheet1!A:F'; // Assuming headers are in columns A to F
+    const range = 'Sheet1!A:F'; // Headers: Timestamp, Name, Email, Phone, Message, FollowUpStatus
 
     const timestamp = new Date().toISOString();
-    // Headers: Timestamp, Name, Email, Phone, Message, FollowUpStatus
-    const values = [[timestamp, data.name, data.email, data.phone || 'N/A', data.message, '']];
+    const values = [[timestamp, data.name, data.email, data.phone || 'N/A', data.message, followUpStatus]];
 
-    await sheets.spreadsheets.values.append({
+    const response = await sheets.spreadsheets.values.append({
       spreadsheetId,
       range,
       valueInputOption: 'USER_ENTERED',
@@ -47,12 +49,50 @@ async function appendToSheet(data: {
         values,
       },
     });
+
+    const updatedRange = response.data.updates?.updatedRange;
+    if (updatedRange) {
+      // Extract the row number from the range, e.g., 'Sheet1!A2:F2' -> 2
+      const match = updatedRange.match(/!A(\d+):/);
+      if (match && match[1]) {
+        return parseInt(match[1], 10);
+      }
+    }
+    return null;
   } catch (error) {
     console.error('Error appending to Google Sheet:', error);
-    // In a real app, you might want to throw this error or handle it differently
-    // For now, we'll log it and let the form submission succeed.
+    // Return null to indicate failure but don't crash the whole process
+    return null;
   }
 }
+
+// This function updates a specific cell in the Google Sheet.
+async function updateSheetCell(cell: string, value: string) {
+  try {
+    const auth = new google.auth.GoogleAuth({
+      credentials: {
+        client_email: process.env.GOOGLE_SHEETS_CLIENT_EMAIL,
+        private_key: (process.env.GOOGLE_SHEETS_PRIVATE_KEY || '').replace(/\\n/g, '\n'),
+      },
+      scopes: ['https://www.googleapis.com/auth/spreadsheets'],
+    });
+
+    const sheets = google.sheets({ version: 'v4', auth });
+    const spreadsheetId = process.env.SHEET_ID;
+
+    await sheets.spreadsheets.values.update({
+      spreadsheetId,
+      range: `Sheet1!${cell}`,
+      valueInputOption: 'USER_ENTERED',
+      requestBody: {
+        values: [[value]],
+      },
+    });
+  } catch (error) {
+    console.error(`Error updating cell ${cell}:`, error);
+  }
+}
+
 
 export async function handleContactSubmission(
   prevState: ContactFormState,
@@ -81,24 +121,44 @@ export async function handleContactSubmission(
   }
 
   const { name, email, phone, message } = validatedFields.data;
+  let newRowIndex: number | null = null;
 
   try {
-    // 1. Send notification email to yourself
+    // 1. Append data to Google Sheet and get the new row's index
+    newRowIndex = await appendToSheet({ name, email, phone, message });
+
+    // 2. Send notification email to yourself
     await sendEmail({
       to: 'malejandro.cortez91@gmail.com',
       subject: `New Message from ${name}`,
       text: `From: ${name} <${email}>\nPhone: ${phone || 'N/A'}\n\n${message}`,
     });
 
-    // 2. Append data to Google Sheet
-    await appendToSheet({ name, email, phone, message });
-    
-    // The delayed email would be handled by a separate process (e.g., a Cloud Function)
-    // that is triggered by the new row in the Google Sheet or a new document in Firestore.
+    // 3. Send confirmation email to the lead
+    try {
+      await sendEmail({
+        to: email,
+        subject: 'Thank you for contacting me',
+        text: `Hi ${name},\n\nThank you for reaching out. I've received your message and will get back to you as soon as possible.\n\nBest regards,\nAlejandro Cortez Velasquez`,
+      });
+      if (newRowIndex) {
+        await updateSheetCell(`F${newRowIndex}`, 'Sent');
+      }
+    } catch (leadEmailError) {
+      console.error('Failed to send email to lead:', leadEmailError);
+      // 4. If it fails, update column F
+      if (newRowIndex) {
+        await updateSheetCell(`F${newRowIndex}`, 'Failed to send');
+      }
+    }
 
     return { data: { success: true }, error: null, errors: null };
   } catch (error) {
     console.error('Contact form submission error:', error);
+    // This is for unexpected errors during the primary process (e.g., notification email)
+    if (newRowIndex) {
+      await updateSheetCell(`F${newRowIndex}`, 'Processing Error');
+    }
     return { data: null, error: 'Failed to process your request. Please try again later.', errors: null };
   }
 }
