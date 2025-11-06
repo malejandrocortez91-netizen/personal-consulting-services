@@ -2,7 +2,6 @@
 
 import { google } from 'googleapis';
 import { z } from 'zod';
-import { sendEmail } from '@/services/email-service';
 
 // --- Google Sheets config ---
 const GOOGLE_SHEETS_CLIENT_EMAIL = process.env.GOOGLE_SHEETS_CLIENT_EMAIL;
@@ -16,8 +15,9 @@ function getGoogleAuth() {
   }
   const auth = new google.auth.GoogleAuth({
     credentials: {
-      client_email: GOOGLE_SHEETS_CLIENT_EMAIL,
-      private_key: (GOOGLE_SHEETS_PRIVATE_KEY || '').replace(/\\n/g, '\n'),
+      client_email: GOOGLE_SHEEETS_CLIENT_EMAIL,
+      // Use the private key directly, as hosting environments typically handle newlines correctly.
+      private_key: GOOGLE_SHEETS_PRIVATE_KEY,
     },
     scopes: ['https://www.googleapis.com/auth/spreadsheets'],
   });
