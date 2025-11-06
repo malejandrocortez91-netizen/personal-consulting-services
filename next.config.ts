@@ -1,5 +1,7 @@
 import type {NextConfig} from 'next';
 
+const isDev = process.env.NODE_ENV === 'development';
+
 const nextConfig: NextConfig = {
   /* config options here */
   images: {
@@ -24,6 +26,15 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  ...(isDev
+    ? {
+        experimental: {
+          allowedDevOrigins: [
+            'https://6000-firebase-studio-1762221620439.cluster-lqzyk3r5hzdcaqv6zwm7wv6pwa.cloudworkstations.dev',
+          ],
+        },
+      }
+    : {}),
 };
 
 export default nextConfig;
