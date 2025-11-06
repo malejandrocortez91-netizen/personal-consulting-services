@@ -24,6 +24,14 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  // If you are deploying to a custom domain on a different host, you may need to uncomment
+  // and configure the following lines for Server Actions to work correctly.
+  // Replace 'your-domain.com' with your actual domain name.
+  // experimental: {
+  //   serverActions: {
+  //     allowedOrigins: ['your-domain.com', '*.your-domain.com'],
+  //   },
+  // },
 };
 
 export default nextConfig;
