@@ -86,7 +86,13 @@ Executive Operations & Transformation Leader`;
   } catch (error: any) {
     console.error('Contact form submission error:', error);
     const errorMessage = error.message || 'Failed to process your request. Please try again later.';
-    if (newRowIndex) await updateSheetCell(`F${newRowIndex}`, 'Processing Error');
+    if (newRowIndex) {
+        try {
+            await updateSheetCell(`F${newRowIndex}`, 'Processing Error');
+        } catch (updateError) {
+            console.error('Failed to update sheet after initial error:', updateError);
+        }
+    }
     return { data: null, error: errorMessage, errors: null };
   }
 }

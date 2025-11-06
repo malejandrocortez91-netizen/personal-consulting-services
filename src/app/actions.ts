@@ -15,7 +15,7 @@ function getGoogleAuth() {
   }
   const auth = new google.auth.GoogleAuth({
     credentials: {
-      client_email: GOOGLE_SHEEETS_CLIENT_EMAIL,
+      client_email: GOOGLE_SHEETS_CLIENT_EMAIL,
       // Use the private key directly, as hosting environments typically handle newlines correctly.
       private_key: GOOGLE_SHEETS_PRIVATE_KEY,
     },
@@ -48,9 +48,10 @@ export async function appendToSheet(
       if (match && match[1]) return parseInt(match[1], 10);
     }
     return null;
-  } catch (error) {
-    console.error('Error appending to Google Sheet:', error);
-    throw new Error('Failed to write to Google Sheet. Please ensure API is enabled and credentials are correct.');
+  } catch (error: any) {
+    console.error('Error appending to Google Sheet:', error.message);
+    // Re-throw a more informative error
+    throw new Error(`Failed to write to Google Sheet. Reason: ${error.message}`);
   }
 }
 
@@ -64,9 +65,9 @@ export async function updateSheetCell(cell: string, value: string) {
       valueInputOption: 'USER_ENTERED',
       requestBody: { values: [[value]] },
     });
-  } catch (error) {
-    console.error(`Error updating cell ${cell}:`, error);
-    throw new Error(`Failed to update cell ${cell} in Google Sheet.`);
+  } catch (error: any) {
+    console.error(`Error updating cell ${cell}:`, error.message);
+    throw new Error(`Failed to update cell ${cell}. Reason: ${error.message}`);
   }
 }
 
