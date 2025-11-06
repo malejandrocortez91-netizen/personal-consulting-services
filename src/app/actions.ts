@@ -13,7 +13,7 @@ const SHEET_ID = process.env.SHEET_ID;
 function getGoogleAuth() {
   // Check for email and sheet ID first
   if (!GOOGLE_SHEETS_CLIENT_EMAIL || !SHEET_ID) {
-    throw new Error('Google Sheets client email or Sheet ID are not configured in environment variables.');
+    throw new Error('Google Sheets API credentials are not configured in environment variables.');
   }
 
   let privateKey: string;
@@ -28,7 +28,7 @@ function getGoogleAuth() {
   } 
   // If neither is found, throw an error
   else {
-    throw new Error('No Google Sheets private key found. Please set either GOOGLE_SHEETS_PRIVATE_KEY or GOOGLE_SHEETS_PRIVATE_KEY_BASE64.');
+    throw new Error('No Google Sheets private key found in environment variables. Please set either GOOGLE_SHEETS_PRIVATE_KEY or GOOGLE_SHEETS_PRIVATE_KEY_BASE64.');
   }
 
   const auth = new google.auth.GoogleAuth({
@@ -67,9 +67,10 @@ export async function appendToSheet(
     }
     return null;
   } catch (error: any) {
-    console.error('Error appending to sheet:', error.message);
-    // Re-throw the specific error for the action to handle
-    throw new Error(`Failed to write to sheet. Reason: ${error.message}`);
+    console.error('Error appending to sheet:', error);
+    // Re-throw a generic but clear error for the action to handle
+    // Avoid exposing detailed internal error messages like `error.message` to the client-side action.
+    throw new Error('A server error occurred while writing to the sheet. Please check the server logs for details.');
   }
 }
 
@@ -84,24 +85,8 @@ export async function updateSheetCell(cell: string, value: string) {
       requestBody: { values: [[value]] },
     });
   } catch (error: any) {
-    console.error(`Error updating cell ${cell}:`, error.message);
-    throw new Error(`Failed to update cell ${cell}. Reason: ${error.message}`);
+    console.error(`Error updating cell ${cell}:`, error);
+    // Re-throw a generic but clear error
+    throw new Error(`A server error occurred while updating cell ${cell}. Please check the server logs.`);
   }
-}
-
-// Summarize resume (placeholder)
-export async function summarizeResumeAction(
-  prevState: { summary: string | null; error: string | null },
-  formData: FormData
-): Promise<{ summary: string | null; error: string | null }> {
-  const jobDescription = formData.get('jobDescription');
-  if (typeof jobDescription !== 'string' || jobDescription.length < 10) {
-    return { summary: null, error: 'Job description must be at least 10 characters.' };
-  }
-
-  console.log('Summarizing resume for job description:', jobDescription);
-
-  const summary = `As a highly skilled and experienced software engineer, I am confident that I have the skills and qualifications that you are looking for. I have a proven track record of success in developing and delivering high-quality software, and I am an expert in a wide range of programming languages and technologies. I am also a highly motivated and results-oriented individual, and I am confident that I can make a significant contribution to your team.`;
-
-  return new Promise((resolve) => setTimeout(() => resolve({ summary, error: null }), 2000));
 }
