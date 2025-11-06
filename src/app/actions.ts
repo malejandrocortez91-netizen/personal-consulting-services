@@ -1,6 +1,7 @@
 'use server';
 
 import { z } from 'zod';
+import { google } from 'googleapis';
 import { sendEmail } from '@/services/email-service';
 
 type ContactFormState = {
@@ -13,6 +14,45 @@ type ContactFormState = {
     message?: string[];
   } | null;
 };
+
+// This function will append data to a Google Sheet.
+async function appendToSheet(data: {
+  name: string;
+  email: string;
+  phone?: string;
+  message: string;
+}) {
+  try {
+    const auth = new google.auth.GoogleAuth({
+      credentials: {
+        client_email: process.env.GOOGLE_SHEETS_CLIENT_EMAIL,
+        private_key: (process.env.GOOGLE_SHEETS_PRIVATE_KEY || '').replace(/\\n/g, '\n'),
+      },
+      scopes: ['https://www.googleapis.com/auth/spreadsheets'],
+    });
+
+    const sheets = google.sheets({ version: 'v4', auth });
+    const spreadsheetId = process.env.SHEET_ID;
+    const range = 'Sheet1!A:F'; // Assuming headers are in columns A to F
+
+    const timestamp = new Date().toISOString();
+    // Headers: Timestamp, Name, Email, Phone, Message, FollowUpStatus
+    const values = [[timestamp, data.name, data.email, data.phone || 'N/A', data.message, '']];
+
+    await sheets.spreadsheets.values.append({
+      spreadsheetId,
+      range,
+      valueInputOption: 'USER_ENTERED',
+      requestBody: {
+        values,
+      },
+    });
+  } catch (error) {
+    console.error('Error appending to Google Sheet:', error);
+    // In a real app, you might want to throw this error or handle it differently
+    // For now, we'll log it and let the form submission succeed.
+  }
+}
 
 export async function handleContactSubmission(
   prevState: ContactFormState,
@@ -40,16 +80,26 @@ export async function handleContactSubmission(
     };
   }
 
+  const { name, email, phone, message } = validatedFields.data;
+
   try {
+    // 1. Send notification email to yourself
     await sendEmail({
       to: 'malejandro.cortez91@gmail.com',
-      subject: `New Message from ${validatedFields.data.name}`,
-      text: `From: ${validatedFields.data.name} <${validatedFields.data.email}>\nPhone: ${validatedFields.data.phone || 'N/A'}\n\n${validatedFields.data.message}`,
+      subject: `New Message from ${name}`,
+      text: `From: ${name} <${email}>\nPhone: ${phone || 'N/A'}\n\n${message}`,
     });
+
+    // 2. Append data to Google Sheet
+    await appendToSheet({ name, email, phone, message });
+    
+    // The delayed email would be handled by a separate process (e.g., a Cloud Function)
+    // that is triggered by the new row in the Google Sheet or a new document in Firestore.
 
     return { data: { success: true }, error: null, errors: null };
   } catch (error) {
-    return { data: null, error: 'Failed to send message. Please try again later.', errors: null };
+    console.error('Contact form submission error:', error);
+    return { data: null, error: 'Failed to process your request. Please try again later.', errors: null };
   }
 }
 
