@@ -9,7 +9,7 @@ export default function Hero() {
       <div className="container mx-auto px-4 text-center">
         <div className="max-w-3xl mx-auto">
           <h1 className="font-headline text-4xl font-extrabold tracking-tight text-primary sm:text-5xl md:text-6xl">
-            Building Robust Solutions with Code, Cloud, and AI
+            Architecting Operational Excellence, Delivering Strategic Growth
           </h1>
           <p className="mt-6 text-lg leading-8 text-muted-foreground">
             An executive operations leader specializing in scaling businesses, driving strategic growth, and implementing high-impact transformation.

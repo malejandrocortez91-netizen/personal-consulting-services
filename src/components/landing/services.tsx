@@ -6,12 +6,12 @@ import { services } from '@/lib/data';
 import { Separator } from '@/components/ui/separator';
 
 const serviceIcons = {
-  scaling: { icon: Zap, title: 'Operational Scaling' },
-  optimization: { icon: Cog, title: 'Process Optimization' },
-  execution: { icon: Target, title: 'Strategic Execution' },
-  automation: { icon: BrainCircuit, title: 'AI-Powered Automation' },
-  leadership: { icon: Users, title: 'Executive Leadership' },
-  transformation: { icon: Shuffle, title: 'High-Impact Transformation' },
+  scaling: { icon: Zap, title: 'Global Operational Scaling' },
+  optimization: { icon: Cog, title: 'Enterprise Process Optimization' },
+  execution: { icon: Target, title: 'Strategic Execution & Delivery' },
+  automation: { icon: BrainCircuit, title: 'AI-Powered Transformation' },
+  leadership: { icon: Users, title: 'Executive Leadership & Team Building' },
+  transformation: { icon: Shuffle, title: 'High-Impact Business Transformation' },
 };
 
 type ServiceKey = keyof typeof serviceIcons;
@@ -24,10 +24,10 @@ export default function Services() {
         <Separator className="mb-12 bg-border/50" />
         <div className="mx-auto max-w-2xl lg:text-center">
           <h2 className="font-headline text-3xl font-bold tracking-tight text-primary sm:text-4xl">
-            My Expertise
+            Areas of Executive Expertise
           </h2>
           <p className="mt-4 text-lg leading-8 text-muted-foreground">
-            Driving growth and efficiency by building high-performance operational frameworks.
+            Driving enterprise-wide growth and efficiency by building high-performance operational frameworks.
           </p>
         </div>
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">

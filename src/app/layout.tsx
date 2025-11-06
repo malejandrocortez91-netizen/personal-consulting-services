@@ -17,8 +17,8 @@ const fontHeadline = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: 'Alejandro Cortez Velasquez | Software Consultant',
-  description: 'Expertise in Full-Stack Development, Cloud, and AI.',
+  title: 'Alejandro Cortez Velasquez | Executive Operations & Transformation Leader',
+  description: 'Driving operational excellence, strategic growth, and high-impact business transformation for enterprise-level organizations.',
 };
 
 export default function RootLayout({
