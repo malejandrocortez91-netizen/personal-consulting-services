@@ -66,7 +66,7 @@ Thank you for reaching out and expressing interest in my consulting services. I 
 
 I am currently reviewing your inquiry and will get back to you personally as soon as possible, typically within one business day.
 
-In the meantime, feel free to connect with me on LinkedIn or explore my project highlights on my website.
+In the meantime, feel free to connect with me on LinkedIn or explore the project highlights on my website.
 
 Best regards,
 

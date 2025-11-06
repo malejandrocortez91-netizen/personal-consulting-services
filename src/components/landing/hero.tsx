@@ -12,7 +12,7 @@ export default function Hero() {
             Architecting Operational Excellence, Delivering Strategic Growth
           </h1>
           <p className="mt-6 text-lg leading-8 text-muted-foreground">
-            An executive operations leader specializing in scaling businesses by identifying systemic weaknesses and deploying high-efficiency AI solutions to drive strategic growth and transformation.
+            An executive operations leader specializing in scaling businesses, identifying systemic weaknesses, and deploying high-efficiency AI solutions to drive strategic growth and transformation.
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <Button asChild size="lg">

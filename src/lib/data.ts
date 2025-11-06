@@ -115,7 +115,7 @@ export const education = [
     institution: 'Google',
     degree: 'Cloud & AI Certifications',
     period: '2024',
-    description: 'A collection of certifications including: Introduction to Generative AI, Introduction to Large Language Models, Introduction to Responsible AI, and Responsible AI: Applying AI Principles with GC.',
+    description: 'A collection of certifications including: Introduction to Generative AI, Introduction to Large Language Models, Introduction to Responsible AI, and Responsible AI: Applying AI Principles with Google Cloud.',
   },
   {
     institution: 'Pontificia Universidad Católica de Chile',
