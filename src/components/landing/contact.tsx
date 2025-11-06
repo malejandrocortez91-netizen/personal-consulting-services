@@ -10,7 +10,7 @@ import { useToast } from '@/hooks/use-toast';
 import { LoaderCircle } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
-import { handleContactSubmission } from '@/app/actions';
+import { handleContactSubmission } from '@/app/contact-action';
 
 type ContactFormState = {
   data: { success: boolean } | null;
@@ -43,7 +43,7 @@ export default function Contact() {
   const { toast } = useToast();
 
   useEffect(() => {
-    if (state?.data) {
+    if (state?.data?.success) {
       toast({
         title: 'Message Sent!',
         description: 'Thank you for reaching out. I will get back to you shortly.',
