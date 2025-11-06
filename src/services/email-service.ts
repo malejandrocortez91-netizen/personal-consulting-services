@@ -16,7 +16,7 @@ interface MailOptions {
 // Securely read credentials from environment variables
 const EMAIL_USER = process.env.EMAIL_USER;
 const EMAIL_PASS = process.env.EMAIL_PASS;
-const EMAIL_FROM_NAME = process.env.EMAIL_FROM_NAME || 'Alejandro Cortez Velasquez';
+const EMAIL_FROM_NAME = process.env.EMAIL_SENDER_NAME || 'Alejandro Cortez Velasquez';
 
 if (!EMAIL_USER || !EMAIL_PASS) {
   console.warn(
