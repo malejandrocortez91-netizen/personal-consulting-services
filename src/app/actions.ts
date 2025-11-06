@@ -4,17 +4,6 @@ import { z } from 'zod';
 import { google } from 'googleapis';
 import { sendEmail } from '@/services/email-service';
 
-type ContactFormState = {
-  data: { success: boolean } | null;
-  error: string | null;
-  errors?: {
-    name?: string[];
-    email?: string[];
-    phone?: string[];
-    message?: string[];
-  } | null;
-};
-
 // --- Google Sheets config ---
 const GOOGLE_SHEETS_CLIENT_EMAIL = process.env.GOOGLE_SHEETS_CLIENT_EMAIL;
 const GOOGLE_SHEETS_PRIVATE_KEY = process.env.GOOGLE_SHEETS_PRIVATE_KEY;
@@ -36,7 +25,7 @@ function getGoogleAuth() {
 }
 
 // Append data to Google Sheet
-async function appendToSheet(
+export async function appendToSheet(
   data: { name: string; email: string; phone?: string; message: string },
   followUpStatus: string = ''
 ) {
@@ -66,7 +55,7 @@ async function appendToSheet(
 }
 
 // Update a specific cell
-async function updateSheetCell(cell: string, value: string) {
+export async function updateSheetCell(cell: string, value: string) {
   try {
     const { sheets, spreadsheetId } = getGoogleAuth();
     await sheets.spreadsheets.values.update({
@@ -80,6 +69,17 @@ async function updateSheetCell(cell: string, value: string) {
     throw new Error(`Failed to update cell ${cell} in Google Sheet.`);
   }
 }
+
+type ContactFormState = {
+  data: { success: boolean } | null;
+  error: string | null;
+  errors?: {
+    name?: string[];
+    email?: string[];
+    phone?: string[];
+    message?: string[];
+  } | null;
+};
 
 // Handle contact form submission
 export async function handleContactSubmission(

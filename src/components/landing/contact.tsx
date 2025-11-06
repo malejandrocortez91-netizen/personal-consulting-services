@@ -2,7 +2,6 @@
 
 import { useActionState, useEffect } from 'react';
 import { useFormStatus } from 'react-dom';
-import { handleContactSubmission } from '@/app/actions';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -11,8 +10,20 @@ import { useToast } from '@/hooks/use-toast';
 import { LoaderCircle } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
+import { handleContactSubmission } from '@/app/actions';
 
-const initialState = {
+type ContactFormState = {
+  data: { success: boolean } | null;
+  error: string | null;
+  errors?: {
+    name?: string[];
+    email?: string[];
+    phone?: string[];
+    message?: string[];
+  } | null;
+};
+
+const initialState: ContactFormState = {
   data: null,
   error: null,
   errors: null,
