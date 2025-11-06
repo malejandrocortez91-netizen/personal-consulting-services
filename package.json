@@ -40,7 +40,6 @@
     "formdata-polyfill": "^4.0.10",
     "lucide-react": "^0.475.0",
     "next": "^15.5.6",
-    "next-intl": "^4.4.0",
     "next-themes": "^0.3.0",
     "react": "^18.3.1",
     "react-day-picker": "^8.10.1",
