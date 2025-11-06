@@ -1,7 +1,6 @@
 'use server';
 
 import { google } from 'googleapis';
-import { z } from 'zod';
 
 // --- Google Sheets config ---
 const GOOGLE_SHEETS_CLIENT_EMAIL = process.env.GOOGLE_SHEETS_CLIENT_EMAIL;
@@ -16,8 +15,8 @@ function getGoogleAuth() {
   const auth = new google.auth.GoogleAuth({
     credentials: {
       client_email: GOOGLE_SHEETS_CLIENT_EMAIL,
-      // Use the private key directly, as hosting environments typically handle newlines correctly.
-      private_key: GOOGLE_SHEETS_PRIVATE_KEY,
+      // Replace literal \n with actual newlines
+      private_key: GOOGLE_SHEETS_PRIVATE_KEY.replace(/\\n/g, '\n'),
     },
     scopes: ['https://www.googleapis.com/auth/spreadsheets'],
   });
@@ -29,7 +28,6 @@ export async function appendToSheet(
   data: { name: string; email: string; phone?: string; message: string },
   followUpStatus: string = ''
 ) {
-  try {
     const { sheets, spreadsheetId } = getGoogleAuth();
     const range = 'Sheet1!A:F';
     const timestamp = new Date().toISOString();
@@ -48,11 +46,6 @@ export async function appendToSheet(
       if (match && match[1]) return parseInt(match[1], 10);
     }
     return null;
-  } catch (error: any) {
-    console.error('Error appending to Google Sheet:', error.message);
-    // Re-throw a more informative error
-    throw new Error(`Failed to write to Google Sheet. Reason: ${error.message}`);
-  }
 }
 
 // Update a specific cell
