@@ -12,7 +12,7 @@ import { Separator } from '@/components/ui/separator';
 
 export default function ResumeTimeline() {
   return (
-    <section id="resume" className="py-16 sm:py-24 bg-background">
+    <section id="resume" className="py-12 sm:py-16 bg-background">
       <div className="container mx-auto px-4">
         <Separator className="mb-12 bg-border/50" />
         <div className="mx-auto max-w-2xl lg:text-center">
@@ -24,7 +24,7 @@ export default function ResumeTimeline() {
           </p>
         </div>
 
-        <div className="mt-16 mx-auto max-w-3xl">
+        <div className="mt-16 mx-auto max-w-5xl">
           <Accordion type="single" collapsible defaultValue="item-0">
             <h3 className="mb-4 font-headline text-2xl font-semibold text-primary">Experience</h3>
             {experience.map((item, index) => (
