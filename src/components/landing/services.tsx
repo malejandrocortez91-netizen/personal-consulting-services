@@ -41,7 +41,7 @@ export default function Services() {
                       <div className="bg-primary/10 text-primary p-3 rounded-lg">
                         <Icon className="h-6 w-6" aria-hidden="true" />
                       </div>
-                      <CardTitle className="font-headline text-xl text-primary">{title}</CardTitle>
+                      <CardTitle className="font-headline text-xl text-primary font-bold">{title}</CardTitle>
                     </div>
                     <CardDescription className="pt-4">{service.description}</CardDescription>
                   </CardHeader>
