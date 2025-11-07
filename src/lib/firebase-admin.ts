@@ -1,8 +1,13 @@
 
 import admin from 'firebase-admin';
 
-// Check if we are in a server environment before proceeding
-if (typeof window === 'undefined') {
+// This function dynamically imports and initializes firebase-admin
+// to ensure it's only ever used on the server.
+async function initializeAdmin() {
+  if (admin.apps.length > 0) {
+    return admin;
+  }
+
   const serviceAccount = {
     type: process.env.FIREBASE_ADMIN_TYPE,
     project_id: process.env.FIREBASE_ADMIN_PROJECT_ID,
@@ -15,22 +20,30 @@ if (typeof window === 'undefined') {
     auth_provider_x509_cert_url: process.env.FIREBASE_ADMIN_AUTH_PROVIDER_X509_CERT_URL,
     client_x509_cert_url: process.env.FIREBASE_ADMIN_CLIENT_X509_CERT_URL,
   } as admin.ServiceAccount;
-  
-  // Initialize app only if it's not already initialized
-  if (!admin.apps.length) {
-    try {
-      admin.initializeApp({
-        credential: admin.credential.cert(serviceAccount),
-      });
-    } catch (error: any) {
-        // This catch block will prevent the app from crashing if credentials are not perfectly set
-        // during local development. It's useful for avoiding startup errors.
-        console.error('Firebase Admin Initialization Error: ', error.message);
+
+  try {
+    admin.initializeApp({
+      credential: admin.credential.cert(serviceAccount),
+    });
+  } catch (error: any) {
+    if (!/already exists/i.test(error.message)) {
+      console.error('Firebase Admin Initialization Error: ', error.message);
     }
   }
+  
+  return admin;
 }
 
-// Safely get the auth instance, which will be undefined on the client.
-const adminAuth = admin.apps.length ? admin.auth() : undefined;
 
-export { adminAuth };
+// Export a getter for adminAuth that initializes on first access
+let _adminAuth: admin.auth.Auth | undefined;
+
+export const adminAuth = {
+  get: async () => {
+    if (!_adminAuth) {
+      const adminInstance = await initializeAdmin();
+      _adminAuth = adminInstance.auth();
+    }
+    return _adminAuth;
+  }
+};

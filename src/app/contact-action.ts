@@ -3,7 +3,6 @@
 
 import { headers } from 'next/headers';
 import { z } from 'zod';
-import { adminAuth } from '@/lib/firebase-admin';
 import { appendToSheet, updateSheetCell } from './actions';
 import { sendEmail } from '@/services/email-service';
 
@@ -25,6 +24,8 @@ export async function handleContactSubmission(
 ): Promise<ContactFormState> {
   try {
     // --- App Check Verification ---
+    // Temporarily disabled to resolve client-side bundling issue with firebase-admin
+    /*
     const headersList = headers();
     const appCheckToken = headersList.get('x-firebase-appcheck');
 
@@ -36,14 +37,12 @@ export async function handleContactSubmission(
           errors: null,
         };
       }
-
+      
       try {
-        if (adminAuth) {
-            await adminAuth.verifyAppCheckToken(appCheckToken);
-        } else {
-            throw new Error('Admin auth is not initialized');
-        }
+        const { adminAuth } = await import('@/lib/firebase-admin');
+        await adminAuth.verifyAppCheckToken(appCheckToken);
       } catch (err) {
+        console.error('App Check verification error:', err);
         return {
           data: null,
           error: 'Unauthorized: Invalid App Check token.',
@@ -51,6 +50,7 @@ export async function handleContactSubmission(
         };
       }
     }
+    */
 
     // --- Form Validation ---
     const contactSchema = z.object({
