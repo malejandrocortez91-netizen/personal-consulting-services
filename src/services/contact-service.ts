@@ -35,6 +35,9 @@ async function sendEmail(options: MailOptions): Promise<void> {
         console.log(`To: ${options.to}`);
         console.log(`Subject: ${options.subject}`);
         console.log(`Text: ${options.text}`);
+        if (options.attachments) {
+            console.log('Attachments:', options.attachments.map(a => a.filename).join(', '));
+        }
         console.log('--- END MOCK EMAIL SERVICE ---');
         return;
     }
@@ -63,11 +66,62 @@ export async function sendOwnerNotificationEmail(data: ContactData) {
 }
 
 export async function sendConfirmationEmail(data: ContactData) {
+    const path = (await import('path')).default;
+    const fs = (await import('fs')).promises;
+
+    const firstName = data.name.split(' ')[0];
+    const resumeFileName = 'MANUEL_ALEJANDRO_CORTEZ_VELASQUEZ.pdf';
+    const resumePath = path.resolve(process.cwd(), 'public', resumeFileName);
+
+    let attachments: MailAttachment[] = [];
+    try {
+        await fs.access(resumePath);
+        attachments.push({
+            filename: resumeFileName,
+            path: resumePath,
+            contentType: 'application/pdf',
+        });
+    } catch (error) {
+        console.error(`Resume file not found at ${resumePath}. Email will be sent without attachment.`);
+    }
+
+    const textContent = `
+Dear ${firstName},
+
+Thank you for reaching out and expressing interest in my consulting services. I have successfully received your message and appreciate you taking the time to connect.
+
+I am currently reviewing your inquiry and will get back to you personally as soon as possible, typically within one business day.
+
+In the meantime, feel free to connect with me on LinkedIn or explore the project highlights on my website.
+
+Best regards,
+
+Manuel Alejandro Cortez Velásquez
+Alternate: ing.cortez.vlz@gmail.com
+Mobile & Whatsapp: +505 5731 3554
+LinkedIn: https://www.linkedin.com/in/alecortez91/
+    `.trim();
+
+    const htmlContent = `
+<p>Dear ${firstName},</p>
+<p>Thank you for reaching out and expressing interest in my consulting services. I have successfully received your message and appreciate you taking the time to connect.</p>
+<p>I am currently reviewing your inquiry and will get back to you personally as soon as possible, typically within one business day.</p>
+<p>In the meantime, feel free to connect with me on <a href="https://www.linkedin.com/in/alecortez91/">LinkedIn</a> or explore the project highlights on my website.</p>
+<p>Best regards,</p>
+<p>
+    <strong>Manuel Alejandro Cortez Velásquez</strong><br>
+    Alternate: ing.cortez.vlz@gmail.com<br>
+    Mobile & Whatsapp: +505 5731 3554<br>
+    LinkedIn: <a href="https://www.linkedin.com/in/alecortez91/">https://www.linkedin.com/in/alecortez91/</a>
+</p>
+    `.trim();
+
     return sendEmail({
         to: data.email,
         subject: 'Thank You for Your Interest in My Services',
-        text: `Dear ${data.name},\n\nThank you for reaching out. I have received your message and will get back to you shortly.\n\nBest regards,\nManuel Alejandro Cortez Velásquez`,
-        html: `<p>Dear ${data.name},</p><p>Thank you for reaching out. I have received your message and will get back to you shortly.</p><p>Best regards,<br>Manuel Alejandro Cortez Velásquez</p>`,
+        text: textContent,
+        html: htmlContent,
+        attachments: attachments,
     });
 }
 
