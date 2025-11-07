@@ -1,10 +1,61 @@
 'use client';
 
+import { useEffect, useRef } from 'react';
+import { useFormState, useFormStatus } from 'react-dom';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import { useToast } from '@/hooks/use-toast';
+import { handleNewsletterSubmission } from '@/app/actions/newsletter';
+import { LoaderCircle } from 'lucide-react';
+
+const initialState = {
+  success: false,
+  message: '',
+};
+
+function SubmitButton() {
+  const { pending } = useFormStatus();
+  return (
+    <Button type="submit" className="flex-none" disabled={pending}>
+      {pending ? (
+        <>
+          <LoaderCircle className="animate-spin mr-2" />
+          Subscribing...
+        </>
+      ) : (
+        'Subscribe'
+      )}
+    </Button>
+  );
+}
 
 export default function Newsletter() {
+  const formRef = useRef<HTMLFormElement>(null);
+  const [state, formAction] = useFormState(
+    handleNewsletterSubmission,
+    initialState
+  );
+  const { toast } = useToast();
+
+  useEffect(() => {
+    if (state.message) {
+      if (state.success) {
+        toast({
+          title: 'Success!',
+          description: state.message,
+        });
+        formRef.current?.reset();
+      } else {
+        toast({
+          variant: 'destructive',
+          title: 'An error occurred',
+          description: state.message,
+        });
+      }
+    }
+  }, [state, toast]);
+
   return (
     <section id="newsletter" className="py-8 sm:py-12 bg-card">
       <div className="container mx-auto px-4">
@@ -13,9 +64,14 @@ export default function Newsletter() {
             Subscribe to My Newsletter
           </h2>
           <p className="mx-auto mt-2 max-w-xl text-lg leading-8 text-muted-foreground">
-            Stay up to date with my latest articles, projects, and insights on technology and leadership.
+            Stay up to date with my latest articles, projects, and insights on
+            technology and leadership.
           </p>
-          <form className="mx-auto mt-6 flex max-w-md gap-x-4">
+          <form
+            ref={formRef}
+            action={formAction}
+            className="mx-auto mt-6 flex max-w-md gap-x-4"
+          >
             <Label htmlFor="email-address" className="sr-only">
               Email address
             </Label>
@@ -28,9 +84,7 @@ export default function Newsletter() {
               placeholder="Enter your email"
               className="min-w-0 flex-auto"
             />
-            <Button type="submit" className="flex-none">
-              Subscribe
-            </Button>
+            <SubmitButton />
           </form>
         </div>
       </div>
