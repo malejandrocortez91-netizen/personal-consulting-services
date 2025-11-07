@@ -28,22 +28,28 @@ export async function handleContactSubmission(
     const headersList = headers();
     const appCheckToken = headersList.get('x-firebase-appcheck');
 
-    if (!appCheckToken) {
-      return {
-        data: null,
-        error: 'Unauthorized: Missing App Check token.',
-        errors: null,
-      };
-    }
+    if (process.env.NODE_ENV === 'production') {
+      if (!appCheckToken) {
+        return {
+          data: null,
+          error: 'Unauthorized: Missing App Check token.',
+          errors: null,
+        };
+      }
 
-    try {
-      await adminAuth.verifyAppCheckToken(appCheckToken);
-    } catch (err) {
-      return {
-        data: null,
-        error: 'Unauthorized: Invalid App Check token.',
-        errors: null,
-      };
+      try {
+        if (adminAuth) {
+            await adminAuth.verifyAppCheckToken(appCheckToken);
+        } else {
+            throw new Error('Admin auth is not initialized');
+        }
+      } catch (err) {
+        return {
+          data: null,
+          error: 'Unauthorized: Invalid App Check token.',
+          errors: null,
+        };
+      }
     }
 
     // --- Form Validation ---
