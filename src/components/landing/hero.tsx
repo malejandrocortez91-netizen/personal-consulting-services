@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 export default function Hero() {
   return (
-    <section id="hero" className="relative bg-background py-10 sm:py-12">
+    <section id="hero" className="relative bg-background py-10 sm:py-12 scroll-mt-16">
       <div className="container mx-auto px-4 text-center">
         <div className="max-w-3xl mx-auto">
           <h1 className="font-headline text-4xl font-extrabold tracking-tight text-primary sm:text-5xl md:text-6xl">
