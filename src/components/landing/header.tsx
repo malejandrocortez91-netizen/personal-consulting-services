@@ -1,8 +1,9 @@
 'use client';
 
 import Link from 'next/link';
-import { MemoryStick } from 'lucide-react';
+import { MemoryStick, MessageSquare } from 'lucide-react';
 import { ThemeToggle } from '@/components/theme-toggle';
+import { Button } from '@/components/ui/button';
 
 export default function Header() {
   return (
@@ -17,6 +18,11 @@ export default function Header() {
           </Link>
         </div>
         <div className="flex items-center gap-2">
+          <Button variant="ghost" size="icon" asChild>
+            <Link href="#contact" aria-label="Contact">
+              <MessageSquare className="h-[1.2rem] w-[1.2rem]" />
+            </Link>
+          </Button>
           <ThemeToggle />
         </div>
       </div>
