@@ -124,7 +124,7 @@ async function getGoogleAuth() {
   const GOOGLE_SHEETS_PRIVATE_KEY = process.env.GOOGLE_SHEETS_PRIVATE_KEY;
   const SHEET_ID = process.env.SHEET_ID;
 
-  if (!GOOGLE_SHEETS_CLIENT_EMAIL || !GOOGLE_SHEET_PRIVATE_KEY || !SHEET_ID) {
+  if (!GOOGLE_SHEETS_CLIENT_EMAIL || !GOOGLE_SHEETS_PRIVATE_KEY || !SHEET_ID) {
     return null;
   }
 
@@ -155,17 +155,17 @@ export async function appendToSheet(
   const range = 'Sheet1!A:F';
   
   const now = new Date();
-  const timestamp = now.toLocaleString('en-US', {
-    timeZone: 'America/New_York',
-    year: 'numeric',
-    month: '2-digit',
-    day: '2-digit',
-    hour: '2-digit',
-    minute: '2-digit',
-    second: '2-digit',
-    hour12: true,
-  }).replace(/,/, '').replace(/(\d+)\/(\d+)\/(\d+)/, '$1-$2-$3');
+  const estDate = new Date(now.toLocaleString('en-US', { timeZone: 'America/New_York' }));
+  const pad = (num: number) => num.toString().padStart(2, '0');
+  
+  const month = pad(estDate.getMonth() + 1);
+  const day = pad(estDate.getDate());
+  const year = estDate.getFullYear();
+  const hours = pad(estDate.getHours());
+  const minutes = pad(estDate.getMinutes());
+  const seconds = pad(estDate.getSeconds());
 
+  const timestamp = `${month}-${day}-${year} ${hours}:${minutes}:${seconds}`;
 
   const values = [
     [
