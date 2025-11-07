@@ -1,7 +1,7 @@
 'use client';
 
-import { useActionState, useEffect } from 'react';
-import { useFormStatus } from 'react-dom';
+import { useEffect, useRef } from 'react';
+import { useFormState, useFormStatus } from 'react-dom';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -39,7 +39,8 @@ function SubmitButton() {
 }
 
 export default function Contact() {
-  const [state, formAction] = useActionState(handleContactSubmission, initialState);
+  const formRef = useRef<HTMLFormElement>(null);
+  const [state, formAction] = useFormState(handleContactSubmission, initialState);
   const { toast } = useToast();
 
   useEffect(() => {
@@ -49,6 +50,7 @@ export default function Contact() {
           title: 'Message Sent!',
           description: state.message,
         });
+        formRef.current?.reset();
       } else if (!state.errors) {
         toast({
           variant: 'destructive',
@@ -83,7 +85,7 @@ export default function Contact() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <form action={formAction} className="space-y-4">
+              <form ref={formRef} action={formAction} className="space-y-4">
                 <div className="space-y-2">
                   <Label htmlFor="name">Name</Label>
                   <Input id="name" name="name" placeholder="John Doe" />
