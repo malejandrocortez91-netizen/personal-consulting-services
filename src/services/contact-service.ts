@@ -66,24 +66,7 @@ export async function sendOwnerNotificationEmail(data: ContactData) {
 }
 
 export async function sendConfirmationEmail(data: ContactData) {
-    const path = (await import('path')).default;
-    const fs = (await import('fs')).promises;
-
     const firstName = data.name.split(' ')[0];
-    const resumeFileName = 'MANUEL_ALEJANDRO_CORTEZ_VELASQUEZ.pdf';
-    const resumePath = path.resolve(process.cwd(), 'public', resumeFileName);
-
-    let attachments: MailAttachment[] = [];
-    try {
-        await fs.access(resumePath);
-        attachments.push({
-            filename: resumeFileName,
-            path: resumePath,
-            contentType: 'application/pdf',
-        });
-    } catch (error) {
-        console.error(`Resume file not found at ${resumePath}. Email will be sent without attachment.`);
-    }
 
     const textContent = `
 Dear ${firstName},
@@ -121,7 +104,6 @@ LinkedIn: https://www.linkedin.com/in/alecortez91/
         subject: 'Thank You for Your Interest in My Services',
         text: textContent,
         html: htmlContent,
-        attachments: attachments,
     });
 }
 
@@ -131,7 +113,7 @@ async function getGoogleAuth() {
     const { google } = await import('googleapis');
 
     const GOOGLE_SHEETS_CLIENT_EMAIL = process.env.GOOGLE_SHEETS_CLIENT_EMAIL;
-    const GOOGLE_SHEETS_PRIVATE_KEY = process.env.GOOGLE_SHEETS_PRIVATE_KEY?.replace(/\\n/g, '\n');
+    const GOOGLE_SHEETS_PRIVATE_KEY = process.env.GOOGLE_SHEETS_PRIVATE_KEY;
     const SHEET_ID = process.env.SHEET_ID;
 
     if (!GOOGLE_SHEETS_CLIENT_EMAIL || !GOOGLE_SHEETS_PRIVATE_KEY || !SHEET_ID) {
@@ -141,7 +123,7 @@ async function getGoogleAuth() {
     const auth = new google.auth.GoogleAuth({
         credentials: {
             client_email: GOOGLE_SHEETS_CLIENT_EMAIL,
-            private_key: GOOGLE_SHEETS_PRIVATE_KEY,
+            private_key: GOOGLE_SHEETS_PRIVATE_KEY.replace(/\\n/g, '\n'),
         },
         scopes: ['https://www.googleapis.com/auth/spreadsheets'],
     });
