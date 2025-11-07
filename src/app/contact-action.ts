@@ -1,7 +1,6 @@
 
 'use server';
 
-import { headers } from 'next/headers';
 import { z } from 'zod';
 import { appendToSheet, updateSheetCell } from './actions';
 import { sendEmail } from '@/services/email-service';
@@ -23,35 +22,6 @@ export async function handleContactSubmission(
   formData: FormData
 ): Promise<ContactFormState> {
   try {
-    // --- App Check Verification ---
-    // Temporarily disabled to resolve client-side bundling issue with firebase-admin
-    /*
-    const headersList = headers();
-    const appCheckToken = headersList.get('x-firebase-appcheck');
-
-    if (process.env.NODE_ENV === 'production') {
-      if (!appCheckToken) {
-        return {
-          data: null,
-          error: 'Unauthorized: Missing App Check token.',
-          errors: null,
-        };
-      }
-      
-      try {
-        const { adminAuth } = await import('@/lib/firebase-admin');
-        await adminAuth.verifyAppCheckToken(appCheckToken);
-      } catch (err) {
-        console.error('App Check verification error:', err);
-        return {
-          data: null,
-          error: 'Unauthorized: Invalid App Check token.',
-          errors: null,
-        };
-      }
-    }
-    */
-
     // --- Form Validation ---
     const contactSchema = z.object({
       name: z.string().min(1, 'Name is required'),
