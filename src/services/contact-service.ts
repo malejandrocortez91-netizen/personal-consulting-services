@@ -131,19 +131,17 @@ async function getGoogleAuth() {
     const { google } = await import('googleapis');
 
     const GOOGLE_SHEETS_CLIENT_EMAIL = process.env.GOOGLE_SHEETS_CLIENT_EMAIL;
-    const GOOGLE_SHEETS_PRIVATE_KEY_BASE64 = process.env.GOOGLE_SHEETS_PRIVATE_KEY_BASE64;
+    const GOOGLE_SHEETS_PRIVATE_KEY = process.env.GOOGLE_SHEETS_PRIVATE_KEY?.replace(/\\n/g, '\n');
     const SHEET_ID = process.env.SHEET_ID;
 
-    if (!GOOGLE_SHEETS_CLIENT_EMAIL || !GOOGLE_SHEETS_PRIVATE_KEY_BASE64 || !SHEET_ID) {
+    if (!GOOGLE_SHEETS_CLIENT_EMAIL || !GOOGLE_SHEETS_PRIVATE_KEY || !SHEET_ID) {
         return null;
     }
-    
-    const privateKey = Buffer.from(GOOGLE_SHEETS_PRIVATE_KEY_BASE64, 'base64').toString('utf8');
 
     const auth = new google.auth.GoogleAuth({
         credentials: {
             client_email: GOOGLE_SHEETS_CLIENT_EMAIL,
-            private_key: privateKey,
+            private_key: GOOGLE_SHEETS_PRIVATE_KEY,
         },
         scopes: ['https://www.googleapis.com/auth/spreadsheets'],
     });
