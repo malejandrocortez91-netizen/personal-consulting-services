@@ -10,11 +10,11 @@ import { useToast } from '@/hooks/use-toast';
 import { LoaderCircle } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
-import { handleContactSubmission } from '@/app/contact-action';
+import { handleContactSubmission } from '@/app/actions/contact';
 
 type ContactFormState = {
-  data: { success: boolean } | null;
-  error: string | null;
+  success: boolean;
+  message: string;
   errors?: {
     name?: string[];
     email?: string[];
@@ -24,8 +24,8 @@ type ContactFormState = {
 };
 
 const initialState: ContactFormState = {
-  data: null,
-  error: null,
+  success: false,
+  message: '',
   errors: null,
 };
 
@@ -43,18 +43,19 @@ export default function Contact() {
   const { toast } = useToast();
 
   useEffect(() => {
-    if (state?.data?.success) {
-      toast({
-        title: 'Message Sent!',
-        description: 'Thank you for reaching out. I will get back to you shortly.',
-      });
-    }
-    if (state?.error && !state.errors) {
-      toast({
-        variant: 'destructive',
-        title: 'An error occurred',
-        description: state.error,
-      });
+    if (state.message) {
+      if (state.success) {
+        toast({
+          title: 'Message Sent!',
+          description: state.message,
+        });
+      } else if (!state.errors) {
+        toast({
+          variant: 'destructive',
+          title: 'An error occurred',
+          description: state.message,
+        });
+      }
     }
   }, [state, toast]);
 
