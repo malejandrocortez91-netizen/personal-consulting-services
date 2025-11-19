@@ -20,20 +20,26 @@ export default function CompanyLogos() {
           <p className="mt-4 text-lg leading-8 text-muted-foreground">
             I have had the privilege of driving growth and operational excellence at these great companies.
           </p>
-          <div className="mt-10 grid grid-cols-2 items-center justify-center gap-x-8 gap-y-10 sm:grid-cols-4">
-            {companies.map((company) => (
+        </div>
+        <div className="mt-16 relative w-full overflow-hidden">
+          <div className="flex animate-marquee-slow hover:[animation-play-state:paused]">
+            {[...companies, ...companies].map((company, index) => (
               <div
-                key={company.name}
-                className="col-span-1 flex justify-center"
+                key={`${company.name}-${index}`}
+                className="flex-shrink-0 w-1/4 flex justify-center items-center px-8"
               >
                 <img
-                    className="h-12 w-auto object-contain filter grayscale transition-all duration-300 hover:grayscale-0"
-                    src={company.logoUrl}
-                    alt={company.name}
+                  className="h-12 w-auto object-contain filter grayscale transition-all duration-300 hover:grayscale-0"
+                  src={company.logoUrl}
+                  alt={company.name}
                 />
               </div>
             ))}
           </div>
+          <div
+            className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-background pointer-events-none"
+            aria-hidden="true"
+          />
         </div>
       </div>
     </section>
