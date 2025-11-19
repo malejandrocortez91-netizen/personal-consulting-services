@@ -21,6 +21,7 @@ const companies = [
   { name: 'Firebase Studio', logoUrl: '/logos/firebase-studio-logo.svg' },
   { name: 'Meraki', logoUrl: '/logos/meraki-logo.svg' },
   { name: 'Cisco', logoUrl: '/logos/cisco-logo.svg' },
+  { name: 'ClickUp', logoUrl: '/logos/clickup-logo.svg' },
 ];
 
 export default function CompanyLogos() {
