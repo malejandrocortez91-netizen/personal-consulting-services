@@ -18,6 +18,9 @@ const companies = [
   { name: 'Apple', logoUrl: '/logos/apple-logo.svg' },
   { name: 'Tiktok', logoUrl: '/logos/tiktok-logo.svg' },
   { name: 'Meta', logoUrl: '/logos/meta-logo.svg' },
+  { name: 'Firebase Studio', logoUrl: '/logos/firebase-studio-logo.svg' },
+  { name: 'Meraki', logoUrl: '/logos/meraki-logo.svg' },
+  { name: 'Cisco', logoUrl: '/logos/cisco-logo.svg' },
 ];
 
 export default function CompanyLogos() {
@@ -29,7 +32,7 @@ export default function CompanyLogos() {
             A Proven Track Record With Industry Leaders
           </h2>
           <p className="mt-4 text-lg leading-8 text-muted-foreground">
-            I have had the privilege of driving growth and operational excellence at these great companies.
+            I've had the opportunity to learn best practices from multiple industries and partners, driving growth and operational excellence.
           </p>
         </div>
         <div className="mt-16 relative w-full overflow-hidden">
