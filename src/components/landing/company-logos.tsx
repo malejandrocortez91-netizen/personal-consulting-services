@@ -1,6 +1,8 @@
 'use client';
 
-import Image from 'next/image';
+import React from 'react';
+import useEmblaCarousel from 'embla-carousel-react';
+import Autoplay from 'embla-carousel-autoplay';
 
 const companies = [
   { name: 'SAGO', logoUrl: '/logos/sago-logo.svg' },
@@ -25,6 +27,10 @@ const companies = [
 ];
 
 export default function CompanyLogos() {
+  const [emblaRef] = useEmblaCarousel({ loop: true, align: 'start', dragFree: true }, [
+    Autoplay({ playOnInit: true, delay: 1500, stopOnInteraction: false, stopOnMouseEnter: true }),
+  ]);
+
   return (
     <section id="companies" className="py-12 sm:py-16 bg-background">
       <div className="container mx-auto px-4">
@@ -36,12 +42,12 @@ export default function CompanyLogos() {
             I've had the opportunity to learn best practices for multiple industries, industry leaders and partners, driving growth and operational excellence.
           </p>
         </div>
-        <div className="mt-16 relative w-full overflow-hidden">
-          <div className="flex animate-marquee-slow hover:[animation-play-state:paused]">
-            {[...companies, ...companies].map((company, index) => (
+        <div className="mt-16 relative w-full overflow-hidden" ref={emblaRef}>
+          <div className="flex">
+            {companies.map((company) => (
               <div
-                key={`${company.name}-${index}`}
-                className="flex-shrink-0 w-1/5 flex justify-center items-center px-8"
+                key={company.name}
+                className="relative flex-[0_0_20%] min-w-0 flex justify-center items-center px-8"
               >
                 <img
                   className="h-12 w-auto object-contain filter grayscale transition-all duration-300 hover:grayscale-0"
@@ -51,7 +57,7 @@ export default function CompanyLogos() {
               </div>
             ))}
           </div>
-          <div
+           <div
             className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-background pointer-events-none"
             aria-hidden="true"
           />
