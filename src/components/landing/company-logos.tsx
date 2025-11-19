@@ -33,7 +33,7 @@ export default function CompanyLogos() {
             A Proven Track Record With Industry Leaders
           </h2>
           <p className="mt-4 text-lg leading-8 text-muted-foreground">
-            I've had the opportunity to learn best practices from multiple industries and partners, driving growth and operational excellence.
+            I've had the opportunity to learn best practices for multiple industries, industry leaders and partners, driving growth and operational excellence.
           </p>
         </div>
         <div className="mt-16 relative w-full overflow-hidden">
