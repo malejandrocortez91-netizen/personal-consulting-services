@@ -2,13 +2,11 @@
 
 import { CheckCircle } from 'lucide-react';
 import { skills } from '@/lib/data';
-import { Separator } from '@/components/ui/separator';
 
 export default function Skills() {
   return (
     <section id="skills" className="py-12 sm:py-16 bg-card">
       <div className="container mx-auto px-4">
-        <Separator className="mb-12 bg-border/50" />
         <div className="mx-auto max-w-6xl">
           <div>
             <div className="text-center">

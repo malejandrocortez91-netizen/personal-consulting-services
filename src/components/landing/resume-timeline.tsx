@@ -8,13 +8,11 @@ import {
 } from '@/components/ui/accordion';
 import { education, experience } from '@/lib/data';
 import { Building, GraduationCap } from 'lucide-react';
-import { Separator } from '@/components/ui/separator';
 
 export default function ResumeTimeline() {
   return (
-    <section id="resume" className="py-12 sm:py-16 bg-background">
+    <section id="resume" className="py-12 sm:py-16 bg-card">
       <div className="container mx-auto px-4">
-        <Separator className="mb-12 bg-border/50" />
         <div className="mx-auto max-w-2xl lg:text-center">
           <h2 className="font-headline text-3xl font-bold tracking-tight text-primary sm:text-4xl">
             Professional Journey
