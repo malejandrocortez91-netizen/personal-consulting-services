@@ -34,6 +34,7 @@ export default function ProjectHighlights() {
                         src={image.imageUrl}
                         alt={image.description}
                         fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         className="rounded-lg object-cover"
                         data-ai-hint={image.imageHint}
                       />
