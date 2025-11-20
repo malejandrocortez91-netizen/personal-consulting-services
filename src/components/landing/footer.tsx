@@ -1,15 +1,8 @@
-'use client';
-
 import Link from 'next/link';
 import { Hexagon } from 'lucide-react';
-import { useEffect, useState } from 'react';
 
 export default function Footer() {
-  const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
-
-  useEffect(() => {
-    setCurrentYear(new Date().getFullYear());
-  }, []);
+  const currentYear = new Date().getFullYear();
 
   return (
     <footer className="bg-card border-t">
