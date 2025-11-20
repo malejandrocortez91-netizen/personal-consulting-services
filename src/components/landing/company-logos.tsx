@@ -54,8 +54,8 @@ export default function CompanyLogos() {
                   width={158}
                   height={48}
                   className={cn(
-                    'object-contain max-h-12 w-auto filter grayscale transition-all duration-300 hover:grayscale-0',
-                    company.name === 'Nielsen' && 'max-h-16 w-full'
+                    'object-contain w-auto max-h-12 filter grayscale transition-all duration-300 hover:grayscale-0',
+                    company.name === 'Nielsen' && 'max-h-16'
                   )}
                 />
               </div>
