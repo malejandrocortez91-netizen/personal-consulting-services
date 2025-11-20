@@ -1,153 +1,69 @@
-# Hostinger Deployment & Domain Configuration Guide
+# Domain & Deployment Guide
 
-This guide provides two main strategies for connecting your custom domain (e.g., `alexcortezv.com`) from Hostinger to your Firebase-hosted application.
-
-*   **Option 1 (Recommended):** Connect Your Custom Domain Directly to Firebase Hosting.
-*   **Option 2:** Deploy the application's exported static files to Hostinger's servers.
+This guide provides the recommended strategy for connecting your custom domain (e.g., from Hostinger) to your Firebase-hosted application.
 
 ---
 
-## Option 1: Connect Custom Domain to Firebase (Recommended)
+## Connecting a Custom Domain to Firebase Hosting (Recommended)
 
-This is the most robust and professional solution. It keeps your application running on Firebase's high-performance infrastructure while making it accessible via your custom domain. Your users will go to `alexcortezv.com` and see your Firebase-hosted app, with the URL remaining `alexcortezv.com` in the address bar.
+This is the most robust and professional solution. It keeps your application running on Firebase's high-performance, serverless infrastructure while making it accessible via your custom domain. Your users will go to `alexcortezv.com`, and the site will be served securely by Firebase.
+
+### Why This is the Right Approach for This App
+
+This application is a **Next.js app**, not a simple static website. It relies on server-side logic (Node.js runtime) to execute **Server Actions** for form submissions. Deploying it as "static files" to traditional hosting like Hostinger **will break all form functionality.**
+
+By pointing your domain to Firebase, you keep the entire application intact and fully functional.
 
 ### Step-by-Step Guide
 
-**Step 1: Get the Next.js Exported App**
-
-First, you need to generate a static, standalone version of your Next.js application. This is because standard hosting (like Hostinger's shared plans) serves static files (HTML, CSS, JS) and does not run a Node.js server, which a typical Next.js app requires.
-
-1.  **Modify `next.config.mjs`:**
-    Ensure your `next.config.mjs` is configured to output a static export. Add the `output: 'export'` setting:
-
-    ```javascript
-    /** @type {import('next').NextConfig} */
-    const nextConfig = {
-      output: 'export',
-      // ... other configurations
-    };
-
-    export default nextConfig;
-    ```
-
-2.  **Update `package.json` build script:**
-    Make sure your `build` script in `package.json` runs `next build`. It should look like this:
-
-    ```json
-    "scripts": {
-      "dev": "next dev",
-      "build": "next build",
-      "start": "next start",
-      "lint": "next lint"
-    }
-    ```
-
-3.  **Run the Build:**
-    Execute the build command in your terminal:
-
-    ```bash
-    npm run build
-    ```
-
-    This will create an `out` folder in your project directory. This `out` folder contains the fully static version of your site.
-
-**Step 2: Add Custom Domain in Firebase Console**
+**Step 1: Add Custom Domain in Firebase Console**
 
 1.  Go to the [Firebase Console](https://console.firebase.google.com/).
 2.  Select your project.
 3.  In the left-hand menu, go to **Build > Hosting**.
-4.  Click on the **"Add custom domain"** button.
+4.  Click the **"Add custom domain"** button.
 5.  Enter the domain you want to connect (e.g., `alexcortezv.com`).
-6.  Firebase will present you with a **TXT record** that you must add to your domain's DNS settings to verify that you own the domain.
+6.  Firebase will present you with a **TXT record**. This is used to verify that you own the domain. Copy this value.
 
-**Step 3: Update DNS Records in Hostinger**
+**Step 2: Update DNS Records in Hostinger (or your Domain Registrar)**
 
-1.  Log in to your Hostinger account.
-2.  Navigate to the **"Domains"** section and find your domain.
-3.  Find the **"DNS / Nameservers"** management area.
-4.  **Add the Verification Record:**
-    *   **Type:** TXT
-    *   **Name/Host:** `@` (or your domain name, depending on Hostinger's interface)
+1.  Log in to your Hostinger account (or wherever your domain is managed).
+2.  Navigate to the **"DNS / Nameservers"** management area for your domain.
+3.  **Add the Verification Record:**
+    *   **Type:** `TXT`
+    *   **Name/Host:** `@` (or your domain name, depending on the interface)
     *   **Value/Content:** Paste the value provided by Firebase.
     *   **TTL:** Leave as default.
 
-5.  After adding the record, wait a few minutes and then click the **"Verify"** button in the Firebase console. DNS changes can take some time to propagate (from minutes to hours).
+4.  Wait a few minutes for the record to be saved, then return to the Firebase console and click the **"Verify"** button. DNS changes can sometimes take up to an hour to propagate, so be patient.
 
-6.  **Add the Hosting Records:**
-    Once verified, Firebase will provide you with **A records**. These are IP addresses that point to Firebase's global hosting servers.
+5.  **Add the Hosting Records:**
+    Once verified, Firebase will provide you with one or more **A records**. These are IP addresses that point to Firebase's global hosting servers.
     *   Go back to your Hostinger DNS editor.
-    *   Add the **A records** exactly as Firebase specifies. There will usually be two of them for redundancy.
-        *   **Type:** A
+    *   **Delete any existing `A` records** for your root domain (`@`) to avoid conflicts.
+    *   Add the new **A records** exactly as Firebase specifies. There will usually be two of them for redundancy.
+        *   **Type:** `A`
         *   **Name/Host:** `@`
         *   **Points to/Value:** The first IP address from Firebase.
         *   **TTL:** Default.
 
-        *   **Type:** A
+        *   **Type:** `A`
         *   **Name/Host:** `@`
         *   **Points to/Value:** The second IP address from Firebase.
         *   **TTL:** Default.
 
-**Step 4: Finalization**
+**Step 3: Finalization**
 
-*   After adding the A records, it will take some time for these changes to propagate across the internet.
-*   Once complete, Firebase will automatically provision an SSL certificate for your domain, so your site will be served securely over HTTPS (`https://alexcortezv.com`).
+*   After adding the A records, it will take some time (from minutes to several hours) for these changes to propagate across the internet.
+*   Once complete, Firebase will automatically provision a free SSL certificate for your domain. The status in the Firebase Hosting dashboard will change to "Connected."
+*   Your site will now be live and secure at `https://yourdomain.com`.
 
 ---
 
-## Option 2: Deploy Static Build to Hostinger (with Critical Limitations)
+## Option 2: Static Export (Not Recommended for This App)
 
-This option involves taking the static `out` folder generated by the `next build` command and uploading its contents to your Hostinger web hosting file manager. This is a "traditional" hosting approach.
+For simpler websites that do not have server-side logic (like form submissions), you can perform a static export. This command pre-builds every page into plain HTML, CSS, and JS files that can be uploaded to any static web host.
 
-However, it is crucial to understand what "static" means in this context and the functionality you will lose. **For this specific application, this option will break critical features.**
+To do this, you would modify `next.config.mjs` to include `output: 'export'` and run `npm run build`. This generates an `out` folder.
 
-### In-Depth Explanation: How a Static Export Works and Its Impact
-
-A standard Next.js application runs as a live Node.js server process. This server can render pages on-demand, run backend code, and process API requests. A **static export** fundamentally changes this.
-
-The `next build` command with `output: 'export'` pre-builds every page of your application into plain HTML, CSS, and JavaScript files. It creates a folder (named `out`) that contains a version of your site that can be served by a simple web server (like Hostinger's) without any active server-side process.
-
-**This means the entire server-side runtime of your Next.js application is removed.**
-
-### Functional Impact: What Breaks and What Works
-
-#### What Will **BREAK** with a Static Deployment on Hostinger:
-
-*   **Contact & Newsletter Forms:** **This is the most critical failure.** The forms in this application use **Next.js Server Actions** (`contact.ts`, `newsletter.ts`). These actions are designed to run securely on the server. In a static deployment, there is no server to execute this code. When a user submits a form, the request will fail, and **no data will be sent to your Google Sheet or Firestore.** The forms will become non-functional.
-
-*   **All Server-Side Logic:** Any and all code that is designed to run on the server will fail. This includes API routes, dynamic server-side rendering of pages, and any other backend processes you might add in the future.
-
-*   **Backend Security:** The integration with Google Sheets relies on server-side logic to protect your secret credentials (the service account key). In a static-only site, there is no secure place to run this logic.
-
-#### What Will **Still Work**:
-
-*   **Visuals and Styling:** The website will look identical. All Tailwind CSS is pre-compiled into static CSS files and will be served correctly.
-
-*   **Client-Side Interactivity:** All user interactions that happen exclusively in the browser will continue to work. This includes UI animations, theme toggling, and any other JavaScript that manipulates the page after it has loaded.
-
-*   **Initial Page Load:** The pages will load very quickly because they are just static HTML files being served directly.
-
-### Conclusion for This Project
-
-While deploying a static site to a service like Hostinger is a valid strategy for simple, informational websites (like a basic online resume or brochure), it is **not a suitable option for this application** because its core functionality (the contact and newsletter forms) depends on server-side code.
-
-**Attempting to deploy this project as a static site on Hostinger will result in a visually correct but non-functional website.** Therefore, **Option 1 (connecting your domain to Firebase Hosting) is the only recommended path** to ensure all features work as intended.
-
-### Step-by-Step Guide (for informational purposes)
-
-If you were to proceed with a static deployment for a simpler site without backend needs, these are the steps:
-
-1.  **Generate Static Build:** Follow **Step 1** from Option 1 to create the `out` folder.
-
-2.  **Prepare Files for Upload:** Compress the *contents* of the `out` folder into a `.zip` file.
-
-3.  **Upload to Hostinger:**
-    *   Log in to your Hostinger hPanel.
-    *   Navigate to **Files > File Manager**.
-    *   Go to the root directory for your website (usually `public_html`).
-    *   Use the **"Upload"** tool to upload the `.zip` file you created.
-
-4.  **Extract Files:**
-    *   Right-click on the uploaded `.zip` file in the File Manager and select **"Extract"**.
-    *   Ensure the files are extracted into the `public_html` directory.
-
-Your site would now be live, but as explained, with broken form functionality.
+**This method will break the contact and newsletter forms for this specific project.** It is only suitable for purely informational sites with no backend functionality.

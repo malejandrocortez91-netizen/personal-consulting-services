@@ -1,6 +1,6 @@
 # Application Documentation
 
-**Live Application URL:** [https://studio--studio-847528267-75732.us-central1.hosted.app/](https://studio--studio-847528267-75732.us-central1.hosted.app/)
+**Live Application URL:** [https://alexcortezv.com/](https://alexcortezv.com/) (or the specific Firebase Hosting URL)
 
 ---
 
@@ -10,103 +10,95 @@ This project is a modern, performant, and scalable web application built on a ca
 
 ### Core Technologies
 
-*   **Next.js (React Framework):** Next.js was chosen as the foundational framework for its powerful features that offer significant advantages over traditional client-side React applications.
-    *   **Hybrid Rendering:** It provides both **Server-Side Rendering (SSR)** and **Static Site Generation (SSG)**. This means the app can deliver lightning-fast initial page loads (great for SEO and user experience) and still have the dynamic capabilities of a full React application.
-    *   **File-System Based Routing:** Simplifies navigation and page creation. Every `.tsx` file in the `src/app` directory automatically becomes a route, making the structure intuitive.
-    *   **API Routes:** Allows for the creation of backend API endpoints within the same codebase, simplifying the architecture for tasks like handling form submissions.
+*   **Next.js (App Router):** Chosen as the foundational framework for its powerful features.
+    *   **Hybrid Rendering:** Provides both Server-Side Rendering (SSR) and Static Site Generation (SSG) for fast initial page loads (great for SEO) and dynamic capabilities.
+    *   **File-System Based Routing:** Simplifies navigation. Every `page.tsx` file in the `src/app` directory automatically becomes a route.
+    *   **Server Actions:** Used for secure, server-side handling of form submissions without needing to create separate API endpoints.
 
-*   **TypeScript:** TypeScript was chosen over plain JavaScript to ensure code quality and long-term maintainability.
-    *   **Type Safety:** By adding static types, we can catch a vast category of bugs during development rather than at runtime. This was crucial in fixing the initial compilation issues.
-    *   **Improved Developer Experience:** Provides excellent autocompletion, code navigation, and refactoring capabilities within the IDE, which speeds up the development process.
+*   **TypeScript:** Ensures code quality and long-term maintainability.
+    *   **Type Safety:** Catches bugs during development rather than at runtime.
+    *   **Improved Developer Experience:** Provides excellent autocompletion, code navigation, and refactoring capabilities.
 
-*   **Tailwind CSS:** This utility-first CSS framework was selected to enable rapid UI development and maintain a consistent design system.
-    *   **Customization without CSS:** It allows for building completely custom designs directly in the markup without writing a single line of custom CSS. This avoids the bloat and complexity of traditional CSS files.
-    *   **Component-Based:** It pairs perfectly with the component-based architecture of React, allowing for the creation of encapsulated and reusable UI elements.
+*   **Tailwind CSS & shadcn/ui:** This combination enables rapid UI development and a consistent, professional design system.
+    *   **Customization:** Allows for building completely custom designs directly in the markup.
+    *   **Component-Based:** `shadcn/ui` provides a set of accessible, reusable, and beautifully designed components.
 
-*   **Firebase (Backend-as-a-Service):** Firebase provides the entire backend infrastructure, which dramatically accelerated development and simplified deployment.
-    *   **Serverless Architecture:** By using services like Firestore, Firebase Authentication, and App Hosting, we eliminate the need to manage servers, databases, or scaling infrastructure.
-    *   **Integrated Ecosystem:** The seamless integration between App Hosting, Authentication (for user management), Firestore (a NoSQL database), and Storage (for file uploads) creates a powerful, unified backend controlled from a single console.
+*   **Firebase (Backend-as-a-Service):** Provides the backend infrastructure.
+    *   **Serverless Architecture:** Using services like App Hosting eliminates the need to manage servers or scaling infrastructure.
+    *   **Security:** Firebase App Check is integrated to ensure that requests to the backend are coming from the legitimate app, protecting against abuse.
 
----
-
-## 2. Development Journey & Troubleshooting
-
-The development process involved overcoming several technical challenges. Here is a summary of the key issues and their resolutions:
-
-### Issue 1: `firebase-admin` Type Resolution Error
-
-*   **Problem:** The initial build failed with compilation errors indicating that TypeScript could not find the type definitions for the `firebase-admin` package. This prevented the application from compiling and building correctly.
-*   **Investigation:** I analyzed the `tsconfig.json` file. The `moduleResolution` was set to `"bundler"`, which is a newer, stricter strategy. While modern, it can sometimes be less compatible with older packages or certain project setups.
-*   **Resolution:** I modified the `tsconfig.json` file, changing the `moduleResolution` strategy to `"node"`. This is a more traditional and widely compatible resolution strategy that correctly mimics the Node.js module lookup algorithm, allowing TypeScript to successfully find the `firebase-admin` type definitions. The project compiled successfully after this change.
-
-### Issue 2: Preview Server Fails to Start (`EADDRINUSE`)
-
-*   **Problem:** When attempting to run the development server for a preview, the process would crash with the error: `Error: listen EADDRINUSE: address already in use 0.0.0.0:9002`.
-*   **Investigation:** This error code (`EADDRINUSE`) is unambiguous: it means another process on the system was already "listening" on port 9002, preventing the new development server from starting. I attempted to use the command `lsof -i :9002` to identify the conflicting process.
-*   **Resolution:** The solution to this common development issue is to either find and terminate the existing process that is occupying the port or configure the application to run on a different port for the development environment.
+*   **Google Sheets API & Nodemailer:** These are used for backend processing of form submissions.
+    *   **Google Sheets:** Acts as a simple, no-code database for storing contact and newsletter submissions.
+    *   **Nodemailer:** Handles sending transactional emails (notifications to the owner, confirmations to the user) through a designated Gmail account.
 
 ---
 
-## 3. Component & Integration Logic
+## 2. API Integration: Forms to Google Sheets & Email
 
-*   **Component Structure:** The application's UI is broken down into reusable components located in `src/components`. This includes general UI elements (`/ui`) like buttons and cards, and larger, more specific components (`/landing`) that structure the main page.
-*   **Firebase Integration:**
-    *   The core Firebase connection logic is centralized in `src/lib/firebase.ts` (for client-side) and `src/lib/firebase-admin.ts` (for server-side actions).
-    *   **App Check (`app-check-provider.tsx`):** This crucial security component wraps the application to ensure that requests to the Firebase backend are coming from the legitimate app, protecting against abuse.
-    *   **Server Actions (`src/app/actions`):** For secure backend operations like processing the contact form, the application uses Next.js Server Actions, which execute on the server and interact directly with the `firebase-admin` SDK.
-
----
-
-## 4. API Integration: Forms to Google Sheets
-
-To provide a simple and effective way to manage contact form submissions and newsletter sign-ups, we integrated the application directly with Google Sheets. This allows for easy viewing and management of submitted data without needing to build a custom admin panel.
+The application provides a robust and user-friendly way to manage contact form submissions and newsletter sign-ups by integrating directly with Google Sheets and an email service.
 
 ### Final Data Workflow
 
-1.  **User Interaction:** A user fills out the Contact or Newsletter form in their browser.
-2.  **Server Action Trigger:** Submitting the form calls a specific Next.js Server Action (`contact.ts` or `newsletter.ts`). This happens securely on the server, not the client.
-3.  **Data Validation:** The Server Action performs validation on the incoming data to ensure it's in the correct format.
-4.  **Service Layer:** The Server Action invokes a dedicated service (`src/services/contact-service.ts`) responsible for handling the communication with external APIs.
-5.  **Google Sheets Authentication:** The service uses a Google Service Account's credentials (stored securely in environment variables) to authenticate with the Google Sheets API.
-6.  **Append Row:** Upon successful authentication, the service sends a request to the Google Sheets API to append a new row with the form data to the designated sheet.
-7.  **Client Feedback:** The Server Action returns a success or error message to the front-end component, which then displays a toast notification (`"Message sent successfully!"` or an error) to the user.
+1.  **User Interaction:** A user fills out the Contact or Newsletter form.
+2.  **Server Action Trigger:** Submitting the form calls a specific Next.js Server Action (`contact.ts` or `newsletter.ts`). This code executes securely on the server.
+3.  **Data Validation:** The Server Action validates the incoming data.
+4.  **Service Layer (`contact-service.ts`):** The Server Action invokes a dedicated service responsible for handling communication with external APIs.
+5.  **Concurrent Processing:** The service uses `Promise.allSettled` to perform three tasks simultaneously for maximum efficiency:
+    *   **Google Sheets Write:** It authenticates with the Google Sheets API using a Service Account and appends the form data as a new row.
+    *   **Owner Notification:** It sends an email notification to the site owner with the new lead's details.
+    *   **User Confirmation:** It sends a confirmation email to the user who submitted the form.
+6.  **Status Update:** After the initial write, the service makes a second, non-blocking call to update a "Status" cell in the Google Sheet to reflect whether the email notifications were sent successfully.
+7.  **Client Feedback:** The Server Action returns a success or error message to the front-end, which then displays a toast notification to the user.
 
-### Step-by-Step Integration Guide
+### Step-by-Step Integration Setup
 
-1.  **Google Cloud Project Setup:**
-    *   A Google Cloud project was created.
-    *   Inside this project, the **Google Sheets API** was enabled from the API library.
+1.  **Google Cloud Project:**
+    *   Create a Google Cloud project.
+    *   Enable the **Google Sheets API** in the API Library.
 
 2.  **Service Account Creation:**
-    *   In the Google Cloud IAM & Admin section, a **Service Account** was created. This acts as a non-human user that can access the API.
-    *   A JSON key file for this service account was generated and downloaded. The contents of this file (specifically `client_email` and `private_key`) are essential for authentication.
+    *   In IAM & Admin, create a **Service Account**.
+    *   Generate and download a JSON key file. The `client_email` and `private_key` from this file are required.
 
-3.  **Secure Credential Storage:**
-    *   The `client_email` and `private_key` from the JSON key file were stored as environment variables in the project (e.g., in a `.env.local` file and then configured in the hosting environment).
+3.  **Google Sheet Configuration:**
+    *   Create a new Google Sheet to store submissions.
+    *   **Share** the sheet with the service account's `client_email`, giving it **"Editor"** permissions. This is critical.
 
-4.  **Google Sheet Configuration:**
-    *   A new Google Sheet was created to store the submissions.
-    *   The sheet was **shared** with the service account's `client_email`, giving it **"Editor"** permissions. This is a critical step that allows the service account to write data to the sheet.
+4.  **Email Service Setup (Gmail):**
+    *   Use a Gmail account for sending emails.
+    *   Generate an **App Password** for this account (required if 2-Factor Authentication is enabled). Standard passwords will not work.
 
-5.  **Code Implementation:**
-    *   A library like `google-spreadsheet` or a direct fetch to the Google Sheets API endpoint is used within the `contact-service.ts` file to handle the authentication and row-append logic.
+5.  **Secure Credential Storage:**
+    *   Create a `.env.local` file in the project root.
+    *   Add the following environment variables:
+        ```env
+        # Google Sheets API
+        GOOGLE_SHEETS_CLIENT_EMAIL=your-service-account-email@...
+        GOOGLE_SHEETS_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----\n"
+        SHEET_ID=your_google_sheet_id
 
-### Key Files & Components to Modify
+        # Nodemailer (Gmail)
+        EMAIL_USER=your-gmail-address@gmail.com
+        EMAIL_PASS=your_16_character_app_password
+        EMAIL_SENDER_NAME="Your Name"
 
-*   **`src/components/landing/contact.tsx`:** The front-end component for the contact form. It triggers the server action on submit.
-*   **`src/components/landing/newsletter.tsx`:** The front-end component for the newsletter signup form.
-*   **`src/app/actions/contact.ts`:** The Next.js Server Action that receives and validates data from the contact form.
-*   **`src/app/actions/newsletter.ts`:** The Server Action for the newsletter signup.
-*   **`src/services/contact-service.ts`:** This is the core of the integration. It contains the logic to connect to Google Sheets using the stored credentials and append the data.
-*   **`.env.local` (and hosting environment variables):** This is where the Google Service Account credentials and the ID of the target Google Sheet must be stored.
+        # Firebase (Client-side)
+        NEXT_PUBLIC_FIREBASE_API_KEY=...
+        NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=...
+        NEXT_PUBLIC_FIREBASE_PROJECT_ID=...
+        NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=...
+        NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=...
+        NEXT_PUBLIC_FIREBASE_APP_ID=...
+
+        # Recaptcha for App Check
+        NEXT_PUBLIC_RECAPTCHA_V3_SITE_KEY=...
+        ```
 
 ### Common Mistakes & Fallback Strategy
 
 *   **Common Mistakes:**
-    *   **Sheet Not Shared:** Forgetting to share the Google Sheet with the service account's email address with "Editor" permissions. The API will return a permissions error.
-    *   **Incorrect Credentials:** Environment variables for the private key or client email are malformed or missing.
-    *   **Google Sheets API Not Enabled:** If the API is not enabled in the Google Cloud project, all requests will fail.
-    *   **Incorrect Sheet/Tab ID:** Pointing to the wrong spreadsheet or worksheet within the sheet.
-
-*   **Fallback Strategy: Firestore**
-    *   The most reliable fallback is to use **Firestore**. The `contact-service.ts` can be wrapped in a `try...catch` block. If the attempt to write to Google Sheets fails (the `catch` block is executed), the service can then write the form data to a "submissions" collection in Firestore. This ensures that no data is lost due to a temporary Google API outage or configuration issue. This provides a robust, resilient system for data capture.
+    *   Forgetting to share the Google Sheet with the service account's email.
+    *   Incorrectly formatting the multi-line `PRIVATE_KEY` in the `.env` file (it must be enclosed in quotes).
+    *   Using a regular Gmail password instead of an App Password.
+    *   Not enabling the Google Sheets API in the GCP project.
+*   **Fallback Strategy:** The current implementation uses `Promise.allSettled`, which is inherently resilient. If an email fails to send, the Google Sheet entry is still recorded, and the sheet is updated with the error status. For even greater resilience, a `try...catch` block could be added to write to a **Firestore** collection if the Google Sheets API call fails, ensuring no data is ever lost.
