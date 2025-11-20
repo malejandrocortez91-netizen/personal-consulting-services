@@ -5,25 +5,11 @@ import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 
 const companies = [
-  { name: 'SAGO', logoUrl: '/logos/sago-logo.svg' },
-  { name: 'IBEX', logoUrl: '/logos/ibex-logo.svg' },
-  { name: 'The Call Center Doctors', logoUrl: '/logos/cc-doctors-logo.svg' },
   { name: 'Foundever', logoUrl: '/logos/foundever-logo.svg' },
   { name: 'Toys R Us', logoUrl: '/logos/toys-r-us-logo.svg' },
   { name: 'Walmart', logoUrl: '/logos/walmart-logo.svg' },
   { name: 'Amazon', logoUrl: '/logos/amazon-logo.svg' },
   { name: 'Cricket Telecom', logoUrl: '/logos/cricket-telecom-logo.svg' },
-  { name: 'Sprint', logoUrl: '/logos/sprint-logo.svg' },
-  { name: 'AT&T', logoUrl: '/logos/att-logo.svg' },
-  { name: 'Nielsen Korea', logoUrl: '/logos/nielsen-korea-logo.svg' },
-  { name: 'Samsung', logoUrl: '/logos/samsung-logo.svg' },
-  { name: 'Apple', logoUrl: '/logos/apple-logo.svg' },
-  { name: 'Tiktok', logoUrl: '/logos/tiktok-logo.svg' },
-  { name: 'Meta', logoUrl: '/logos/meta-logo.svg' },
-  { name: 'Firebase Studio', logoUrl: '/logos/firebase-studio-logo.svg' },
-  { name: 'Meraki', logoUrl: '/logos/meraki-logo.svg' },
-  { name: 'Cisco', logoUrl: '/logos/cisco-logo.svg' },
-  { name: 'ClickUp', logoUrl: '/logos/clickup-logo.svg' },
 ];
 
 export default function CompanyLogos() {
@@ -44,9 +30,9 @@ export default function CompanyLogos() {
         </div>
         <div className="mt-16 relative w-full overflow-hidden" ref={emblaRef}>
           <div className="flex">
-            {companies.map((company) => (
+            {[...companies, ...companies].map((company, index) => (
               <div
-                key={company.name}
+                key={`${company.name}-${index}`}
                 className="relative flex-[0_0_20%] min-w-0 flex justify-center items-center px-8"
               >
                 <img
