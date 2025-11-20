@@ -1,4 +1,3 @@
-
 'use client';
 
 import React from 'react';
@@ -29,7 +28,7 @@ export default function CompanyLogos() {
             I've had the opportunity to learn best practices for multiple industries, industry leaders and partners, driving growth and operational excellence.
           </p>
         </div>
-        <div className="mt-16 relative w-full overflow-hidden" ref={emblaRef}>
+        <div className="mt-16 overflow-hidden" ref={emblaRef}>
           <div className="flex">
             {[...companies, ...companies].map((company, index) => (
               <div
@@ -46,10 +45,6 @@ export default function CompanyLogos() {
               </div>
             ))}
           </div>
-           <div
-            className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-background pointer-events-none"
-            aria-hidden="true"
-          />
         </div>
       </div>
     </section>
