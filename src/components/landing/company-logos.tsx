@@ -48,7 +48,7 @@ export default function CompanyLogos() {
           <div className="embla__container flex items-center">
             {[...companies, ...companies].map((company, index) => (
               <div
-                className="embla__slide flex-[0_0_auto] min-w-0 px-5"
+                className="embla__slide flex-[0_0_auto] min-w-0 px-6"
                 key={`${company.name}-${index}`}
               >
                 <Image
