@@ -1,8 +1,6 @@
 'use client';
 
 import React from 'react';
-import useEmblaCarousel from 'embla-carousel-react';
-import Autoplay from 'embla-carousel-autoplay';
 import Image from 'next/image';
 
 const companies = [
@@ -13,11 +11,10 @@ const companies = [
   { name: 'Samsung', logoUrl: '/logos/Samsung_Orig_Wordmark_BLUE_RGB.jpg' },
 ];
 
-export default function CompanyLogos() {
-  const [emblaRef] = useEmblaCarousel({ loop: true }, [
-    Autoplay({ delay: 1000, stopOnInteraction: false }),
-  ]);
+// Duplicate the logos for a seamless loop
+const allLogos = [...companies, ...companies];
 
+export default function CompanyLogos() {
   return (
     <section id="companies" className="py-12 sm:py-16 bg-background">
       <div className="container mx-auto px-4">
@@ -30,10 +27,10 @@ export default function CompanyLogos() {
           </p>
         </div>
         
-        <div className="embla mt-16 overflow-hidden" ref={emblaRef}>
-          <div className="embla__container flex items-center">
-            {companies.map((company, index) => (
-              <div className="embla__slide flex-[0_0_50%] md:flex-[0_0_33.33%] lg:flex-[0_0_20%] p-8" key={`${company.name}-${index}`}>
+        <div className="mt-16 relative w-full overflow-hidden">
+          <div className="flex w-max animate-[marquee_30s_linear_infinite] hover:[animation-play-state:paused]">
+            {allLogos.map((company, index) => (
+              <div className="flex-shrink-0 w-64 mx-8" key={`${company.name}-${index}`}>
                 <div className="relative flex h-24 items-center justify-center">
                   <Image
                     src={company.logoUrl}
