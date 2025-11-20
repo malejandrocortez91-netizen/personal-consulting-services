@@ -4,7 +4,6 @@ import React from 'react';
 import Image from 'next/image';
 import useEmblaCarousel from 'embla-carousel-react';
 import AutoScroll from 'embla-carousel-auto-scroll';
-import { cn } from '@/lib/utils';
 
 const companies = [
   { name: 'Amazon', logoUrl: '/logos/amazon-logo-squid-ink-smile-orange.png' },
@@ -23,7 +22,7 @@ export default function CompanyLogos() {
     { loop: true, dragFree: true }, 
     [
       AutoScroll({ 
-        speed: 0.5, 
+        speed: 1, 
         stopOnInteraction: false, 
         stopOnMouseEnter: true 
       })
@@ -45,7 +44,7 @@ export default function CompanyLogos() {
         <div className="embla mt-16" ref={emblaRef}>
           <div className="embla__container flex items-center">
             {companies.map((company, index) => (
-              <div className="embla__slide flex-shrink-0 flex-grow-0 basis-auto px-4" key={`${company.name}-${index}`}>
+              <div className="embla__slide flex-[0_0_auto] min-w-0 px-4" key={`${company.name}-${index}`}>
                 <Image
                   src={company.logoUrl}
                   alt={`${company.name} logo`}
@@ -56,7 +55,7 @@ export default function CompanyLogos() {
               </div>
             ))}
              {companies.map((company, index) => (
-              <div className="embla__slide flex-shrink-0 flex-grow-0 basis-auto px-4" key={`duplicate-${company.name}-${index}`}>
+              <div className="embla__slide flex-[0_0_auto] min-w-0 px-4" key={`duplicate-${company.name}-${index}`}>
                 <Image
                   src={company.logoUrl}
                   alt={`${company.name} logo`}
