@@ -19,16 +19,13 @@ const companies = [
 ];
 
 export default function CompanyLogos() {
-  const [emblaRef] = useEmblaCarousel(
-    { loop: true, dragFree: true },
-    [
-      AutoScroll({
-        speed: 1,
-        stopOnInteraction: false,
-        stopOnMouseEnter: true,
-      }),
-    ]
-  );
+  const [emblaRef] = useEmblaCarousel({ loop: true, dragFree: true }, [
+    AutoScroll({
+      speed: 1,
+      stopOnInteraction: false,
+      stopOnMouseEnter: true,
+    }),
+  ]);
 
   return (
     <section id="companies" className="py-12 sm:py-16 bg-background">
@@ -44,7 +41,7 @@ export default function CompanyLogos() {
           </p>
         </div>
 
-        <div className="embla mt-16" ref={emblaRef}>
+        <div className="embla mt-16 overflow-hidden" ref={emblaRef}>
           <div className="embla__container flex items-center">
             {[...companies, ...companies].map((company, index) => (
               <div
