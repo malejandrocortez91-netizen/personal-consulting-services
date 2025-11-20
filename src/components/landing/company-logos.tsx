@@ -10,15 +10,15 @@ const companies = [
   { name: 'Cricket Wireless', logoUrl: '/logos/Cricket_Wireless_Logo.png' },
   { name: 'Ibex Global', logoUrl: '/logos/Ibex-global-logo.png' },
   { name: 'Sago', logoUrl: '/logos/sago logo.png' },
-  { name: 'CCHI', logoUrl: '/logos/CCHI-Logo-small-DOUIcFDL.png'},
+  { name: 'Samsung', logoUrl: '/logos/Samsung_Orig_Wordmark_BLUE_RGB.svg.png'},
   { name: 'Facebook Meta', logoUrl: '/logos/Facebook-Meta.png'},
   { name: 'Meraki', logoUrl: '/logos/Meraki_Logo_2016_transparent.svg.png'},
-  { name: 'Samsung', logoUrl: '/logos/Samsung_Orig_Wordmark_BLUE_RGB.svg.png'},
+  { name: 'CCHI', logoUrl: '/logos/CCHI-Logo-small-DOUIcFDL.png'},
 ];
 
 export default function CompanyLogos() {
   const [emblaRef] = useEmblaCarousel({ loop: true, align: 'start', dragFree: true }, [
-    Autoplay({ playOnInit: true, delay: 1500, stopOnInteraction: false, stopOnMouseEnter: true }),
+    Autoplay({ playOnInit: true, delay: 3000, stopOnInteraction: false, stopOnMouseEnter: true }),
   ]);
 
   return (
@@ -38,7 +38,7 @@ export default function CompanyLogos() {
             {[...companies, ...companies].map((company, index) => (
               <div
                 key={`${company.name}-${index}`}
-                className="flex-shrink-0 flex-grow-0 basis-1/3 md:basis-1/4 lg:basis-1/5 min-w-0 px-4"
+                className="flex-[0_0_50%] sm:flex-[0_0_33.33%] md:flex-[0_0_25%] lg:flex-[0_0_20%] min-w-0 px-4"
               >
                 <div className="relative flex h-24 items-center justify-center">
                   <Image
