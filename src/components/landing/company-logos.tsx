@@ -7,7 +7,6 @@ import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 
 const companies = [
-  { name: 'Foundever', logoUrl: '/logos/foundever-logo.svg' },
   { name: 'Toys R Us', logoUrl: '/logos/toys-r-us-logo.svg' },
   { name: 'Walmart', logoUrl: '/logos/walmart-logo.svg' },
   { name: 'Amazon', logoUrl: '/logos/amazon-logo.svg' },
@@ -35,7 +34,7 @@ export default function CompanyLogos() {
             {[...companies, ...companies].map((company, index) => (
               <div
                 key={`${company.name}-${index}`}
-                className="relative flex-[0_0_20%] min-w-0 flex justify-center items-center px-8"
+                className="relative flex-[0_0_25%] min-w-0 flex justify-center items-center px-8"
               >
                 <Image
                   src={company.logoUrl}
