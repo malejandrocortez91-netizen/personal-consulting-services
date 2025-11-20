@@ -1,4 +1,3 @@
-
 'use client';
 
 import React from 'react';
@@ -13,15 +12,15 @@ const companies = [
   { name: 'Sago', logoUrl: '/logos/sago logo.png' },
   { name: 'Samsung', logoUrl: '/logos/Samsung_Orig_Wordmark_BLUE_RGB.jpg' },
   { name: 'CCHI', logoUrl: '/logos/CCHI-Logo-small-DOUIcFDL.png' },
-  { name 'Facebook Meta', logoUrl: '/logos/Facebook-Meta.png' },
+  { name: 'Facebook Meta', logoUrl: '/logos/Facebook-Meta.png' },
   { name: 'Meraki', logoUrl: '/logos/Meraki_Logo_2016_transparent.svg.png' },
   { name: 'Nielsen', logoUrl: '/logos/nielsen_default_meta_image_1200x675.png' },
 ];
 
 export default function CompanyLogos() {
   const [emblaRef] = useEmblaCarousel(
-    { loop: true, dragFree: true }, 
-    [Autoplay({ delay: 1500, stopOnInteraction: false, stopOnMouseEnter: true })]
+    { loop: true, dragFree: true },
+    [Autoplay({ delay: 0, stopOnInteraction: false, stopOnMouseEnter: true })]
   );
 
   return (
@@ -35,12 +34,12 @@ export default function CompanyLogos() {
             I've had the opportunity to learn best practices for multiple industries, industry leaders and partners, driving growth and operational excellence.
           </p>
         </div>
-        
+
         <div className="embla mt-16" ref={emblaRef}>
           <div className="embla__container">
-            {companies.map((company, index) => (
+            {[...companies, ...companies].map((company, index) => (
               <div className="embla__slide" key={`${company.name}-${index}`}>
-                <div className="relative flex h-24 items-center justify-center">
+                <div className="relative mx-4 flex h-24 items-center justify-center">
                   <Image
                     src={company.logoUrl}
                     alt={`${company.name} logo`}
@@ -60,18 +59,14 @@ export default function CompanyLogos() {
         }
         .embla__container {
           display: flex;
+          /* The continuous scroll effect is achieved by the Autoplay plugin with delay: 0 */
+          /* and the dragFree option in the carousel. No custom animation needed here. */
         }
         .embla__slide {
           flex: 0 0 auto;
           min-width: 0;
-          padding-left: 1rem; /* Corresponds to mx-4-ish */
           position: relative;
-          width: 25%; /* 4 logos visible on desktop */
-        }
-        @media (max-width: 768px) {
-          .embla__slide {
-            width: 50%; /* 2 logos visible on mobile */
-          }
+          width: auto; /* Let the content define the width */
         }
       `}</style>
     </section>
