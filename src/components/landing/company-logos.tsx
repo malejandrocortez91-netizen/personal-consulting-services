@@ -18,7 +18,7 @@ const companies = [
 
 export default function CompanyLogos() {
   const [emblaRef] = useEmblaCarousel({ loop: true, align: 'start', dragFree: true }, [
-    Autoplay({ playOnInit: true, delay: 3000, stopOnInteraction: false, stopOnMouseEnter: true }),
+    Autoplay({ playOnInit: true, delay: 700, stopOnInteraction: false, stopOnMouseEnter: true }),
   ]);
 
   return (
