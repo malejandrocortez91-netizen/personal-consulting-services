@@ -15,7 +15,7 @@ const companies = [
 
 export default function CompanyLogos() {
   const [emblaRef] = useEmblaCarousel({ loop: true }, [
-    Autoplay({ delay: 1500, stopOnInteraction: false }),
+    Autoplay({ delay: 1000, stopOnInteraction: false }),
   ]);
 
   return (
