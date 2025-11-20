@@ -2,21 +2,17 @@
 
 import React from 'react';
 import Image from 'next/image';
-import useEmblaCarousel from 'embla-carousel-react';
-import Autoplay from 'embla-carousel-autoplay';
 
 const companies = [
   { name: 'Amazon', logoUrl: '/logos/amazon-logo-squid-ink-smile-orange.png' },
   { name: 'Cricket Wireless', logoUrl: '/logos/Cricket_Wireless_Logo.png' },
   { name: 'Ibex Global', logoUrl: '/logos/Ibex-global-logo.png' },
   { name: 'Sago', logoUrl: '/logos/sago logo.png' },
-  { name: 'Samsung', logoUrl: '/logos/Samsung_Orig_Wordmark_BLUE_RGB.jpg'},
+  { name: 'Samsung', logoUrl: '/logos/Samsung_Orig_Wordmark_BLUE_RGB.jpg' },
 ];
 
 export default function CompanyLogos() {
-  const [emblaRef] = useEmblaCarousel({ loop: true, align: 'start', dragFree: true }, [
-    Autoplay({ playOnInit: true, delay: 1000, stopOnInteraction: false, stopOnMouseEnter: true }),
-  ]);
+  const duplicatedCompanies = [...companies, ...companies];
 
   return (
     <section id="companies" className="py-12 sm:py-16 bg-background">
@@ -30,14 +26,11 @@ export default function CompanyLogos() {
           </p>
         </div>
         
-        <div className="mt-16 overflow-hidden" ref={emblaRef}>
-          <div className="flex">
-            {[...companies, ...companies].map((company, index) => (
-              <div
-                key={`${company.name}-${index}`}
-                className="flex-[0_0_50%] sm:flex-[0_0_33.33%] md:flex-[0_0_25%] lg:flex-[0_0_20%] min-w-0 px-8"
-              >
-                <div className="relative flex h-24 items-center justify-center">
+        <div className="mt-16 w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
+          <ul className="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-marquee-slow">
+            {duplicatedCompanies.map((company, index) => (
+              <li key={`${company.name}-${index}`}>
+                <div className="relative flex h-24 items-center justify-center w-[160px]">
                   <Image
                     src={company.logoUrl}
                     alt={`${company.name} logo`}
@@ -46,9 +39,9 @@ export default function CompanyLogos() {
                     className="object-contain filter grayscale transition-all duration-300 hover:grayscale-0"
                   />
                 </div>
-              </div>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </div>
     </section>
