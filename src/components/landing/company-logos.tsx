@@ -1,6 +1,8 @@
+
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 
@@ -35,10 +37,12 @@ export default function CompanyLogos() {
                 key={`${company.name}-${index}`}
                 className="relative flex-[0_0_20%] min-w-0 flex justify-center items-center px-8"
               >
-                <img
-                  className="h-12 w-auto object-contain filter grayscale transition-all duration-300 hover:grayscale-0"
+                <Image
                   src={company.logoUrl}
-                  alt={company.name}
+                  alt={`${company.name} logo`}
+                  width={158}
+                  height={48}
+                  className="object-contain filter grayscale transition-all duration-300 hover:grayscale-0"
                 />
               </div>
             ))}
