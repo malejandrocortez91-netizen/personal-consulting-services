@@ -28,13 +28,13 @@ export default function CompanyLogos() {
   ]);
 
   return (
-    <section id="companies" className="py-12 sm:py-16 bg-background">
+    <section id="companies" className="py-12 sm:py-16 bg-white">
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-5xl text-center">
           <h2 className="font-headline text-3xl font-bold tracking-tight text-primary sm:text-4xl">
             A Proven Track Record With Industry Leaders
           </h2>
-          <p className="mt-4 text-lg leading-8 text-muted-foreground">
+          <p className="mt-4 text-lg leading-8 text-zinc-600">
             I've had the opportunity to learn best practices for multiple
             industries, industry leaders and partners, driving growth and
             operational excellence.
