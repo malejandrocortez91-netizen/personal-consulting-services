@@ -29,13 +29,9 @@ export default function CompanyLogos() {
           </p>
         </div>
         
-        {/* Carousel Container */}
         <div className="mt-16 overflow-hidden" ref={emblaRef}>
-          {/* Slides Container */}
           <div className="flex">
-            {/* Double the array for a seamless loop */}
             {[...companies, ...companies].map((company, index) => (
-              // Each Slide
               <div
                 key={`${company.name}-${index}`}
                 className="flex-shrink-0 flex-grow-0 basis-1/3 md:basis-1/4 lg:basis-1/5 min-w-0 px-4"
