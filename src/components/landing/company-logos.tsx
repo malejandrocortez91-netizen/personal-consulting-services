@@ -14,7 +14,7 @@ const companies = [
 ];
 
 export default function CompanyLogos() {
-  const [emblaRef] = useEmblaCarousel({ loop: true, dragFree: true }, [
+  const [emblaRef] = useEmblaCarousel({ loop: true }, [
     Autoplay({ delay: 1500, stopOnInteraction: false }),
   ]);
 
@@ -30,7 +30,7 @@ export default function CompanyLogos() {
           </p>
         </div>
         
-        <div className="embla mt-16" ref={emblaRef}>
+        <div className="embla mt-16 overflow-hidden" ref={emblaRef}>
           <div className="embla__container flex items-center">
             {companies.map((company, index) => (
               <div className="embla__slide flex-[0_0_50%] md:flex-[0_0_33.33%] lg:flex-[0_0_20%] p-8" key={`${company.name}-${index}`}>
