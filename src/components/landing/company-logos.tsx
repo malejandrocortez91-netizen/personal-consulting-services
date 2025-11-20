@@ -11,14 +11,11 @@ const companies = [
   { name: 'Ibex Global', logoUrl: '/logos/Ibex-global-logo.png' },
   { name: 'Sago', logoUrl: '/logos/sago logo.png' },
   { name: 'Samsung', logoUrl: '/logos/Samsung_Orig_Wordmark_BLUE_RGB.jpg'},
-  { name: 'Facebook Meta', logoUrl: '/logos/Facebook-Meta.png'},
-  { name: 'Meraki', logoUrl: '/logos/Meraki_Logo_2016_transparent.svg.png'},
-  { name: 'CCHI', logoUrl: '/logos/CCHI-Logo-small-DOUIcFDL.png'},
 ];
 
 export default function CompanyLogos() {
   const [emblaRef] = useEmblaCarousel({ loop: true, align: 'start', dragFree: true }, [
-    Autoplay({ playOnInit: true, delay: 100, stopOnInteraction: false, stopOnMouseEnter: true }),
+    Autoplay({ playOnInit: true, delay: 1500, stopOnInteraction: false, stopOnMouseEnter: true }),
   ]);
 
   return (
