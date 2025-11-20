@@ -9,6 +9,10 @@ const companies = [
   { name: 'Ibex Global', logoUrl: '/logos/Ibex-global-logo.png' },
   { name: 'Sago', logoUrl: '/logos/sago logo.png' },
   { name: 'Samsung', logoUrl: '/logos/Samsung_Orig_Wordmark_BLUE_RGB.jpg' },
+  { name: 'CCHI', logoUrl: '/logos/CCHI-Logo-small-DOUIcFDL.png' },
+  { name: 'Facebook Meta', logoUrl: '/logos/Facebook-Meta.png' },
+  { name: 'Meraki', logoUrl: '/logos/Meraki_Logo_2016_transparent.svg.png' },
+  { name: 'Nielsen', logoUrl: '/logos/nielsen_default_meta_image_1200x675.png' },
 ];
 
 // Duplicate the logos for a seamless loop
@@ -28,7 +32,7 @@ export default function CompanyLogos() {
         </div>
         
         <div className="mt-16 relative w-full overflow-hidden">
-          <div className="flex w-max animate-[marquee_30s_linear_infinite] hover:[animation-play-state:paused]">
+          <div className="flex w-max animate-[marquee_60s_linear_infinite] hover:[animation-play-state:paused]">
             {allLogos.map((company, index) => (
               <div className="flex-shrink-0 w-64 mx-8" key={`${company.name}-${index}`}>
                 <div className="relative flex h-24 items-center justify-center">
