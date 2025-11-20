@@ -38,7 +38,7 @@ export default function CompanyLogos() {
             {[...companies, ...companies].map((company, index) => (
               <div
                 key={`${company.name}-${index}`}
-                className="flex-[0_0_50%] sm:flex-[0_0_33.33%] md:flex-[0_0_25%] lg:flex-[0_0_20%] min-w-0 px-4"
+                className="flex-[0_0_50%] sm:flex-[0_0_33.33%] md:flex-[0_0_25%] lg:flex-[0_0_20%] min-w-0 px-8"
               >
                 <div className="relative flex h-24 items-center justify-center">
                   <Image
