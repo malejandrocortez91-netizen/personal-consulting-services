@@ -20,7 +20,7 @@ const companies = [
 export default function CompanyLogos() {
   const [emblaRef] = useEmblaCarousel(
     { loop: true, dragFree: true },
-    [Autoplay({ delay: 0, stopOnInteraction: false, stopOnMouseEnter: true })]
+    [Autoplay({ delay: 1500, stopOnInteraction: false, stopOnMouseEnter: true })]
   );
 
   return (
@@ -59,14 +59,12 @@ export default function CompanyLogos() {
         }
         .embla__container {
           display: flex;
-          /* The continuous scroll effect is achieved by the Autoplay plugin with delay: 0 */
-          /* and the dragFree option in the carousel. No custom animation needed here. */
         }
         .embla__slide {
           flex: 0 0 auto;
           min-width: 0;
           position: relative;
-          width: auto; /* Let the content define the width */
+          width: auto;
         }
       `}</style>
     </section>
