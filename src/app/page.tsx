@@ -7,7 +7,7 @@ import ProjectHighlights from '@/components/landing/project-highlights';
 import ResumeTimeline from '@/components/landing/resume-timeline';
 import Services from '@/components/landing/services';
 import Skills from '@/components/landing/skills';
-// import CompanyLogos from '@/components/landing/company-logos';
+import CompanyLogos from '@/components/landing/company-logos';
 
 export default function Home() {
   return (
@@ -17,7 +17,7 @@ export default function Home() {
         <Hero />
         <Services />
         <Skills />
-        {/* <CompanyLogos /> */}
+        <CompanyLogos />
         <ResumeTimeline />
         <ProjectHighlights />
         <Contact />
