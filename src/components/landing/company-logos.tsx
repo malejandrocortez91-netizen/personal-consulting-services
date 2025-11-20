@@ -6,10 +6,14 @@ import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 
 const companies = [
-  { name: 'Toys R Us', logoUrl: '/logos/toys-r-us-logo.svg' },
-  { name: 'Walmart', logoUrl: '/logos/walmart-logo.svg' },
-  { name: 'Amazon', logoUrl: '/logos/amazon-logo.svg' },
-  { name: 'Cricket Telecom', logoUrl: '/logos/cricket-telecom-logo.svg' },
+  { name: 'Amazon', logoUrl: '/logos/amazon-logo-squid-ink-smile-orange-logotype-RGB-NEG.svg.png' },
+  { name: 'Cricket Wireless', logoUrl: '/logos/Cricket_Wireless_Logo.png' },
+  { name: 'Ibex Global', logoUrl: '/logos/Ibex-global-logo.png' },
+  { name: 'Sago', logoUrl: '/logos/sago logo.png' },
+  { name: 'CCHI', logoUrl: '/logos/CCHI-Logo-small-DOUIcFDL.png'},
+  { name: 'Facebook Meta', logoUrl: '/logos/Facebook-Meta.png'},
+  { name: 'Meraki', logoUrl: '/logos/Meraki_Logo_2016_transparent.svg.png'},
+  { name: 'Samsung', logoUrl: '/logos/Samsung_Orig_Wordmark_BLUE_RGB.svg.png'},
 ];
 
 export default function CompanyLogos() {
