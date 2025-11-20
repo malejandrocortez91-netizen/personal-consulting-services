@@ -6,11 +6,11 @@ import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 
 const companies = [
-  { name: 'Amazon', logoUrl: '/logos/amazon-logo-squid-ink-smile-orange-logotype-RGB-NEG.svg.png' },
+  { name: 'Amazon', logoUrl: '/logos/amazon-logo-squid-ink-smile-orange.png' },
   { name: 'Cricket Wireless', logoUrl: '/logos/Cricket_Wireless_Logo.png' },
   { name: 'Ibex Global', logoUrl: '/logos/Ibex-global-logo.png' },
   { name: 'Sago', logoUrl: '/logos/sago logo.png' },
-  { name: 'Samsung', logoUrl: '/logos/Samsung_Orig_Wordmark_BLUE_RGB.svg.png'},
+  { name: 'Samsung', logoUrl: '/logos/Samsung_Orig_Wordmark_BLUE_RGB.jpg'},
   { name: 'Facebook Meta', logoUrl: '/logos/Facebook-Meta.png'},
   { name: 'Meraki', logoUrl: '/logos/Meraki_Logo_2016_transparent.svg.png'},
   { name: 'CCHI', logoUrl: '/logos/CCHI-Logo-small-DOUIcFDL.png'},
