@@ -1,9 +1,8 @@
 'use client';
 
-import React from 'react';
+import React, { useRef, useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
-import useEmblaCarousel from 'embla-carousel-react';
-import Autoplay from 'embla-carousel-autoplay';
+import { cn } from '@/lib/utils';
 
 const companies = [
   { name: 'Amazon', logoUrl: '/logos/amazon-logo-squid-ink-smile-orange.png' },
@@ -18,10 +17,15 @@ const companies = [
 ];
 
 export default function CompanyLogos() {
-  const [emblaRef] = useEmblaCarousel(
-    { loop: true, dragFree: true },
-    [Autoplay({ delay: 1500, stopOnInteraction: false, stopOnMouseEnter: true })]
-  );
+  const scrollerRef = useRef<HTMLDivElement>(null);
+  const [isPaused, setIsPaused] = useState(false);
+  
+  useEffect(() => {
+    const scroller = scrollerRef.current;
+    if (scroller) {
+      scroller.setAttribute('data-animated', 'true');
+    }
+  }, []);
 
   return (
     <section id="companies" className="py-12 sm:py-16 bg-background">
@@ -35,38 +39,37 @@ export default function CompanyLogos() {
           </p>
         </div>
 
-        <div className="embla mt-16" ref={emblaRef}>
-          <div className="embla__container">
+        <div
+          ref={scrollerRef}
+          className="scroller group relative mt-16 overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+        >
+          <div 
+            className={cn(
+              "flex min-w-full shrink-0 animate-marquee items-center gap-16 py-4 [animation-duration:60s]",
+              isPaused && "[animation-play-state:paused]"
+            )}
+          >
             {[...companies, ...companies].map((company, index) => (
-              <div className="embla__slide" key={`${company.name}-${index}`}>
-                <div className="relative mx-4 flex h-24 items-center justify-center">
-                  <Image
-                    src={company.logoUrl}
-                    alt={`${company.name} logo`}
-                    width={158}
-                    height={48}
-                    className="object-contain filter grayscale transition-all duration-300 hover:grayscale-0"
-                  />
-                </div>
+              <div className="flex-shrink-0" key={`${company.name}-${index}`}>
+                <Image
+                  src={company.logoUrl}
+                  alt={`${company.name} logo`}
+                  width={158}
+                  height={48}
+                  className="max-h-12 w-auto object-contain filter grayscale transition-all duration-300 group-hover:grayscale-0"
+                />
               </div>
             ))}
           </div>
         </div>
       </div>
        <style jsx>{`
-        .embla {
-          overflow: hidden;
+        .animate-marquee {
+          animation: marquee linear infinite;
         }
-        .embla__container {
-          display: flex;
-        }
-        .embla__slide {
-          flex: 0 0 auto;
-          min-width: 0;
-          position: relative;
-          width: auto;
-        }
-      `}</style>
+       `}</style>
     </section>
   );
 }
