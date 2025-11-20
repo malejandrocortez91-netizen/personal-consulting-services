@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Hexagon } from 'lucide-react';
+import { Screw } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
 export default function Footer() {
@@ -15,8 +15,8 @@ export default function Footer() {
     <footer className="bg-card border-t">
       <div className="container mx-auto flex flex-col items-center justify-between gap-4 px-4 py-8 md:h-24 md:flex-row">
         <div className="flex flex-col items-center gap-4 px-8 md:flex-row md:gap-2 md:px-0">
-          <Link href="/#hero" className="flex items-center space-x-3">
-            <Hexagon className="h-6 w-6 text-primary" />
+          <Link href="#hero" className="flex items-center space-x-3">
+            <Screw className="h-6 w-6 text-primary" />
             <span className="inline-block font-font-handwriting text-2xl font-bold text-primary">
               Alejandro Cortez Velasquez
             </span>
