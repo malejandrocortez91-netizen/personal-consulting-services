@@ -1,7 +1,10 @@
+
 'use client';
 
 import React from 'react';
 import Image from 'next/image';
+import useEmblaCarousel from 'embla-carousel-react';
+import Autoplay from 'embla-carousel-autoplay';
 
 const companies = [
   { name: 'Amazon', logoUrl: '/logos/amazon-logo-squid-ink-smile-orange.png' },
@@ -10,15 +13,17 @@ const companies = [
   { name: 'Sago', logoUrl: '/logos/sago logo.png' },
   { name: 'Samsung', logoUrl: '/logos/Samsung_Orig_Wordmark_BLUE_RGB.jpg' },
   { name: 'CCHI', logoUrl: '/logos/CCHI-Logo-small-DOUIcFDL.png' },
-  { name: 'Facebook Meta', logoUrl: '/logos/Facebook-Meta.png' },
+  { name 'Facebook Meta', logoUrl: '/logos/Facebook-Meta.png' },
   { name: 'Meraki', logoUrl: '/logos/Meraki_Logo_2016_transparent.svg.png' },
   { name: 'Nielsen', logoUrl: '/logos/nielsen_default_meta_image_1200x675.png' },
 ];
 
-// Duplicate the logos for a seamless loop
-const allLogos = [...companies, ...companies];
-
 export default function CompanyLogos() {
+  const [emblaRef] = useEmblaCarousel(
+    { loop: true, dragFree: true }, 
+    [Autoplay({ delay: 1500, stopOnInteraction: false, stopOnMouseEnter: true })]
+  );
+
   return (
     <section id="companies" className="py-12 sm:py-16 bg-background">
       <div className="container mx-auto px-4">
@@ -31,10 +36,10 @@ export default function CompanyLogos() {
           </p>
         </div>
         
-        <div className="mt-16 relative w-full overflow-hidden">
-          <div className="flex w-max animate-[marquee_60s_linear_infinite] hover:[animation-play-state:paused]">
-            {allLogos.map((company, index) => (
-              <div className="flex-shrink-0 w-64 mx-4" key={`${company.name}-${index}`}>
+        <div className="embla mt-16" ref={emblaRef}>
+          <div className="embla__container">
+            {companies.map((company, index) => (
+              <div className="embla__slide" key={`${company.name}-${index}`}>
                 <div className="relative flex h-24 items-center justify-center">
                   <Image
                     src={company.logoUrl}
@@ -49,6 +54,26 @@ export default function CompanyLogos() {
           </div>
         </div>
       </div>
+       <style jsx>{`
+        .embla {
+          overflow: hidden;
+        }
+        .embla__container {
+          display: flex;
+        }
+        .embla__slide {
+          flex: 0 0 auto;
+          min-width: 0;
+          padding-left: 1rem; /* Corresponds to mx-4-ish */
+          position: relative;
+          width: 25%; /* 4 logos visible on desktop */
+        }
+        @media (max-width: 768px) {
+          .embla__slide {
+            width: 50%; /* 2 logos visible on mobile */
+          }
+        }
+      `}</style>
     </section>
   );
 }
