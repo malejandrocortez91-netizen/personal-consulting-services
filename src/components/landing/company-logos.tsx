@@ -34,7 +34,7 @@ export default function CompanyLogos() {
             {[...companies, ...companies].map((company, index) => (
               <div
                 key={`${company.name}-${index}`}
-                className="relative flex-[0_0_25%] min-w-0 flex justify-center items-center px-8"
+                className="flex-shrink-0 flex-grow-0 basis-1/4 min-w-0 px-8 flex items-center justify-center"
               >
                 <Image
                   src={company.logoUrl}
