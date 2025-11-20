@@ -8,6 +8,7 @@ import {
 import { CheckCircle } from 'lucide-react';
 import Footer from '@/components/landing/footer';
 import Header from '@/components/landing/header';
+import Contact from '@/components/landing/contact';
 
 const servicesData = [
   {
@@ -153,6 +154,7 @@ export default function ServicesPage() {
             </div>
           </div>
         </section>
+        <Contact />
       </main>
       <Footer />
     </div>
