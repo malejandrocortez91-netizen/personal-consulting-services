@@ -1,6 +1,8 @@
 'use client';
 
 import React from 'react';
+import useEmblaCarousel from 'embla-carousel-react';
+import Autoplay from 'embla-carousel-autoplay';
 import Image from 'next/image';
 
 const companies = [
@@ -12,7 +14,9 @@ const companies = [
 ];
 
 export default function CompanyLogos() {
-  const duplicatedCompanies = [...companies, ...companies];
+  const [emblaRef] = useEmblaCarousel({ loop: true, dragFree: true }, [
+    Autoplay({ delay: 1500, stopOnInteraction: false }),
+  ]);
 
   return (
     <section id="companies" className="py-12 sm:py-16 bg-background">
@@ -26,11 +30,11 @@ export default function CompanyLogos() {
           </p>
         </div>
         
-        <div className="mt-16 w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
-          <ul className="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-marquee-slow">
-            {duplicatedCompanies.map((company, index) => (
-              <li key={`${company.name}-${index}`}>
-                <div className="relative flex h-24 items-center justify-center w-[160px]">
+        <div className="embla mt-16" ref={emblaRef}>
+          <div className="embla__container flex items-center">
+            {companies.map((company, index) => (
+              <div className="embla__slide flex-[0_0_50%] md:flex-[0_0_33.33%] lg:flex-[0_0_20%] p-8" key={`${company.name}-${index}`}>
+                <div className="relative flex h-24 items-center justify-center">
                   <Image
                     src={company.logoUrl}
                     alt={`${company.name} logo`}
@@ -39,9 +43,9 @@ export default function CompanyLogos() {
                     className="object-contain filter grayscale transition-all duration-300 hover:grayscale-0"
                   />
                 </div>
-              </li>
+              </div>
             ))}
-          </ul>
+          </div>
         </div>
       </div>
     </section>
