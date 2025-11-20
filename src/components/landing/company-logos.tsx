@@ -34,7 +34,7 @@ export default function CompanyLogos() {
         <div className="mt-16 relative w-full overflow-hidden">
           <div className="flex w-max animate-[marquee_60s_linear_infinite] hover:[animation-play-state:paused]">
             {allLogos.map((company, index) => (
-              <div className="flex-shrink-0 w-64 mx-8" key={`${company.name}-${index}`}>
+              <div className="flex-shrink-0 w-64 mx-4" key={`${company.name}-${index}`}>
                 <div className="relative flex h-24 items-center justify-center">
                   <Image
                     src={company.logoUrl}
