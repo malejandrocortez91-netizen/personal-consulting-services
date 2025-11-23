@@ -1,3 +1,5 @@
+'use server';
+
 // --- Types ---
 interface ContactData {
   name: string;
@@ -34,7 +36,6 @@ async function sendEmail(options: MailOptions): Promise<void> {
     console.log('--- MOCK EMAIL SERVICE (Credentials Missing) ---');
     console.log(`To: ${options.to}`);
     console.log(`Subject: ${options.subject}`);
-    console.log(`Text: ${options.text}`);
     if (options.attachments) {
       console.log(
         'Attachments:',
