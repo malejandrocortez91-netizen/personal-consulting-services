@@ -14,9 +14,10 @@ const servicesData = [
   {
     title: 'High-Tech Process Outsourcing (Near-shore)',
     summary:
-      'Scale your operations intelligently by leveraging high-caliber talent in near-shore locations. We specialize in building and managing dedicated teams for technical support, software development, data analysis, and back-office functions. Our model provides a cost-effective alternative to local hiring without sacrificing quality, time-zone alignment, or cultural affinity, enabling you to focus on your core business while we handle the operational complexities.',
+      'Scale your operations intelligently by leveraging high-caliber talent in near-shore locations. We specialize in building and managing dedicated teams for technical support, software development, and back-office functions. Through my network of experts, I offer high-volume and specialized per-role recruiting in key LATAM markets including Nicaragua, Mexico, Argentina, and Colombia. This model provides a cost-effective alternative to local hiring without sacrificing quality or time-zone alignment, enabling you to focus on your core business while we handle the operational complexities.',
     deliverables: [
       'Outsourcing Needs Analysis and Strategy',
+      'High-Volume & Specialized Recruiting (Nicaragua, Mexico, Argentina, Colombia)',
       'Near-shore Team Recruitment and Onboarding',
       'Infrastructure and IT Setup',
       'Process Documentation and Knowledge Transfer',
