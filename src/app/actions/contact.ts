@@ -4,9 +4,8 @@
 import {
   sendConfirmationEmail,
   sendOwnerNotificationEmail,
-  appendToSheet,
-  updateSheetCell,
-} from '@/services/contact-service';
+} from '@/services/email';
+import { appendToSheet, updateSheetCell } from '@/services/google-sheets';
 
 type ContactFormState = {
   success: boolean;
@@ -113,4 +112,3 @@ export async function handleContactSubmission(
     };
   }
 }
-

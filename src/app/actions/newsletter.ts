@@ -1,7 +1,7 @@
 
 'use server';
 
-import { appendToSheet } from '@/services/contact-service';
+import { appendToSheet } from '@/services/google-sheets';
 
 type NewsletterFormState = {
   success: boolean;
@@ -42,4 +42,3 @@ export async function handleNewsletterSubmission(
     };
   }
 }
-
