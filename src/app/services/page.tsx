@@ -12,29 +12,42 @@ import Contact from '@/components/landing/contact';
 
 const servicesData = [
   {
-    title: 'Process & Automation Consulting with AI Augmentation',
+    title: 'High-Tech Process Outsourcing (Near-shore)',
     summary:
-      'Leverage the power of Artificial Intelligence and Lean methodologies to revolutionize your operations. We conduct in-depth process mapping to identify bottlenecks and inefficiencies, then design and implement intelligent automation solutions. Our approach focuses on augmenting your team with AI tools, reducing manual overhead, and creating self-sustaining, optimized workflows that drive exponential efficiency and quality improvements.',
+      'Scale your operations intelligently by leveraging high-caliber talent in near-shore locations. We specialize in building and managing dedicated teams for technical support, software development, data analysis, and back-office functions. Our model provides a cost-effective alternative to local hiring without sacrificing quality, time-zone alignment, or cultural affinity, enabling you to focus on your core business while we handle the operational complexities.',
     deliverables: [
-      'Comprehensive Process Audit & Value Stream Mapping',
-      'AI-Powered Automation Strategy & Roadmap',
-      'Custom AI Tool Integration (e.g., automated reporting, intelligent data entry)',
-      'Workflow Re-engineering and SOP Documentation',
-      'Team Training on New AI-Augmented Processes',
-      'Performance Dashboards for ROI Tracking',
+      'Outsourcing Needs Analysis and Strategy',
+      'Near-shore Team Recruitment and Onboarding',
+      'Infrastructure and IT Setup',
+      'Process Documentation and Knowledge Transfer',
+      'Ongoing Team Management and Performance Oversight',
+      'Quality Assurance and Compliance Frameworks',
     ],
   },
   {
-    title: 'Consultant Management (Following a Six Sigma Approach)',
+    title: 'Startup Consulting & Scaling Strategy Support',
     summary:
-      'Optimize your investment in external expertise with our rigorous, data-driven consultant management framework. Using Six Sigma principles (DMAIC—Define, Measure, Analyze, Improve, Control), we ensure that every consulting engagement is clearly defined, success metrics are established upfront, and performance is meticulously tracked. We manage the entire lifecycle, from vendor selection and onboarding to performance oversight and value realization, guaranteeing measurable ROI.',
+      'Turn your innovative idea into a viable, scalable business. We provide foundational support for startups, helping you refine your business model, develop a robust go-to-market strategy, and build a minimum viable product (MVP). Our guidance covers everything from financial modeling and pitch deck creation to establishing core operational processes that prepare you for rapid growth and investor scrutiny.',
     deliverables: [
-      'Consultant Sourcing and Vetting',
-      'Six Sigma Project Charters for Each Engagement',
-      'KPI and SLA Development and Tracking',
-      'Performance Audits and Governance Meetings',
-      'Risk Mitigation and Issue Resolution',
-      'Final Value and ROI Assessment Reports',
+      'Business Plan and Financial Model Development',
+      'Go-to-Market (GTM) Strategy',
+      'Pitch Deck Creation and Investor Readiness Coaching',
+      'MVP Definition and Development Roadmap',
+      'Lean Operational Process Setup (HR, Finance, Legal)',
+      'Early-Stage Growth and Traction Strategy',
+    ],
+  },
+  {
+    title: 'Enterprise Transformation & AI-Driven Process Optimization',
+    summary:
+      "Drive transformative change by embedding intelligence and efficiency into your core operations. We apply rigorous, data-driven methodologies like Six Sigma (DMAIC) to re-engineer workflows, identify systemic weaknesses, and implement AI-powered automation. This holistic approach not only optimizes your investment in consulting and technology but also builds a resilient, self-improving operational framework that guarantees measurable ROI and a sustainable competitive advantage.",
+    deliverables: [
+      'Six Sigma (DMAIC) Based Process Audit & Value Stream Mapping',
+      'AI-Powered Automation & Augmentation Roadmap',
+      'Custom AI Tool Integration & Workflow Re-engineering',
+      'Consultant & Vendor Performance Management Framework',
+      'Governance Models for Risk Mitigation & Issue Resolution',
+      'Executive Dashboards for Performance & ROI Tracking',
     ],
   },
   {
@@ -53,7 +66,7 @@ const servicesData = [
   {
     title: 'Digital Marketing & Web Presence Management',
     summary:
-      "Establish a powerful and professional online presence. We offer end-to-end digital marketing solutions, starting with a custom, high-performance website designed to convert visitors into leads. Beyond the website, we manage your entire digital footprint, including optimizing your Google My Business profile to enhance local search visibility and building a cohesive brand image across all digital channels.",
+      'Establish a powerful and professional online presence. We offer end-to-end digital marketing solutions, starting with a custom, high-performance website designed to convert visitors into leads. Beyond the website, we manage your entire digital footprint, including optimizing your Google My Business profile to enhance local search visibility and building a cohesive brand image across all digital channels.',
     deliverables: [
       'Custom Website Design and Development',
       'Google My Business Profile Creation and Optimization',
@@ -74,32 +87,6 @@ const servicesData = [
       'Proactive Review Generation Campaigns',
       'Multi-Platform Review Monitoring and Response',
       'Monthly Reputation and SEO Performance Reports',
-    ],
-  },
-  {
-    title: 'Startup Consulting & Go-to-Market Support',
-    summary:
-      'Turn your innovative idea into a viable, scalable business. We provide foundational support for startups, helping you refine your business model, develop a robust go-to-market strategy, and build a minimum viable product (MVP). Our guidance covers everything from financial modeling and pitch deck creation to establishing core operational processes that prepare you for rapid growth and investor scrutiny.',
-    deliverables: [
-      'Business Plan and Financial Model Development',
-      'Go-to-Market (GTM) Strategy',
-      'Pitch Deck Creation and Investor Readiness Coaching',
-      'MVP Definition and Development Roadmap',
-      'Lean Operational Process Setup (HR, Finance, Legal)',
-      'Early-Stage Growth and Traction Strategy',
-    ],
-  },
-  {
-    title: 'High-Tech Process Outsourcing (Near-shore)',
-    summary:
-      "Scale your operations intelligently by leveraging high-caliber talent in near-shore locations. We specialize in building and managing dedicated teams for technical support, software development, data analysis, and back-office functions. Our model provides a cost-effective alternative to local hiring without sacrificing quality, time-zone alignment, or cultural affinity, enabling you to focus on your core business while we handle the operational complexities.",
-    deliverables: [
-      'Outsourcing Needs Analysis and Strategy',
-      'Near-shore Team Recruitment and Onboarding',
-      'Infrastructure and IT Setup',
-      'Process Documentation and Knowledge Transfer',
-      'Ongoing Team Management and Performance Oversight',
-      'Quality Assurance and Compliance Frameworks',
     ],
   },
 ];
