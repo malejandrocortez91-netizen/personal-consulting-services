@@ -76,19 +76,6 @@ const servicesData = [
       'Performance Analytics and Reporting',
     ],
   },
-  {
-    title: 'SEO & Online Review Management',
-    summary:
-      'Dominate search engine rankings and build a stellar online reputation. Our SEO strategy focuses on foundational excellence: technical SEO, on-page optimization, and quality content to drive organic traffic. Simultaneously, we implement a proactive review management system to encourage positive reviews, monitor feedback across platforms like Google and Yelp, and professionally address negative comments to protect and enhance your brand’s reputation.',
-    deliverables: [
-      'Comprehensive SEO Audit (Technical, On-Page, Off-Page)',
-      'Keyword Research and Content Optimization Plan',
-      'Link-Building and Local SEO Strategy',
-      'Proactive Review Generation Campaigns',
-      'Multi-Platform Review Monitoring and Response',
-      'Monthly Reputation and SEO Performance Reports',
-    ],
-  },
 ];
 
 export default function ServicesPage() {
