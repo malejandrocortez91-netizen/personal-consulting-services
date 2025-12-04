@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Hexagon, MessageSquare, Briefcase } from 'lucide-react';
+import { Hexagon, MessageSquare, Briefcase, Server } from 'lucide-react';
 import { ThemeToggle } from '@/components/theme-toggle';
 import { Button } from '@/components/ui/button';
 
@@ -20,11 +20,16 @@ export default function Header() {
         <div className="flex items-center gap-2">
           <Button variant="ghost" size="icon" asChild>
             <Link href="/services" aria-label="Services">
+              <Server className="h-[1.2rem] w-[1.2rem]" />
+            </Link>
+          </Button>
+          <Button variant="ghost" size="icon" asChild>
+            <Link href="/portfolio" aria-label="Portfolio">
               <Briefcase className="h-[1.2rem] w-[1.2rem]" />
             </Link>
           </Button>
           <Button variant="ghost" size="icon" asChild>
-            <Link href="#contact" aria-label="Contact">
+            <Link href="/#contact" aria-label="Contact">
               <MessageSquare className="h-[1.2rem] w-[1.2rem]" />
             </Link>
           </Button>
