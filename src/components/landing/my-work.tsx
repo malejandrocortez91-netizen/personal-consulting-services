@@ -104,6 +104,18 @@ const workItems = [
       "Ensured 100% of new leads received follow-up within 5 minutes."
     ]
   },
+  {
+    id: 'pm-platform',
+    title: 'Project Management Platform Integration',
+    description: 'Led the integration of a new project management platform (e.g., Asana, ClickUp) with existing company systems. This project included developing a full suite of client success KPIs and building a custom Looker Studio dashboard to track project health, team productivity, and client satisfaction metrics in real-time. The unified platform provided a single source of truth for all project-related activities and communications.',
+    imageIds: ['pm-platform-1', 'pm-platform-2', 'pm-platform-3'],
+    outcomes: [
+      'Centralized project data, leading to a 30% reduction in reporting time.',
+      'Improved on-time project delivery rate from 80% to 95%.',
+      'Provided clients with transparent, real-time access to project status.',
+      'Standardized client success metrics across the entire organization.',
+    ],
+  },
 ];
 
 export default function MyWork() {
@@ -140,7 +152,7 @@ export default function MyWork() {
         </div>
 
         {/* Dynamic Work Items Section */}
-        <div className="mx-auto mt-16 max-w-7xl space-y-24 sm:mt-20 lg:mt-24">
+        <div className="mx-auto mt-16 max-w-7xl space-y-16 sm:mt-20 lg:mt-24">
           {workItems.map((item, index) => {
              const images = getImages(item.imageIds);
              const isReversed = index % 2 !== 0;
@@ -212,4 +224,3 @@ export default function MyWork() {
     </section>
   );
 }
-

@@ -81,7 +81,7 @@
     {
       "id": "quality-1",
       "description": "A hand-drawn fishbone (Ishikawa) diagram on a whiteboard, analyzing a problem.",
-      "imageUrl": "https://images.unsplash.com/photo-1542744095-fcf48d80b2fd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxmaXNoYm9uZSUyMGRpYWdyYW18ZW58MHx8fHwxNzYyMjE1NDUxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1542744095-fcf48d80b2fd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxmaXNoYm9uZSUyMGRpYWdyYW18ZW58MHx8fHwxNzYyMjE1NDUxfDA&ixlibrb-4.1.0&q=80&w=1080",
       "imageHint": "fishbone diagram"
     },
     {
@@ -119,6 +119,24 @@
       "description": "A workflow automation sequence shown on a screen, with triggers and actions.",
       "imageUrl": "https://images.unsplash.com/photo-1529400971034-29393a400903?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx3b3JrZmxvdyUyMGF1dG9tYXRpb258ZW58MHx8fHwxNzYyMjE1NzM4fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "workflow automation"
+    },
+    {
+      "id": "pm-platform-1",
+      "description": "A screenshot of a project management tool like Asana or ClickUp, showing tasks and timelines.",
+      "imageUrl": "https://images.unsplash.com/photo-1634926878768-2a5b3c42f139?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwcm9qZWN0JTIwbWFuYWdlbWVudCUyMHRvb2x8ZW58MHx8fHwxNzYyMjI0MDUzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "project management"
+    },
+    {
+      "id": "pm-platform-2",
+      "description": "A Looker Studio or Power BI dashboard displaying client success KPIs.",
+      "imageUrl": "https://images.unsplash.com/photo-1630514926522-397987352349?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxLUkklMjBkYXNoYm9hcmR8ZW58MHx8fHwxNzYyMjI0MDgzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "kpi dashboard"
+    },
+    {
+      "id": "pm-platform-3",
+      "description": "A diagram illustrating the integration between different software platforms.",
+      "imageUrl": "https://images.unsplash.com/photo-1542744095-291d1f67b221?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzb2Z0d2FyZSUyMGludGVncmF0aW9uJTIwZGlhZ3JhbXxlbnwwfHx8fDE3NjIyMjQxMTN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "software integration"
     }
   ]
 }
