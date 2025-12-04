@@ -2,6 +2,7 @@ import Contact from '@/components/landing/contact';
 import Footer from '@/components/landing/footer';
 import Header from '@/components/landing/header';
 import ProjectHighlights from '@/components/landing/project-highlights';
+import MyWork from '@/components/landing/my-work';
 
 export default function PortfolioPage() {
   return (
@@ -10,6 +11,7 @@ export default function PortfolioPage() {
       <main className="flex-1 bg-card">
         <div className="py-12 sm:py-16">
           <ProjectHighlights />
+          <MyWork />
         </div>
         <Contact />
       </main>

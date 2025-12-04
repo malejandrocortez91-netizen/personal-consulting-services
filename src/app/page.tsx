@@ -8,6 +8,7 @@ import ResumeTimeline from '@/components/landing/resume-timeline';
 import Services from '@/components/landing/services';
 import Skills from '@/components/landing/skills';
 import CompanyLogos from '@/components/landing/company-logos';
+import MyWork from '@/components/landing/my-work';
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
         <CompanyLogos />
         <ResumeTimeline />
         <ProjectHighlights />
+        <MyWork />
         <Contact />
         <Newsletter />
       </main>
