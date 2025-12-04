@@ -17,6 +17,24 @@
       "description": "Two hands shaking over a table with documents, symbolizing a successful deal or merger.",
       "imageUrl": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxidXNpbmVzcyUyMGhhbmRzaGFrZXxlbnwwfHx8fDE3NjIxODI4NDZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "business handshake"
+    },
+    {
+      "id": "work-diagram",
+      "description": "A complex flowchart diagram on a whiteboard, representing a business process or workflow.",
+      "imageUrl": "https://images.unsplash.com/photo-1542744095-fcf48d80b2fd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHx3b3JrZmxvdyUyMGRpYWdyYW18ZW58MHx8fHwxNzYyMjE1MDIyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "workflow diagram"
+    },
+    {
+      "id": "work-dashboard",
+      "description": "A computer screen showing a modern business intelligence dashboard with charts and graphs.",
+      "imageUrl": "https://images.unsplash.com/photo-1601740992036-575796495679?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxiaSUyMGRhc2hib2FyZHxlbnwwfHx8fDE3NjIyMTUwODV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "BI dashboard"
+    },
+    {
+      "id": "work-framework",
+      "description": "Abstract visualization of a connected network or framework, representing a strategic business model.",
+      "imageUrl": "https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxhYnN0cmFjdCUyMG5ldHdvcmt8ZW58MHx8fHwxNzYyMjE1MTI4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "abstract network"
     }
   ]
 }
