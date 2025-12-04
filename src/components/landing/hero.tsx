@@ -19,7 +19,7 @@ export default function Hero() {
               <Link href="#contact">Get In Touch</Link>
             </Button>
             <Button asChild variant="secondary" size="lg">
-              <Link href="/services">Explore Services</Link>
+              <Link href="#projects">My Portfolio</Link>
             </Button>
           </div>
         </div>
