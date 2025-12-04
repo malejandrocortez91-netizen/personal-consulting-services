@@ -1,49 +1,65 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
 import useEmblaCarousel from 'embla-carousel-react';
 import AutoScroll from 'embla-carousel-auto-scroll';
 import { Separator } from '@/components/ui/separator';
 import { education } from '@/lib/data';
-import { Award, CheckCircle } from 'lucide-react';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { Award } from 'lucide-react';
+import { PlaceHolderImages, type ImagePlaceholder } from '@/lib/placeholder-images';
 import { cn } from '@/lib/utils';
-
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { InteractiveCarousel } from '@/components/ui/interactive-carousel';
 
 const workItems = [
   {
-    title: 'Post-Acquisition Integration Workflow',
+    id: 'center-of-excellence',
+    title: 'New Center of Excellence Buildout',
     description:
-      'Following a major acquisition, I designed and led the 90-day integration plan to unify technology stacks, operational teams, and cultural practices. This visual workflow was the master document that aligned all stakeholders—from C-suite executives to frontline managers—on key milestones, dependencies, and success metrics.',
-    deliverables: [
-      'Reduced system redundancy by 40% within the first 6 months.',
-      'Achieved a 95% employee retention rate in key acquired teams.',
-      'Unified disparate CRM and ERP systems into a single source of truth.',
-    ],
-    imageId: 'work-diagram',
+      'Architected and deployed a global center of excellence from the ground up, scaling from an initial team of 5 to a fully operational 60-person hub. This initiative involved comprehensive operational planning, talent acquisition, and infrastructure setup, creating a high-performance engine for global market research and project management functions. The center became a cornerstone of the company’s operational strategy, leading to its successful acquisition by SAGO.',
+    imageIds: ['coe-1', 'coe-2', 'coe-3'],
   },
   {
-    title: 'AI-Powered Process Optimization Dashboard',
+    id: 'rebranding-integration',
+    title: 'Rebranding & Post-Acquisition Integration',
     description:
-      'To address rising operational costs and manual inefficiencies, I spearheaded an initiative to implement an AI-driven process optimization framework. This dashboard, built in Power BI, provided real-time visibility into key performance indicators, identifying bottlenecks and opportunities for automation. The system integrated with existing tools to learn and suggest improvements over time.',
-    deliverables: [
-      'Automated over 20,000 manual hours of data entry annually.',
-      'Increased processing throughput by 35% in the first quarter.',
-      'Provided predictive insights that led to a 15% reduction in error rates.',
-    ],
-    imageId: 'work-dashboard',
+      'Led the critical post-acquisition integration of multiple global companies, unifying disparate brands, systems, and cultures under a new corporate identity. This complex transformation required meticulous change management, stakeholder communication, and the harmonization of core operational processes. The outcome was a seamless transition that preserved business continuity, retained key talent, and established a cohesive global brand presence.',
+    imageIds: ['rebrand-1', 'rebrand-2'],
   },
-    {
-    title: 'Startup Scaling & Go-to-Market Framework',
+  {
+    id: 'csat-dashboard',
+    title: 'Call Center Performance Dashboard (B2C)',
     description:
-      'Working with an early-stage startup, I developed a comprehensive framework that guided them from 5 to 60 employees and ultimately to a successful acquisition. This model defined the core operational pillars—HR, finance, product, and sales—and established the scalable processes needed to support rapid growth while maintaining a lean structure and clear go-to-market strategy.',
-    deliverables: [
-      'Secured a successful exit through acquisition by a major industry player.',
-      'Established a data-driven culture with clear KPIs for each department.',
-      'Built a repeatable sales process that increased lead-to-close ratio by 50%.',
-    ],
-    imageId: 'work-framework',
+      'Developed and implemented a comprehensive B2C call center performance dashboard using Power BI. This tool provided real-time tracking of critical KPIs including Customer Satisfaction (CSAT), Net Promoter Score (NPS), and Average Handle Time (AHT). By visualizing performance data, we empowered team leaders to identify trends, address issues proactively, and drive a 25% improvement in overall customer satisfaction scores.',
+    imageIds: ['csat-1', 'csat-2', 'csat-3'],
+  },
+  {
+    id: 'appointment-dashboard',
+    title: 'Appointment Setter Looker Dashboard',
+    description:
+      'Designed a sophisticated Looker dashboard to monitor and optimize the performance of appointment-setting teams. The dashboard integrated data from multiple sources to track key metrics like call volume, connection rates, and appointments scheduled per agent. This data-driven approach enabled managers to implement targeted coaching, resulting in a 40% increase in qualified appointments and a significant boost in sales pipeline value.',
+    imageIds: ['looker-appt-1', 'looker-appt-2'],
+  },
+  {
+    id: 'quality-tools',
+    title: '7 Tools of Quality Applied to Call Center',
+    description:
+      'Championed a quality revolution within the call center by applying the 7 Basic Tools of Quality (e.g., Pareto charts, fishbone diagrams, control charts). This systematic, data-driven methodology allowed us to diagnose the root causes of common issues like long wait times and repeat calls. The initiative resulted in a 30% reduction in customer complaints and a more efficient, quality-focused operational culture.',
+    imageIds: ['quality-1', 'quality-2', 'quality-3'],
+  },
+  {
+    id: 'financial-dashboard',
+    title: 'Financial Looker Dashboard',
+    description:
+      'Created a comprehensive financial dashboard in Looker for executive leadership, providing a consolidated view of the company’s fiscal health. The dashboard included detailed P&L statements, cash flow analysis, and automated expense classification. This tool replaced manual reporting processes, reduced financial closing times by 50%, and equipped the C-suite with accurate, real-time data for strategic decision-making.',
+    imageIds: ['looker-finance-1', 'looker-finance-2'],
+  },
+  {
+    id: 'crm-automation',
+    title: 'Dialer & CRM Automations',
+    description:
+      'Spearheaded a major automation project to integrate the dialer system with the CRM, eliminating manual data entry and streamlining lead management workflows. Custom automations were built to handle lead assignment, status updates, and follow-up scheduling. This initiative recovered thousands of agent hours annually and increased lead engagement rates by over 50% by ensuring timely and consistent communication.',
+    imageIds: ['crm-1', 'crm-2'],
   },
 ];
 
@@ -63,7 +79,8 @@ export default function MyWork() {
       e.institution.toLowerCase() === 'microsoft'
   );
 
-  const getImage = (id: string) => PlaceHolderImages.find((img) => img.id === id);
+  const getImages = (ids: string[]): ImagePlaceholder[] =>
+    ids.map(id => PlaceHolderImages.find(img => img.id === id)).filter((img): img is ImagePlaceholder => !!img);
 
 
   return (
@@ -75,49 +92,33 @@ export default function MyWork() {
             My Work
           </h2>
           <p className="mt-4 text-lg leading-8 text-muted-foreground">
-            A showcase of my work, including strategic frameworks, operational dashboards, certifications, and achievements.
+            A showcase of strategic frameworks, operational dashboards, and impactful automations.
           </p>
         </div>
 
         {/* Dynamic Work Items Section */}
-        <div className="mx-auto mt-16 max-w-7xl space-y-16 sm:mt-20 lg:mt-24">
+        <div className="mx-auto mt-16 max-w-7xl space-y-24 sm:mt-20 lg:mt-24">
           {workItems.map((item, index) => {
-             const image = getImage(item.imageId);
+             const images = getImages(item.imageIds);
              const isReversed = index % 2 !== 0;
              return (
-                <div key={item.title} className="relative animate-unfold" style={{ animationDelay: `${index * 150}ms`}}>
-                   <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
-                      <div className={cn("space-y-6", isReversed && "lg:order-last")}>
-                         <h3 className="font-headline text-2xl font-semibold text-primary">{item.title}</h3>
-                         <p className="text-muted-foreground leading-relaxed">{item.description}</p>
-                         <div>
-                            <h4 className="font-semibold mb-3 text-foreground">
-                               Key Outcomes:
-                            </h4>
-                            <ul className="space-y-2">
-                               {item.deliverables.map((deliverable) => (
-                                  <li key={deliverable} className="flex items-start gap-3">
-                                     <CheckCircle className="h-5 w-5 text-accent mt-1 shrink-0" />
-                                     <span className="text-muted-foreground">{deliverable}</span>
-                                  </li>
-                               ))}
-                            </ul>
-                         </div>
-                      </div>
-                      {image && (
-                         <div className={cn("relative h-80 w-full rounded-lg shadow-xl", isReversed && "lg:order-first")}>
-                            <Image
-                               src={image.imageUrl}
-                               alt={image.description}
-                               fill
-                               sizes="(max-width: 1024px) 100vw, 50vw"
-                               className="object-cover rounded-lg"
-                               data-ai-hint={image.imageHint}
-                            />
-                         </div>
-                      )}
-                   </div>
-                </div>
+                <Card key={item.id} className="relative animate-unfold border shadow-lg" style={{ animationDelay: `${index * 150}ms`}}>
+                  <CardHeader>
+                    <CardTitle className="font-headline text-2xl font-semibold text-primary">{item.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:gap-12">
+                        <div className={cn("space-y-6", isReversed && "lg:order-last")}>
+                          <p className="text-muted-foreground leading-relaxed">{item.description}</p>
+                        </div>
+                        {images.length > 0 && (
+                          <div className={cn("relative h-80 w-full", isReversed && "lg:order-first")}>
+                              <InteractiveCarousel images={images} />
+                          </div>
+                        )}
+                    </div>
+                  </CardContent>
+                </Card>
              );
           })}
         </div>

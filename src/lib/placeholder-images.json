@@ -19,22 +19,106 @@
       "imageHint": "business handshake"
     },
     {
-      "id": "work-diagram",
-      "description": "A complex flowchart diagram on a whiteboard, representing a business process or workflow.",
-      "imageUrl": "https://images.unsplash.com/photo-1542744095-fcf48d80b2fd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHx3b3JrZmxvdyUyMGRpYWdyYW18ZW58MHx8fHwxNzYyMjE1MDIyfDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "workflow diagram"
+      "id": "coe-1",
+      "description": "A modern office space with a global map on the wall, representing a center of excellence.",
+      "imageUrl": "https://images.unsplash.com/photo-1573496799515-e6b3c8395ff6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxnbG9iYWwlMjBvZmZpY2V8ZW58MHx8fHwxNzYyMjE1MTI4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "global office"
     },
     {
-      "id": "work-dashboard",
-      "description": "A computer screen showing a modern business intelligence dashboard with charts and graphs.",
+      "id": "coe-2",
+      "description": "A diverse team collaborating around a table.",
+      "imageUrl": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxkaXZlcnNlJTIwdGVhbXxlbnwwfHx8fDE3NjIyMTUxODF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "diverse team"
+    },
+    {
+      "id": "coe-3",
+      "description": "A chart showing upward growth and expansion.",
+      "imageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxncm93dGglMjBjaGFydHxlbnwwfHx8fDE3NjIyMTUyMTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "growth chart"
+    },
+    {
+      "id": "rebrand-1",
+      "description": "A mood board with different logos, color palettes, and branding materials.",
+      "imageUrl": "https://images.unsplash.com/photo-1542744095-fcf48d80b2fd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxyZWJyYW5kaW5nJTIwc3RyYXRlZ3l8ZW58MHx8fHwxNzYyMjE1MjQyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "rebranding strategy"
+    },
+    {
+      "id": "rebrand-2",
+      "description": "People in a workshop, collaborating on a new brand identity.",
+      "imageUrl": "https://images.unsplash.com/photo-1560439514-4e9645039924?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxicmFuZCUyMHdvcmtzaG9wfGVufDB8fHx8fDE3NjIyMTUyNzJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "brand workshop"
+    },
+    {
+      "id": "csat-1",
+      "description": "A close-up of a vibrant BI dashboard showing CSAT and NPS scores with gauges.",
       "imageUrl": "https://images.unsplash.com/photo-1601740992036-575796495679?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxiaSUyMGRhc2hib2FyZHxlbnwwfHx8fDE3NjIyMTUwODV8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "BI dashboard"
+      "imageHint": "customer satisfaction"
     },
     {
-      "id": "work-framework",
-      "description": "Abstract visualization of a connected network or framework, representing a strategic business model.",
-      "imageUrl": "https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxhYnN0cmFjdCUyMG5ldHdvcmt8ZW58MHx8fHwxNzYyMjE1MTI4fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "abstract network"
+      "id": "csat-2",
+      "description": "A call center with agents working, representing customer service operations.",
+      "imageUrl": "https://images.unsplash.com/photo-1587573089734-09cb69c0f2b4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjdXN0b21lciUyMHNlcnZpY2UlMjBjZW50ZXJ8ZW58MHx8fHwxNzYyMjE1MzMyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "customer service"
+    },
+    {
+      "id": "csat-3",
+      "description": "A line graph showing a clear upward trend in customer satisfaction over time.",
+      "imageUrl": "https://images.unsplash.com/photo-1526623669166-5f653139a139?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwb3NpdGl2ZSUyMHRyZW5kJTIwZ3JhcGh8ZW58MHx8fHwxNzYyMjE1MzYxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "positive trend"
+    },
+    {
+      "id": "looker-appt-1",
+      "description": "A sleek, dark-themed Looker dashboard focused on sales appointments and lead conversion funnels.",
+      "imageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxkYXJrJTIwZGFzaGJvYXJkfGVufDB8fHx8fDE3NjIyMTUzOTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "sales dashboard"
+    },
+    {
+      "id": "looker-appt-2",
+      "description": "A sales team huddling, looking at a screen with performance metrics.",
+      "imageUrl": "https://images.unsplash.com/photo-1543269865-cbf427effbad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzYWxlcyUyMHRlYW0lMjBtZWV0aW5nfGVufDB8fHx8fDE3NjIyMTU0MjN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "sales meeting"
+    },
+    {
+      "id": "quality-1",
+      "description": "A hand-drawn fishbone (Ishikawa) diagram on a whiteboard, analyzing a problem.",
+      "imageUrl": "https://images.unsplash.com/photo-1542744095-fcf48d80b2fd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxmaXNoYm9uZSUyMGRpYWdyYW18ZW58MHx8fHwxNzYyMjE1NDUxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "fishbone diagram"
+    },
+    {
+      "id": "quality-2",
+      "description": "A Pareto chart showing the 80/20 principle in action for quality control.",
+      "imageUrl": "https://images.unsplash.com/photo-1611974780784-3c6c2b8c8b4c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwYXJldG8lMjBjaGFydHxlbnwwfHx8fHwxNzYyMjE1NDc5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "pareto chart"
+    },
+    {
+      "id": "quality-3",
+      "description": "A person looking at a control chart with upper and lower limits, monitoring process stability.",
+      "imageUrl": "https://images.unsplash.com/photo-1637416187747-8a6c761a29e2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjb250cm9sJTIwY2hhcnR8ZW58MHx8fHwxNzYyMjE1NTA4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "control chart"
+    },
+    {
+      "id": "looker-finance-1",
+      "description": "A financial dashboard showing P&L, revenue, and expense trends.",
+      "imageUrl": "https://images.unsplash.com/photo-1642427749670-f20e2e76f8c8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxmaW5hbmNpYWwlMjBkYXNoYm9hcmR8ZW58MHx8fHwxNzYyMjE1NjUxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "financial dashboard"
+    },
+    {
+      "id": "looker-finance-2",
+      "description": "A pie chart breaking down expense classifications.",
+      "imageUrl": "https://images.unsplash.com/photo-1524146162947-d558d042ed35?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxleHBlbnNlJTIwY2hhcnR8ZW58MHx8fHwxNzYyMjE1NjgwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "expense chart"
+    },
+    {
+      "id": "crm-1",
+      "description": "A diagram showing a CRM system connected to other apps like a dialer and email service.",
+      "imageUrl": "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxDUk0lMjBhdXRvbWF0aW9ufGVufDB8fHx8fDE3NjIyMTU3MDd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "crm automation"
+    },
+    {
+      "id": "crm-2",
+      "description": "A workflow automation sequence shown on a screen, with triggers and actions.",
+      "imageUrl": "https://images.unsplash.com/photo-1529400971034-29393a400903?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx3b3JrZmxvdyUyMGF1dG9tYXRpb258ZW58MHx8fHwxNzYyMjE1NzM4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "workflow automation"
     }
   ]
 }
