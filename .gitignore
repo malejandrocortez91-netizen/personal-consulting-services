@@ -1,0 +1,27 @@
+# Dependencies
+/node_modules
+
+# Build directory
+/.next/
+/out/
+
+# Vercel
+.vercel
+
+# Temporary files
+*.swp
+*~
+
+# Environment variables
+.env
+.env.local
+.env.production
+
+# Logs
+firebase-debug.log
+firestore-debug.log
+
+# Other
+.DS_Store
+.firebase
+/home/user/studio/.firebase

@@ -1,0 +1,26 @@
+diff --git a/node_modules/@opentelemetry/sdk-trace-base/build/esm/index.js b/node_modules/@opentelemetry/sdk-trace-base/build/esm/index.js
+index 430541e..e226a2e 100644
+--- a/node_modules/@opentelemetry/sdk-trace-base/build/esm/index.js
++++ b/node_modules/@opentelemetry/sdk-trace-base/build/esm/index.js
+@@ -12,7 +12,7 @@
+  * See the License for the specific language governing permissions and
+  * limitations under the License.
+  */
+-export * from './BasicTracerProvider';
++export * from './BasicTracerProvider.js';
+ export * from './context-utils';
+ export * from './instrumentation';
+ export * from './platform';
+diff --git a/node_modules/@opentelemetry/sdk-trace-base/build/esm/index.d.ts b/node_modules/@opentelemetry/sdk-trace-base/build/esm/index.d.ts
+index e998084..6257a3e 100644
+--- a/node_modules/@opentelemetry/sdk-trace-base/build/esm/index.d.ts
++++ b/node_modules/@opentelemetry/sdk-trace-base/build/esm/index.d.ts
+@@ -12,7 +12,7 @@
+  * See the License for a specific language governing permissions and
+  * limitations under the License.
+  */
+-export * from './BasicTracerProvider';
++export * from './BasicTracerProvider.js';
+ export * from './context-utils';
+ export * from './instrumentation';
+ export * from './platform';
