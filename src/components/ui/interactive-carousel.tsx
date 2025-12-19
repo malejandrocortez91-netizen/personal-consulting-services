@@ -11,12 +11,11 @@ import type { ImagePlaceholder } from "@/lib/placeholder-images"
 
 interface InteractiveCarouselProps {
   images: ImagePlaceholder[];
-  startIndex?: number;
 }
 
-export function InteractiveCarousel({ images, startIndex = 0 }: InteractiveCarouselProps) {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, startIndex })
-  const [selectedIndex, setSelectedIndex] = React.useState(startIndex)
+export function InteractiveCarousel({ images }: InteractiveCarouselProps) {
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true })
+  const [selectedIndex, setSelectedIndex] = React.useState(0)
 
   const scrollPrev = React.useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev()
