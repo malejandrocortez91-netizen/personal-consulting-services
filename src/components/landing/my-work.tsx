@@ -44,7 +44,7 @@ const workItems = [
     title: 'Call Center Performance Dashboard (B2C)',
     description:
       'Developed and implemented a comprehensive B2C call center performance dashboard using Power BI. This tool provided real-time tracking of critical KPIs including Customer Satisfaction (CSAT), Net Promoter Score (NPS), and Average Handle Time (AHT). By visualizing performance data, we empowered team leaders to identify trends, address issues proactively, and drive significant improvements in service quality.',
-    imageIds: ['retail-dash-1', 'retail-dash'],
+    imageIds: ['retail-dash-1', 'retail-dash-2'],
     outcomes: [
       "Improved CSAT scores by 25% within 6 months.",
       "Reduced Average Handle Time (AHT) by 18% through targeted coaching.",
@@ -57,7 +57,7 @@ const workItems = [
     title: 'Appointment Setter Looker Dashboard',
     description:
       'Designed a sophisticated Looker dashboard to monitor and optimize the performance of appointment-setting teams. The dashboard integrated data from multiple sources to track key metrics like call volume, connection rates, and appointments scheduled per agent. This data-driven approach enabled managers to implement targeted coaching, resulting in a dramatic increase in qualified appointments and sales pipeline value.',
-    imageIds: ['appt_dash_1', 'appt_dash_2', 'appt_dash'],
+    imageIds: ['appt_dash_1', 'appt_dash_2', 'appt_dash_3'],
     outcomes: [
       "Increased qualified appointments scheduled by 40%.",
       "Boosted sales pipeline value by $2.5M in the first year.",
