@@ -156,13 +156,15 @@ export default function MyWork() {
           {workItems.map((item, index) => {
              const images = getImages(item.imageIds);
              const isReversed = index % 2 !== 0;
+             const isLookerDashboard = item.id === 'appointment-dashboard';
+             
              return (
                 <Card key={item.id} className="relative animate-unfold border shadow-lg" style={{ animationDelay: `${index * 150}ms`}}>
                   <CardHeader className="pb-4">
                     <CardTitle className="font-headline text-2xl font-semibold text-primary">{item.title}</CardTitle>
                   </CardHeader>
                   <CardContent className="grid grid-cols-1 items-start gap-8 lg:grid-cols-2 lg:gap-12 pt-2">
-                      <div className={cn("space-y-6", isReversed && "lg:order-last")}>
+                      <div className={cn("space-y-6", (isReversed && !isLookerDashboard) && "lg:order-last", isLookerDashboard && "lg:order-last")}>
                         <p className="text-muted-foreground leading-relaxed">{item.description}</p>
                         <div>
                           <h4 className="font-semibold text-foreground mb-3">Key Metrics & Outcomes:</h4>
@@ -179,7 +181,7 @@ export default function MyWork() {
                         </div>
                       </div>
                       {images.length > 0 && (
-                        <div className={cn("relative h-96 w-full", isReversed && "lg:order-first")}>
+                        <div className={cn("relative h-96 w-full", (isReversed && !isLookerDashboard) && "lg:order-first", isLookerDashboard && "lg:order-first")}>
                             <InteractiveCarousel images={images} />
                         </div>
                       )}
@@ -224,3 +226,4 @@ export default function MyWork() {
     </section>
   );
 }
+
