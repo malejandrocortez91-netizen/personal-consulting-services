@@ -57,7 +57,7 @@ const workItems = [
     title: 'Appointment Setter Looker Dashboard',
     description:
       'Designed a sophisticated Looker dashboard to monitor and optimize the performance of appointment-setting teams. The dashboard integrated data from multiple sources to track key metrics like call volume, connection rates, and appointments scheduled per agent. This data-driven approach enabled managers to implement targeted coaching, resulting in a dramatic increase in qualified appointments and sales pipeline value.',
-    imageIds: ['appt-dash-1', 'appt-dash-2'],
+    imageIds: ['appt-dash-1', 'appt-dash-2', 'appt-dash-3'],
     outcomes: [
       "Increased qualified appointments scheduled by 25%.",
       "Boosted sales pipeline value by $2.5M in the first year.",
@@ -70,7 +70,7 @@ const workItems = [
     title: '7 Tools of Quality Applied to Call Center',
     description:
       'Championed a quality revolution within the call center by applying the 7 Basic Tools of Quality (e.g., Pareto charts, fishbone diagrams, control charts). This systematic, data-driven methodology allowed us to diagnose the root causes of common issues like long wait times and repeat calls. The initiative resulted in a more efficient, quality-focused operational culture and a significant reduction in customer complaints.',
-    imageIds: ['quality-1', 'quality-2', 'quality-3'],
+    imageIds: ['quality-1', 'quality-2'],
     outcomes: [
       "Reduced customer complaints by 30% in one year.",
       "Identified and eliminated root causes for 80% of repeat calls.",
@@ -163,7 +163,7 @@ export default function MyWork() {
                     <CardTitle className="font-headline text-2xl font-semibold text-primary">{item.title}</CardTitle>
                   </CardHeader>
                   <CardContent className="grid grid-cols-1 items-start gap-8 lg:grid-cols-2 lg:gap-12 pt-2">
-                      <div className={cn("space-y-6", (item.id === 'appointment-dashboard' || isReversed) ? 'lg:order-last' : '')}>
+                      <div className={cn("space-y-6", item.id === 'appointment-dashboard' || isReversed ? 'lg:order-last' : '')}>
                         <p className="text-muted-foreground leading-relaxed">{item.description}</p>
                         <div>
                           <h4 className="font-semibold text-foreground mb-3">Key Metrics & Outcomes:</h4>
@@ -180,7 +180,7 @@ export default function MyWork() {
                         </div>
                       </div>
                       {images.length > 0 && (
-                        <div className={cn("relative h-96 w-full", (item.id === 'appointment-dashboard' || isReversed) ? 'lg:order-first' : '')}>
+                        <div className={cn("relative h-96 w-full", item.id === 'appointment-dashboard' || isReversed ? 'lg:order-first' : '')}>
                             <InteractiveCarousel images={images} />
                         </div>
                       )}
