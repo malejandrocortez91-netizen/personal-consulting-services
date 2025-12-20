@@ -57,7 +57,7 @@ const workItems = [
     title: 'Appointment Setter Looker Dashboard',
     description:
       'Designed a sophisticated Looker dashboard to monitor and optimize the performance of appointment-setting teams. The dashboard integrated data from multiple sources to track key metrics like call volume, connection rates, and appointments scheduled per agent. This data-driven approach enabled managers to implement targeted coaching, resulting in a dramatic increase in qualified appointments and sales pipeline value.',
-    imageIds: ['appt_dash_1', 'appt_dash_2', 'appt_dash_3'],
+    imageIds: ['appt_dash_1', 'appt_dash_2'],
     outcomes: [
       "Increased qualified appointments scheduled by 40%.",
       "Boosted sales pipeline value by $2.5M in the first year.",
