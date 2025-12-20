@@ -39,7 +39,7 @@
     {
       "id": "rebrand-1",
       "description": "A mood board with different logos, color palettes, and branding materials.",
-      "imageUrl": "https://images.unsplash.com/photo-1542744095-fcf48d80b2fd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxyZWJyYW5kaW5nJTIwc3RyYXRlZ3l8ZW58MHx8fHwxNzYyMjE1MjQyfDA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1542744095-fcf48d80b2fd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxyZWJyYW5kaW5nJTIwc3RyYXRlZ3l8ZW58MHx8fHwxNzYyMjE1MjQyfDA&ixlib.rb-4.1.0&q=80&w=1080",
       "imageHint": "rebranding strategy"
     },
     {
@@ -57,7 +57,7 @@
     {
       "id": "looker-finance-2",
       "description": "A pie chart breaking down expense classifications.",
-      "imageUrl": "https://images.unsplash.com/photo-1524146162947-d558d042ed35?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxleHBlbnNlJTIwY2hhcnR8ZW58MHx8fHwxNzYyMjE1NjgwfDA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1524146162947-d558d042ed35?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxleHBlbnNlJTIwY2hhcnR8ZW58MHx8fHwxNzYyMjE1NjgwfDA&ixlib.rb-4.1.0&q=80&w=1080",
       "imageHint": "expense chart"
     },
     {
