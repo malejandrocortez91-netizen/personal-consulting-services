@@ -62,26 +62,20 @@
     },
     {
       "id": "crm-1",
-      "description": "A diagram showing a CRM system connected to other apps like a dialer and email service.",
-      "imageUrl": "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxDUk0lMjBhdXRvbWF0aW9ufGVufDB8fHx8fDE3NjIyMTU3MDd8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "crm automation"
+      "description": "An n8n workflow for CRM automation.",
+      "imageUrl": "/images/n8n_workflow.png",
+      "imageHint": "n8n workflow"
     },
     {
       "id": "crm-2",
-      "description": "A workflow automation sequence shown on a screen, with triggers and actions.",
-      "imageUrl": "https://images.unsplash.com/photo-1529400971034-29393a400903?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx3b3JrZmxvdyUyMGF1dG9tYXRpb258ZW58MHx8fHwxNzYyMjE1NzM4fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "workflow automation"
-    },
-    {
-      "id": "crm-3",
-      "description": "A cold call automation workflow showing steps from webhook to CRM storage and notifications.",
-      "imageUrl": "https://storage.googleapis.com/aai-web-samples/user-provided/Kv1j84l80oT8LpA4g9tq-original.png",
-      "imageHint": "automation workflow"
+      "description": "A second n8n workflow for CRM automation.",
+      "imageUrl": "/images/n8n_workflow2.png",
+      "imageHint": "n8n workflow"
     },
     {
       "id": "pm-platform-1",
       "description": "A screenshot of a project management tool like Asana or ClickUp, showing tasks and timelines.",
-      "imageUrl": "https://images.unsplash.com/photo-1758876201787-bd6ad98b7d6c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxBZ2lsZSUyMG1ldGhvZHxlbnwwfHx8fDE3NjUzNDE4NjN8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1758876201787-bd6ad98b7d6c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxBZ2lsZSUyMG1ldGhvZHxlbnwwfHx8fDE3NjUzNDE4NjN8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "Agile method"
     },
     {
@@ -93,14 +87,8 @@
     {
       "id": "pm-platform-3",
       "description": "A diagram illustrating the integration between different software platforms.",
-      "imageUrl": "https://images.unsplash.com/photo-1542744095-291d1f67b221?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzb2Z0d2FyZSUyMGludGVncmF0aW9uJTIwZGlhZ3JhbXxlbnwwfHx8fDE3NjIyMjQxMTN8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1542744095-291d1f67b221?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzb2Z0d2FyZSUyMGludGVncmF0aW9uJTIwZGlhZ3JhbXxlbnwwfHx8fDE3NjIyMjQxMTN8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "software integration"
-    },
-    {
-      "id": "quality-1",
-      "description": "A hand-drawn fishbone (Ishikawa) diagram on a whiteboard, analyzing a problem.",
-      "imageUrl": "/images/7_tools_of_QA_1.png",
-      "imageHint": "fishbone diagram"
     },
     {
       "id": "quality-2",

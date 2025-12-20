@@ -96,7 +96,7 @@ const workItems = [
     title: 'Dialer & CRM Automations',
     description:
       'Spearheaded a major automation project to integrate the dialer system with the CRM, eliminating manual data entry and streamlining lead management workflows. Custom automations were built to handle lead assignment, status updates, and follow-up scheduling. This initiative recovered thousands of agent hours annually and and increased lead engagement rates by ensuring timely and consistent communication.',
-    imageIds: ['crm-1', 'crm-2', 'crm-3'],
+    imageIds: ['crm-1', 'crm-2'],
     outcomes: [
       "Increased lead engagement rates by over 50%.",
       "Saved an estimated 8,000 agent hours annually through automation.",
@@ -163,7 +163,7 @@ export default function MyWork() {
                     <CardTitle className="font-headline text-2xl font-semibold text-primary">{item.title}</CardTitle>
                   </CardHeader>
                   <CardContent className="grid grid-cols-1 items-start gap-8 lg:grid-cols-2 lg:gap-12 pt-2">
-                      <div className={cn("space-y-6", item.id === 'appointment-dashboard' || isReversed ? 'lg:order-last' : '')}>
+                      <div className={cn("space-y-6", (item.id === 'appointment-dashboard' || isReversed) && item.id !== 'crm-automation' ? 'lg:order-last' : '')}>
                         <p className="text-muted-foreground leading-relaxed">{item.description}</p>
                         <div>
                           <h4 className="font-semibold text-foreground mb-3">Key Metrics & Outcomes:</h4>
@@ -180,7 +180,7 @@ export default function MyWork() {
                         </div>
                       </div>
                       {images.length > 0 && (
-                        <div className={cn("relative h-96 w-full", isReversed ? 'lg:order-first' : '')}>
+                        <div className={cn("relative h-96 w-full", (item.id === 'appointment-dashboard' || isReversed) && item.id !== 'crm-automation' ? 'lg:order-first' : '')}>
                             <InteractiveCarousel images={images} />
                         </div>
                       )}
@@ -225,3 +225,5 @@ export default function MyWork() {
     </section>
   );
 }
+
+    
