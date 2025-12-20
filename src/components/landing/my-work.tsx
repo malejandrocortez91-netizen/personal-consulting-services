@@ -96,7 +96,7 @@ const workItems = [
     title: 'Dialer & CRM Automations',
     description:
       'Spearheaded a major automation project to integrate the dialer system with the CRM, eliminating manual data entry and streamlining lead management workflows. Custom automations were built to handle lead assignment, status updates, and follow-up scheduling. This initiative recovered thousands of agent hours annually and and increased lead engagement rates by ensuring timely and consistent communication.',
-    imageIds: ['crm-1', 'crm-2'],
+    imageIds: ['crm-n8n-1', 'crm-n8n-2'],
     outcomes: [
       "Increased lead engagement rates by over 50%.",
       "Saved an estimated 8,000 agent hours annually through automation.",
@@ -225,5 +225,7 @@ export default function MyWork() {
     </section>
   );
 }
+
+    
 
     

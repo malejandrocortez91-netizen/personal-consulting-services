@@ -61,13 +61,13 @@
       "imageHint": "expense chart"
     },
     {
-      "id": "crm-1",
+      "id": "crm-n8n-1",
       "description": "An n8n workflow for CRM automation.",
       "imageUrl": "/images/n8n_workflow.png",
       "imageHint": "n8n workflow"
     },
     {
-      "id": "crm-2",
+      "id": "crm-n8n-2",
       "description": "A second n8n workflow for CRM automation.",
       "imageUrl": "/images/n8n_workflow2.png",
       "imageHint": "n8n workflow"
