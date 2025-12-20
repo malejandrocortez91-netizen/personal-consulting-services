@@ -40,8 +40,8 @@ const workItems = [
     ]
   },
   {
-    id: 'csat-dashboard',
-    title: 'Call Center Performance Dashboard (B2C)',
+    id: 'retail-dashboard',
+    title: 'B2C Call Center Performance Dashboard',
     description:
       'Developed and implemented a comprehensive B2C call center performance dashboard using Power BI. This tool provided real-time tracking of critical KPIs including Customer Satisfaction (CSAT), Net Promoter Score (NPS), and Average Handle Time (AHT). By visualizing performance data, we empowered team leaders to identify trends, address issues proactively, and drive significant improvements in service quality.',
     imageIds: ['retail-dash-1', 'retail-dash-2'],
