@@ -18,7 +18,7 @@ const workItems = [
     title: 'New Center of Excellence Buildout',
     description:
       'Architected and deployed a global center of excellence from the ground up, scaling from an initial team of 5 to a fully operational 60-person hub. This initiative involved comprehensive operational planning, talent acquisition, and infrastructure setup, creating a high-performance engine for global market research and project management functions. The center became a cornerstone of the company’s operational strategy, leading to its successful acquisition by SAGO.',
-    imageIds: ['coe-1', 'coe-2', 'coe-3'],
+    imageIds: ['coe-build-1', 'coe-build-2', 'coe-build-3', 'coe-build-4'],
     outcomes: [
       "Scaled team from 5 to 60 members in 18 months.",
       "Reduced operational costs by 35% through process centralization.",
@@ -31,7 +31,7 @@ const workItems = [
     title: 'Rebranding & Post-Acquisition Integration',
     description:
       'Led the critical post-acquisition integration of multiple global companies, unifying disparate brands, systems, and cultures under a new corporate identity. This complex transformation required meticulous change management, stakeholder communication, and the harmonization of core operational processes. The outcome was a seamless transition that preserved business continuity, retained key talent, and established a cohesive global brand presence.',
-    imageIds: ['rebrand-1', 'rebrand-2'],
+    imageIds: ['rebrand-img-1', 'rebrand-img-2', 'rebrand-img-3', 'rebrand-img-4', 'rebrand-img-5'],
     outcomes: [
       "Unified 4 distinct company brands into a single global identity.",
       "Integrated 3 separate CRM systems into one, creating a single source of truth.",
@@ -96,11 +96,11 @@ const workItems = [
     title: 'Dialer & CRM Automations',
     description:
       'Spearheaded a major automation project to integrate the dialer system with the CRM, eliminating manual data entry and streamlining lead management workflows. Custom automations were built to handle lead assignment, status updates, and follow-up scheduling. This initiative recovered thousands of agent hours annually and and increased lead engagement rates by ensuring timely and consistent communication.',
-    imageIds: ['crm-n8n-1', 'crm-n8n-2'],
+    imageIds: ['crm-n8n-1', 'crm-n8n-2', 'crm-n8n-3'],
     outcomes: [
       "Increased lead engagement rates by over 50%.",
       "Saved an estimated 8,000 agent hours annually through automation.",
-      "Eliminated 99% of manual data entry errors between dialer and CRM.",
+      "Eliminated 91% of manual data entry errors between dialer and CRM.",
       "Ensured 100% of new leads received follow-up within 5 minutes."
     ]
   },
@@ -225,11 +225,3 @@ export default function MyWork() {
     </section>
   );
 }
-
-    
-
-    
-
-    
-    
-    

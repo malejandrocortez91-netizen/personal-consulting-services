@@ -37,16 +37,34 @@
       "imageHint": "growth chart"
     },
     {
-      "id": "rebrand-1",
-      "description": "A mood board with different logos, color palettes, and branding materials.",
-      "imageUrl": "https://images.unsplash.com/photo-1542744095-fcf48d80b2fd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxyZWJyYW5kaW5nJTIwc3RyYXRlZ3l8ZW58MHx8fHwxNzYyMjE1MjQyfDA&ixlib.rb-4.1.0&q=80&w=1080",
-      "imageHint": "rebranding strategy"
+      "id": "rebrand-img-1",
+      "description": "Marketing material changes 1",
+      "imageUrl": "/images/Marketing_material_changes (1).jpg",
+      "imageHint": "marketing material"
     },
     {
-      "id": "rebrand-2",
-      "description": "People in a workshop, collaborating on a new brand identity.",
-      "imageUrl": "https://images.unsplash.com/photo-1560439514-4e9645039924?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxicmFuZCUyMHdvcmtzaG9wfGVufDB8fHx8fDE3NjIyMTUyNzJ8MA&ixlib.rb-4.1.0&q=80&w=1080",
-      "imageHint": "brand workshop"
+      "id": "rebrand-img-2",
+      "description": "Marketing material changes 2",
+      "imageUrl": "/images/Marketing_material_changes (2).jpg",
+      "imageHint": "marketing material"
+    },
+    {
+      "id": "rebrand-img-3",
+      "description": "Marketing material changes 3",
+      "imageUrl": "/images/Marketing_material_changes (3).jpg",
+      "imageHint": "marketing material"
+    },
+    {
+      "id": "rebrand-img-4",
+      "description": "Marketing material changes 4",
+      "imageUrl": "/images/Marketing_material_2_ (1).jpg",
+      "imageHint": "marketing material"
+    },
+    {
+      "id": "rebrand-img-5",
+      "description": "Marketing material changes 5",
+      "imageUrl": "/images/Marketing_material_2_ (2).jpg",
+      "imageHint": "marketing material"
     },
     {
       "id": "looker-finance-1",
@@ -73,15 +91,21 @@
       "imageHint": "n8n workflow"
     },
     {
+      "id": "crm-n8n-3",
+      "description": "A third n8n workflow for CRM automation.",
+      "imageUrl": "/images/n8n_workflow3.jpeg",
+      "imageHint": "n8n workflow"
+    },
+    {
       "id": "pm-platform-1",
       "description": "A screenshot of a project management tool like Asana or ClickUp, showing tasks and timelines.",
-      "imageUrl": "https://images.unsplash.com/photo-1758876201787-bd6ad98b7d6c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxBZ2lsZSUyMG1ldGhvZHxlbnwwfHx8fDE3NjUzNDE4NjN8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1758876201787-bd6ad98b7d6c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxBZ2lsZSUyMG1ldGhvZHxlbnwwfHx8fDE3NjUzNDE4NjN8MA&ixlib.rb-4.1.0&q=80&w=1080",
       "imageHint": "Agile method"
     },
     {
       "id": "pm-platform-2",
       "description": "A Looker Studio or Power BI dashboard displaying client success KPIs.",
-      "imageUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxEYXRhJTIwRGFzaGJvYXJkfGVufDB8fHx8MTc2NTM0MTkwMnww&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxEYXRhJTIwRGFzaGJvYXJkfGVufDB8fHx8MTc2NTM0MTkwMnww&ixlib.rb-4.1.0&q=80&w=1080",
       "imageHint": "Data Dashboard"
     },
     {
@@ -131,6 +155,30 @@
       "description": "Second retail dashboard.",
       "imageUrl": "/images/retail_dash.png",
       "imageHint": "retail dashboard"
+    },
+    {
+      "id": "coe-build-1",
+      "description": "Call center buildout image 1",
+      "imageUrl": "/images/call-center-build_ (1).jpeg",
+      "imageHint": "call center build"
+    },
+    {
+      "id": "coe-build-2",
+      "description": "Call center buildout image 2",
+      "imageUrl": "/images/call-center-build_ (1).jpg",
+      "imageHint": "call center build"
+    },
+    {
+      "id": "coe-build-3",
+      "description": "Call center buildout image 3",
+      "imageUrl": "/images/call-center-build_ (2).jpg",
+      "imageHint": "call center build"
+    },
+    {
+      "id": "coe-build-4",
+      "description": "Call center buildout image 4",
+      "imageUrl": "/images/call-center-build_ (3).jpg",
+      "imageHint": "call center build"
     }
   ]
 }
