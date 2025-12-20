@@ -9,13 +9,13 @@
     {
       "id": "project-2",
       "description": "A busy shipping container port, representing logistics and supply chain.",
-      "imageUrl": "https://images.unsplash.com/photo-1617938568125-b55e59775632?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8c2hpcHBpbmclMjBjb250YWluZXJzfGVufDB8fHx8fDE3NjIyMTA5NzV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1617938568125-b55e59775632?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8c2hpcHBpbmclMjBjb250YWluZXJzfGVufDB8fHx8fDE3NjIyMTA5NzV8MA&ixlib-rb-4.1.0&q=80&w=1080",
       "imageHint": "shipping containers"
     },
     {
       "id": "project-3",
       "description": "Two hands shaking over a table with documents, symbolizing a successful deal or merger.",
-      "imageUrl": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxidXNpbmVzcyUyMGhhbmRzaGFrZXxlbnwwfHx8fDE3NjIxODI4NDZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxidXNpbmVzcyUyMGhhbmRzaGFrZXxlbnwwfHx8fDE3NjIxODI4NDZ8MA&ixlib-rb-4.1.0&q=80&w=1080",
       "imageHint": "business handshake"
     },
     {
@@ -39,7 +39,7 @@
     {
       "id": "rebrand-1",
       "description": "A mood board with different logos, color palettes, and branding materials.",
-      "imageUrl": "https://images.unsplash.com/photo-1542744095-fcf48d80b2fd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxyZWJyYW5kaW5nJTIwc3RyYXRlZ3l8ZW58MHx8fHwxNzYyMjE1MjQyfDA&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1542744095-fcf48d80b2fd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxyZWJyYW5kaW5nJTIwc3RyYXRlZ3l8ZW58MHx8fHwxNzYyMjE1MjQyfDA&ixlib-rb-4.1.0&q=80&w=1080",
       "imageHint": "rebranding strategy"
     },
     {
@@ -87,7 +87,7 @@
     {
       "id": "pm-platform-3",
       "description": "A diagram illustrating the integration between different software platforms.",
-      "imageUrl": "https://images.unsplash.com/photo-1542744095-291d1f67b221?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzb2Z0d2FyZSUyMGludGVncmF0aW9uJTIwZGlhZ3JhbXxlbnwwfHx8fDE3NjIyMjQxMTN8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1542744095-291d1f67b221?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzb2Z0d2FyZSUyMGludGVncmF0aW9uJTIwZGlhZ3JhbXxlbnwwfHx8fDE3NjIyMjQxMTN8MA&ixlib.rb-4.1.0&q=80&w=1080",
       "imageHint": "software integration"
     },
     {
