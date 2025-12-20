@@ -70,7 +70,7 @@ const workItems = [
     title: '7 Tools of Quality Applied to Call Center',
     description:
       'Championed a quality revolution within the call center by applying the 7 Basic Tools of Quality (e.g., Pareto charts, fishbone diagrams, control charts). This systematic, data-driven methodology allowed us to diagnose the root causes of common issues like long wait times and repeat calls. The initiative resulted in a more efficient, quality-focused operational culture and a significant reduction in customer complaints.',
-    imageIds: ['quality-1', 'quality-2'],
+    imageIds: ['quality-2', 'quality-3'],
     outcomes: [
       "Reduced customer complaints by 30% in one year.",
       "Identified and eliminated root causes for 80% of repeat calls.",
