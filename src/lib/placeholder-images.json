@@ -21,37 +21,37 @@
     {
       "id": "coe-1",
       "description": "A modern office space with a global map on the wall, representing a center of excellence.",
-      "imageUrl": "https://images.unsplash.com/photo-1676817710465-f977383c49c6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxuZXclMjBidWlsZGluZ3xlbnwwfHx8fDE3NjUzNDE2NDl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1676817710465-f977383c49c6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxuZXclMjBidWlsZGluZ3xlbnwwfHx8fDE3NjUzNDE2NDl8MA&ixlib.rb-4.1.0&q=80&w=1080",
       "imageHint": "new building"
     },
     {
       "id": "coe-2",
       "description": "A diverse team collaborating around a table.",
-      "imageUrl": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxkaXZlcnNlJTIwdGVhbXxlbnwwfHx8fDE3NjIyMTUxODF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxkaXZlcnNlJTIwdGVhbXxlbnwwfHx8fDE3NjIyMTUxODF8MA&ixlib.rb-4.1.0&q=80&w=1080",
       "imageHint": "diverse team"
     },
     {
       "id": "coe-3",
       "description": "A chart showing upward growth and expansion.",
-      "imageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxncm93dGglMjBjaGFydHxlbnwwfHx8fDE3NjIyMTUyMTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxncm93dGglMjBjaGFydHxlbnwwfHx8fDE3NjIyMTUyMTJ8MA&ixlib.rb-4.1.0&q=80&w=1080",
       "imageHint": "growth chart"
     },
     {
       "id": "rebrand-1",
       "description": "A mood board with different logos, color palettes, and branding materials.",
-      "imageUrl": "https://images.unsplash.com/photo-1542744095-fcf48d80b2fd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxyZWJyYW5kaW5nJTIwc3RyYXRlZ3l8ZW58MHx8fHwxNzYyMjE1MjQyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1542744095-fcf48d80b2fd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxyZWJyYW5kaW5nJTIwc3RyYXRlZ3l8ZW58MHx8fHwxNzYyMjE1MjQyfDA&ixlib.rb-4.1.0&q=80&w=1080",
       "imageHint": "rebranding strategy"
     },
     {
       "id": "rebrand-2",
       "description": "People in a workshop, collaborating on a new brand identity.",
-      "imageUrl": "https://images.unsplash.com/photo-1560439514-4e9645039924?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxicmFuZCUyMHdvcmtzaG9wfGVufDB8fHx8fDE3NjIyMTUyNzJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1560439514-4e9645039924?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxicmFuZCUyMHdvcmtzaG9wfGVufDB8fHx8fDE3NjIyMTUyNzJ8MA&ixlib.rb-4.1.0&q=80&w=1080",
       "imageHint": "brand workshop"
     },
     {
       "id": "looker-finance-1",
       "description": "A financial dashboard showing P&L, revenue, and expense trends.",
-      "imageUrl": "https://images.unsplash.com/photo-1642427749670-f20e2e76f8c8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxmaW5hbmNpYWwlMjBkYXNoYm9hcmR8ZW58MHx8fHwxNzYyMjE1NjUxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1642427749670-f20e2e76f8c8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxmaW5hbmNpYWwlMjBkYXNoYm9hcmR8ZW58MHx8fHwxNzYyMjE1NjUxfDA&ixlib.rb-4.1.0&q=80&w=1080",
       "imageHint": "financial dashboard"
     },
     {
@@ -75,19 +75,19 @@
     {
       "id": "pm-platform-1",
       "description": "A screenshot of a project management tool like Asana or ClickUp, showing tasks and timelines.",
-      "imageUrl": "https://images.unsplash.com/photo-1758876201787-bd6ad98b7d6c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxBZ2lsZSUyMG1ldGhvZHxlbnwwfHx8fDE3NjUzNDE4NjN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1758876201787-bd6ad98b7d6c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxBZ2lsZSUyMG1ldGhvZHxlbnwwfHx8fDE3NjUzNDE4NjN8MA&ixlib-rb-4.1.0&q=80&w=1080",
       "imageHint": "Agile method"
     },
     {
       "id": "pm-platform-2",
       "description": "A Looker Studio or Power BI dashboard displaying client success KPIs.",
-      "imageUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxEYXRhJTIwRGFzaGJvYXJkfGVufDB8fHx8MTc2NTM0MTkwMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxEYXRhJTIwRGFzaGJvYXJkfGVufDB8fHx8MTc2NTM0MTkwMnww&ixlib-rb-4.1.0&q=80&w=1080",
       "imageHint": "Data Dashboard"
     },
     {
       "id": "pm-platform-3",
       "description": "A diagram illustrating the integration between different software platforms.",
-      "imageUrl": "https://images.unsplash.com/photo-1542744095-291d1f67b221?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzb2Z0d2FyZSUyMGludGVncmF0aW9uJTIwZGlhZ3JhbXxlbnwwfHx8fDE3NjIyMjQxMTN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1542744095-291d1f67b221?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzb2Z0d2FyZSUyMGludGVncmF0aW9uJTIwZGlhZ3JhbXxlbnwwfHx8fDE3NjIyMjQxMTN8MA&ixlib-rb-4.1.0&q=80&w=1080",
       "imageHint": "software integration"
     },
     {

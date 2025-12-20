@@ -163,7 +163,7 @@ export default function MyWork() {
                     <CardTitle className="font-headline text-2xl font-semibold text-primary">{item.title}</CardTitle>
                   </CardHeader>
                   <CardContent className="grid grid-cols-1 items-start gap-8 lg:grid-cols-2 lg:gap-12 pt-2">
-                      <div className={cn("space-y-6", (item.id === 'appointment-dashboard' || isReversed) && item.id !== 'crm-automation' ? 'lg:order-last' : '')}>
+                      <div className={cn("space-y-6", isReversed ? 'lg:order-last' : '')}>
                         <p className="text-muted-foreground leading-relaxed">{item.description}</p>
                         <div>
                           <h4 className="font-semibold text-foreground mb-3">Key Metrics & Outcomes:</h4>
@@ -180,7 +180,7 @@ export default function MyWork() {
                         </div>
                       </div>
                       {images.length > 0 && (
-                        <div className={cn("relative h-96 w-full", (item.id === 'appointment-dashboard' || isReversed) && item.id !== 'crm-automation' ? 'lg:order-first' : '')}>
+                        <div className={cn("relative h-96 w-full", isReversed ? 'lg:order-first' : '')}>
                             <InteractiveCarousel images={images} />
                         </div>
                       )}
